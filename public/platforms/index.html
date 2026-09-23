@@ -1,0 +1,2109 @@
+<!DOCTYPE html>
+<html data-theme="dark"><head><style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Static fallback for non-JS agents; Metadata.dc.html overwrites both from
+     SITE_CONFIG once the page mounts, since this <head> isn't templated. -->
+<title>Platforms legend — Vertex Order</title>
+<meta name="description" content="Internal tooling for tuning how platform icons render across the Vertex Order lists.">
+<script src="./support.js"></script>
+<script src="./data/site.js"></script>
+<script src="./data/platform-icons.js"></script>
+<script src="./data/help-wanted.js"></script>
+<script>
+  /* components.js is a generated bundle that inlines every sibling *.dc.html so
+     <dc-import> resolves without fetch(), which browsers block on file:// only.
+     Over http(s) (GitHub Pages, `just serve`, Claude Design) the runtime fetches
+     each *.dc.html live, so load the bundle solely off disk. */
+  if (location.protocol === 'file:') {
+    document.write('<script src="./components.js"><\/script>');
+  }
+</script>
+<style>x-dc{display:none!important}</style><style>html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}</style><link rel="stylesheet" href="_ds/nocturne-dd511f00-0314-498c-83ef-49f001a371b0/styles.css" data-dc-tpl="1"><script src="_ds/nocturne-dd511f00-0314-498c-83ef-49f001a371b0/_ds_bundle.js" data-dc-tpl="2"></script><link rel="stylesheet" href="data/theme.css" data-dc-tpl="3"><script src="./theme-dev.js" data-dc-tpl="4"></script><style data-dc-tpl="5">
+body { margin: 0; background: var(--color-bg); }
+a { color: var(--color-accent-300); text-decoration: none; }
+a:hover { color: var(--color-accent); text-decoration: underline; }
+:root[data-theme="light"] a { color: var(--color-accent-300); }
+:root[data-theme="light"] a:hover { color: var(--color-accent); }
+/* Icon tint overrides for light mode now live in PlatformIcon.dc.html itself,
+   so they travel with it when it's copied to other projects. */
+</style><style></style><style data-dc-tpl="5">
+/* Canonical icon tint. Every platform <img> gets it by default, so the
+   legend never repeats the filter string and the source SVG's own fill
+   (black, white, light-grey brand color — whatever) stops mattering:
+   brightness(0) flattens it before the tint is applied.
+
+   The light-mode variant relies on an ancestor with a data-theme="light"
+   attribute (set by the consuming page's toggle); with no such ancestor
+   icons keep the dark-mode tint.
+
+   Escape hatch: a `filter:` in the entry's imgStyle is inline, so it
+   overrides both rules below — used by nintendo-snes (grayscale, to keep
+   its multi-colour logo readable as luminance rather than a flat blob). */
+.dc-plat-img { filter: brightness(0) saturate(100%) invert(80%) sepia(15%) saturate(200%) hue-rotate(195deg); }
+[data-theme="light"] .dc-plat-img { filter: brightness(0) saturate(100%) invert(35%) sepia(10%) saturate(400%) hue-rotate(195deg); }
+</style></head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-dd511f00-0314-498c-83ef-49f001a371b0/styles.css">
+<script src="_ds/nocturne-dd511f00-0314-498c-83ef-49f001a371b0/_ds_bundle.js"></script>
+<!-- data/theme.css: per-repo color overrides, not vendored -- see kit's
+     docs/init-list.md "Theme colors" -->
+<link rel="stylesheet" href="data/theme.css">
+<script src="./theme-dev.js"></script>
+<style>
+body { margin: 0; background: var(--color-bg); }
+a { color: var(--color-accent-300); text-decoration: none; }
+a:hover { color: var(--color-accent); text-decoration: underline; }
+:root[data-theme="light"] a { color: var(--color-accent-300); }
+:root[data-theme="light"] a:hover { color: var(--color-accent); }
+/* Icon tint overrides for light mode now live in PlatformIcon.dc.html itself,
+   so they travel with it when it's copied to other projects. */
+</style>
+</helmet>
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh;">
+  <span id="top" style="position: absolute; top: 0; left: 0;"></span>
+
+  <dc-import name="Metadata" title="{{ metaTitle }}" description="{{ metaDescription }}" hint-size="0,0"></dc-import>
+  <dc-import name="ThemeToggle" hint-size="36px,36px"></dc-import>
+  <dc-import name="BackToTop" hint-size="0,0"></dc-import>
+
+  <div style="max-width: 760px; margin: 0 auto; padding: calc(var(--space-8) + var(--space-6)) var(--space-4) var(--space-8);">
+    <dc-import name="Intro" notice-url="{{ footerNoticeUrl }}" discussions-url="{{ siteDiscussionsUrl }}" hint-size="auto,220px" style="display: block;"></dc-import>
+
+    <h3 style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; color: var(--color-neutral-400); margin: 0 0 var(--space-2);">ZOOMED ICONS</h3>
+    <div style="position: relative; margin: 0 0 var(--space-8);">
+      <div style="position: absolute; inset: 0; pointer-events: none; background-color: var(--color-accent); -webkit-mask-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='84'%3E%3Crect x='0' y='14' width='28' height='2' fill='white'/%3E%3Crect x='0' y='50' width='28' height='2' fill='white'/%3E%3C/svg%3E&quot;); mask-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='84'%3E%3Crect x='0' y='14' width='28' height='2' fill='white'/%3E%3Crect x='0' y='50' width='28' height='2' fill='white'/%3E%3C/svg%3E&quot;); -webkit-mask-size: 28px 84px; mask-size: 28px 84px; -webkit-mask-repeat: repeat; mask-repeat: repeat;"></div>
+      <div style="position: relative; display: flex; flex-wrap: wrap; align-content: flex-start; row-gap: 16px; column-gap: 16px;">
+        <sc-for list="{{ platformIcons }}" as="pl" hint-placeholder-count="30">
+          <span data-legend-item="{{ pl.name }}" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <dc-import name="ZoomedPlatformIcon" item-name="{{ pl.name }}" prefix="{{ pl.prefix }}" icon-img="{{ pl.iconImg }}" icon="{{ pl.icon }}" icon-size="{{ pl.iconSize }}" suffix-font-size="{{ pl.suffixFontSize }}" suffix-small-caps="{{ pl.suffixSmallCaps }}" suffix-offset-y="{{ pl.suffixOffsetY }}" img-style="{{ pl.imgStyle }}" text="{{ pl.text }}" suffix="{{ pl.suffix }}" jp-tag="{{ pl.jpTag }}" non-jp-tag="{{ pl.nonJpTag }}" hint-size="auto,40px" style="display: flex;"></dc-import>
+          </span>
+        </sc-for>
+      </div>
+    </div>
+
+    <h3 id="page-size-icons" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; color: var(--color-neutral-400); margin: 0 0 var(--space-2);">PAGE SIZE ICONS</h3>
+    <div style="margin: 0 0 var(--space-8);">
+      <span style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px;">
+        <sc-for list="{{ platformIcons }}" as="pl" hint-placeholder-count="30">
+<dc-import name="PlatformIcon" item-name="{{ pl.name }}" prefix="{{ pl.prefix }}" icon-img="{{ pl.iconImg }}" icon="{{ pl.icon }}" icon-size="{{ pl.iconSize }}" suffix-font-size="{{ pl.suffixFontSize }}" suffix-small-caps="{{ pl.suffixSmallCaps }}" suffix-offset-y="{{ pl.suffixOffsetY }}" img-style="{{ pl.imgStyle }}" text="{{ pl.text }}" suffix="{{ pl.suffix }}" jp-tag="{{ pl.jpTag }}" non-jp-tag="{{ pl.nonJpTag }}" hint-size="auto,20px" style="display: flex;"></dc-import>
+</sc-for>
+      </span>
+    </div>
+
+    <div style="height: 1px; background: linear-gradient(to right, transparent, var(--color-neutral-700), transparent); margin: 0 0 var(--space-6);"></div>
+
+    <div id="help-wanted">
+      <dc-import name="HelpWanted" items="{{ helpWantedItems }}" hint-size="auto,220px" style="display: block;"></dc-import>
+    </div>
+
+    <dc-import name="Footer" license="{{ footerLicense }}" notice-url="{{ footerNoticeUrl }}" entities="{{ footerEntities }}" show-affiliate-disclosure="{{ false }}" hint-size="auto,260px" style="display: block;"></dc-import>
+  </div>
+</div>
+</x-dc>
+<div id="dc-root-ssr"><div class="sc-host" data-sc-name="index"><div data-dc-tpl="6" style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh;">
+  <span data-dc-tpl="7" id="top" style="position: absolute; top: 0px; left: 0px;"></span>
+
+  <div class="sc-host" data-sc-name="Metadata" data-dc-tpl="8"></div>
+  <div class="sc-host" data-sc-name="ThemeToggle" data-dc-tpl="9"><button data-dc-tpl="5" title="Toggle light/dark mode" style="position: fixed; top: var(--space-4); right: var(--space-4); z-index: 10; width: 36px; height: 36px; border-radius: var(--radius-md); border: 1px solid var(--color-divider); background: var(--color-surface); color: var(--color-text); display: flex; align-items: center; justify-content: center; cursor: pointer;" class="scp0 scp1">
+  <svg width="17" height="17" viewBox="0 0 256 256" fill="currentColor"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path></svg>
+</button></div>
+  <div class="sc-host" data-sc-name="BackToTop" data-dc-tpl="10"></div>
+
+  <div data-dc-tpl="11" style="max-width: 760px; margin: 0px auto; padding: calc(var(--space-8) + var(--space-6)) var(--space-4) var(--space-8);">
+    <div class="sc-host" data-sc-name="Intro" data-dc-tpl="12"><h1 data-dc-tpl="5" style="font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal); font-size: 32px; margin: var(--space-6) 0 var(--space-3);">Platforms legend</h1><p data-dc-tpl="6" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; max-width: 620px; margin: 0 0 var(--space-3);">Looking for the order lists? Head to <a data-dc-tpl="7" href="https://vertex-order.github.io" target="_blank" rel="noopener">vertex-order.github.io</a>.</p><p data-dc-tpl="8" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; max-width: 620px; margin: 0 0 var(--space-6);">This page is internal tooling for tuning how platform icons render in the Vertex Order listings — not something you need to visit as a reader. The <strong data-dc-tpl="9" style="color: var(--color-text); font-weight: 500;">Zoomed</strong> grid is roughly twice page size for easier visual tweaking; the <a data-dc-tpl="10" href="#page-size-icons">Page size</a> grid renders each icon through <code data-dc-tpl="11" style="font-size: 13px;">PlatformIcon.dc.html</code> at the size used in listing rows — the same data, at 1x. Icons are credited in full in <a data-dc-tpl="12" href="https://github.com/vertex-order/platforms/blob/main/NOTICE.md" target="_blank" rel="noopener">NOTICE</a>. See <a data-dc-tpl="13" href="#help-wanted">Help Wanted</a> below, or use the <a data-dc-tpl="14" href="https://github.com/vertex-order/platforms/discussions" target="_blank" rel="noopener">discussion page</a> to propose new platforms or changes.</p></div>
+
+    <h3 data-dc-tpl="13" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; color: var(--color-neutral-400); margin: 0 0 var(--space-2);">ZOOMED ICONS</h3>
+    <div data-dc-tpl="14" style="position: relative; margin: 0 0 var(--space-8);">
+      <div data-dc-tpl="15" style="position: absolute; inset: 0px; pointer-events: none; background-color: var(--color-accent); -webkit-mask-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='84'%3E%3Crect x='0' y='14' width='28' height='2' fill='white'/%3E%3Crect x='0' y='50' width='28' height='2' fill='white'/%3E%3C/svg%3E&quot;); mask-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='84'%3E%3Crect x='0' y='14' width='28' height='2' fill='white'/%3E%3Crect x='0' y='50' width='28' height='2' fill='white'/%3E%3C/svg%3E&quot;); -webkit-mask-size: 28px 84px; mask-size: 28px 84px; -webkit-mask-repeat: repeat; mask-repeat: repeat;"></div>
+      <div data-dc-tpl="16" style="position: relative; display: flex; flex-wrap: wrap; align-content: flex-start; row-gap: 16px; column-gap: 16px;">
+        
+          <span data-dc-tpl="18" data-legend-item="Windows (PC; Handheld; Digital)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Windows (PC; Handheld; Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Windows (PC; Handheld; Digital)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/windows.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="macOS" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="macOS" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="macOS" class="dc-plat-img" width="16.5" height="16.5" style="flex-shrink: 0; max-width: none; width: auto; height: 16.5px;" src="images/platforms/macos.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Linux" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Linux" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Linux" class="dc-plat-img" width="20" height="20" style="flex-shrink: 0; max-width: none; width: auto; height: 20px;" src="images/platforms/linux.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="GOG (PC)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="GOG (PC)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="GOG (PC)" class="dc-plat-img" width="16.75" height="16.75" style="flex-shrink: 0; max-width: none; width: auto; height: 16.75px;" src="images/platforms/gog.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Steam (PC; Handheld)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Steam (PC; Handheld)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Steam (PC; Handheld)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/steam.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Epic Games Store (PC)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Epic Games Store (PC)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Epic Games Store (PC)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/epic-games.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Xbox Series X/S (Physical; Digital; Optimized; FPS Boost; 360 Compatibility; One Compatibility)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Xbox Series X/S (Physical; Digital; Optimized; FPS Boost; 360 Compatibility; One Compatibility)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Xbox Series X/S (Physical; Digital; Optimized; FPS Boost; 360 Compatibility; One Compatibility)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/xbox-xs.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Xbox One (Physical; Digital; Enhanced; Xbox One X Enhanced; 360 Compatibility)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Xbox One (Physical; Digital; Enhanced; Xbox One X Enhanced; 360 Compatibility)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Xbox One (Physical; Digital; Enhanced; Xbox One X Enhanced; 360 Compatibility)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/xbox-one.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Xbox 360 (Physical; Xbox Live Arcade)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Xbox 360 (Physical; Xbox Live Arcade)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Xbox 360 (Physical; Xbox Live Arcade)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/xbox-360.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Xbox Cloud Gaming" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Xbox Cloud Gaming" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Xbox Cloud Gaming" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/xbox-cloud.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="PlayStation VR2 (PS5)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="PlayStation VR2 (PS5)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation VR2 (PS5)" class="dc-plat-img" width="8.05" height="8.05" style="flex-shrink: 0; max-width: none; width: auto; height: 8.05px;" src="images/platforms/playstation-vr2.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="PlayStation 5 (Physical; Digital; PS4 Compatibility; Pro Enhanced)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="PlayStation 5 (Physical; Digital; PS4 Compatibility; Pro Enhanced)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation 5 (Physical; Digital; PS4 Compatibility; Pro Enhanced)" class="dc-plat-img" width="8.05" height="8.05" style="flex-shrink: 0; max-width: none; width: auto; height: 8.05px;" src="images/platforms/playstation5.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="PlayStation VR (PS4; PS5 Compatibility)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="PlayStation VR (PS4; PS5 Compatibility)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation VR (PS4; PS5 Compatibility)" class="dc-plat-img" width="8.05" height="8.05" style="flex-shrink: 0; max-width: none; width: auto; height: 8.05px;" src="images/platforms/playstation-vr.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="PlayStation 4 (Physical; Digital)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="PlayStation 4 (Physical; Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation 4 (Physical; Digital)" class="dc-plat-img" width="8.05" height="8.05" style="flex-shrink: 0; max-width: none; width: auto; height: 8.05px;" src="images/platforms/playstation4.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="PlayStation 3 (Physical; Digital; PSone Compatibility; PS2 Compatibility)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="PlayStation 3 (Physical; Digital; PSone Compatibility; PS2 Compatibility)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation 3 (Physical; Digital; PSone Compatibility; PS2 Compatibility)" class="dc-plat-img" width="8.06" height="8.06" style="flex-shrink: 0; max-width: none; width: auto; height: 8.06px;" src="images/platforms/playstation3.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="PlayStation 2 (Physical; PSone Compatibility)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="PlayStation 2 (Physical; PSone Compatibility)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation 2 (Physical; PSone Compatibility)" class="dc-plat-img" width="8.05" height="8.05" style="flex-shrink: 0; max-width: none; width: auto; height: 8.05px;" src="images/platforms/playstation2.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="PlayStation Classic" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="PlayStation Classic" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation Classic" class="dc-plat-img" width="8.48" height="8.48" style="flex-shrink: 0; max-width: none; width: auto; height: 8.48px;" src="images/platforms/playstation-classic.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="PlayStation (PSone) (Physical)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="PlayStation (PSone) (Physical)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation (PSone) (Physical)" class="dc-plat-img" width="9" height="9" style="flex-shrink: 0; max-width: none; width: auto; height: 9px;" src="images/platforms/playstation1.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="PlayStation Vita (Physical; Digital)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="PlayStation Vita (Physical; Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation Vita (Physical; Digital)" class="dc-plat-img" width="8.49" height="8.49" style="flex-shrink: 0; max-width: none; width: auto; height: 8.49px;" src="images/platforms/playstation-vita.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="PlayStation Portable (PSP) (Physical; Digital; Universal Media Disk)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="PlayStation Portable (PSP) (Physical; Digital; Universal Media Disk)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation Portable (PSP) (Physical; Digital; Universal Media Disk)" class="dc-plat-img" width="8.24" height="8.24" style="flex-shrink: 0; max-width: none; width: auto; height: 8.24px;" src="images/platforms/playstation-portable.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="PlayStation Plus (PS Plus)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="PlayStation Plus (PS Plus)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation Plus (PS Plus)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/playstation-plus.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Nintendo Switch 2 (Physical; Digital)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Nintendo Switch 2 (Physical; Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Switch 2 (Physical; Digital)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/nintendo-switch-2.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Nintendo Switch (Physical; Digital)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Nintendo Switch (Physical; Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Switch (Physical; Digital)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/nintendo-switch.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Nintendo Wii U (Physical; Virtual Console; WiiWare)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Nintendo Wii U (Physical; Virtual Console; WiiWare)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Wii U (Physical; Virtual Console; WiiWare)" class="dc-plat-img" width="10.99" height="10.99" style="flex-shrink: 0; max-width: none; width: auto; height: 10.99px;" src="images/platforms/nintendo-wii-u.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Nintendo Wii (Physical; Virtual Console; WiiWare)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Nintendo Wii (Physical; Virtual Console; WiiWare)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Wii (Physical; Virtual Console; WiiWare)" class="dc-plat-img" width="10.99" height="10.99" style="flex-shrink: 0; max-width: none; width: auto; height: 10.99px;" src="images/platforms/nintendo-wii.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Nintendo GameCube (Physical)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Nintendo GameCube (Physical)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo GameCube (Physical)" class="dc-plat-img" width="18.5" height="18.5" style="flex-shrink: 0; max-width: none; width: auto; height: 18.5px;" src="images/platforms/nintendo-gamecube.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Super Nintendo Entertainment System (SNES) Classic Edition" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Super Nintendo Entertainment System (SNES) Classic Edition" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Super Nintendo Entertainment System (SNES) Classic Edition" class="dc-plat-img" width="9.61" height="9.61" style="flex-shrink: 0; max-width: none; width: auto; height: 9.61px;" src="images/platforms/nintendo-snes-classic-edition.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Super Nintendo Entertainment System (SNES) (Physical)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Super Nintendo Entertainment System (SNES) (Physical)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Super Nintendo Entertainment System (SNES) (Physical)" class="dc-plat-img" width="14.25" height="14.25" style="flex-shrink: 0; max-width: none; width: auto; height: 14.25px; filter: grayscale(100%);" src="images/platforms/nintendo-snes.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Nintendo NES Classic Edition" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Nintendo NES Classic Edition" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo NES Classic Edition" class="dc-plat-img" width="9.61" height="9.61" style="flex-shrink: 0; max-width: none; width: auto; height: 9.61px;" src="images/platforms/nintendo-nes-classic-edition.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Nintendo Entertainment System (NES / FC) (Physical)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Nintendo Entertainment System (NES / FC) (Physical)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Entertainment System (NES / FC) (Physical)" class="dc-plat-img" width="9.25" height="9.25" style="flex-shrink: 0; max-width: none; width: auto; height: 9.25px;" src="images/platforms/nintendo-nes-fc.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Nintendo Entertainment System (Physical)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Nintendo Entertainment System (Physical)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Entertainment System (Physical)" class="dc-plat-img" width="9.61" height="9.61" style="flex-shrink: 0; max-width: none; width: auto; height: 9.61px;" src="images/platforms/nintendo-nes.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Nintendo Famicom (Physical; Japan Only)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Nintendo Famicom (Physical; Japan Only)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Famicom (Physical; Japan Only)" class="dc-plat-img" width="9.61" height="9.61" style="flex-shrink: 0; max-width: none; width: auto; height: 9.61px;" src="images/platforms/nintendo-fc.svg">
+      
+      
+      
+      <span data-dc-tpl="37" style="font-size: 10.8px; font-style: italic; font-variant: small-caps; padding-left: 1px;">(jp)</span>
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Nintendo 3DS (Physical; Digital)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Nintendo 3DS (Physical; Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo 3DS (Physical; Digital)" class="dc-plat-img" width="10.4" height="10.4" style="flex-shrink: 0; max-width: none; width: auto; height: 10.4px;" src="images/platforms/nintendo-3ds.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Nintendo DS (Physical; DSi Digital)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Nintendo DS (Physical; DSi Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo DS (Physical; DSi Digital)" class="dc-plat-img" width="10.4" height="10.4" style="flex-shrink: 0; max-width: none; width: auto; height: 10.4px;" src="images/platforms/nintendo-ds.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Game Boy Advance (Physical)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Game Boy Advance (Physical)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Game Boy Advance (Physical)" class="dc-plat-img" width="12.5" height="12.5" style="flex-shrink: 0; max-width: none; width: auto; height: 12.5px;" src="images/platforms/nintendo-game-boy-advance.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Nintendo Game Boy (Physical)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Nintendo Game Boy (Physical)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Game Boy (Physical)" class="dc-plat-img" width="12.5" height="12.5" style="flex-shrink: 0; max-width: none; width: auto; height: 12.5px;" src="images/platforms/nintendo-game-boy.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Ouya" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Ouya" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Ouya" class="dc-plat-img" width="13.5" height="13.5" style="flex-shrink: 0; max-width: none; width: auto; height: 13.5px;" src="images/platforms/ouya.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Arcade" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Arcade" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Arcade" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/arcade.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="WonderSwan Color (Physical; Japan Only)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="WonderSwan Color (Physical; Japan Only)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="WonderSwan Color (Physical; Japan Only)" class="dc-plat-img" width="15.93" height="15.93" style="flex-shrink: 0; max-width: none; width: auto; height: 15.93px;" src="images/platforms/wonderswan.svg">
+      
+      
+      
+      <span data-dc-tpl="37" style="font-size: 10.8px; font-style: italic; font-variant: small-caps; padding-left: 1px;">(jp)</span>
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="MSX2 (Physical; Japan Only)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="MSX2 (Physical; Japan Only)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="MSX2 (Physical; Japan Only)" class="dc-plat-img" width="12.93" height="12.93" style="flex-shrink: 0; max-width: none; width: auto; height: 12.93px;" src="images/platforms/msx2.svg">
+      
+      
+      
+      <span data-dc-tpl="37" style="font-size: 10.8px; font-style: italic; font-variant: small-caps; padding-left: 1px;">(jp)</span>
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="MSX (Physical; Japan Only)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="MSX (Physical; Japan Only)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="MSX (Physical; Japan Only)" class="dc-plat-img" width="12.73" height="12.73" style="flex-shrink: 0; max-width: none; width: auto; height: 12.73px;" src="images/platforms/msx.svg">
+      
+      
+      
+      <span data-dc-tpl="37" style="font-size: 10.8px; font-style: italic; font-variant: small-caps; padding-left: 1px;">(jp)</span>
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Sharp X1 (Physical; Japan Only)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Sharp X1 (Physical; Japan Only)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Sharp X1 (Physical; Japan Only)" class="dc-plat-img" width="10.25" height="10.25" style="flex-shrink: 0; max-width: none; width: auto; height: 10.25px;" src="images/platforms/sharp-x1.svg">
+      
+      
+      
+      <span data-dc-tpl="37" style="font-size: 10.8px; font-style: italic; font-variant: small-caps; padding-left: 1px;">(jp)</span>
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="NEC PC-8801mkII SR (Physical; Japan Only)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="NEC PC-8801mkII SR (Physical; Japan Only)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="NEC PC-8801mkII SR (Physical; Japan Only)" class="dc-plat-img" width="8.875" height="8.875" style="flex-shrink: 0; max-width: none; width: auto; height: 8.875px;" src="images/platforms/pc8801.svg">
+      
+      
+      <span data-dc-tpl="35" style="font-size: 9.75px; margin-left: 3px; line-height: 1; display: flex; align-items: center; margin-top: 1px; font-variant: normal;"><span class="sc-interp">mkII SR</span></span>
+      <span data-dc-tpl="37" style="font-size: 10.8px; font-style: italic; font-variant: small-caps; padding-left: 1px;">(jp)</span>
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Browser" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Browser" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Browser" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/globe.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Android" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Android" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Android" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/android2.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="iOS" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="iOS" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="iOS" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/apple.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Apple Arcade" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Apple Arcade" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Apple Arcade" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/apple-arcade.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Amazon App Store" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Amazon App Store" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Amazon App Store" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/amazon.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Facebook (Messenger)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Facebook (Messenger)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Facebook (Messenger)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/facebook.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Windows Phone" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Windows Phone" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Windows Phone" class="dc-plat-img" width="17.25" height="17.25" style="flex-shrink: 0; max-width: none; width: auto; height: 17.25px;" src="images/platforms/windows-phone.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Mobile Phones" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Mobile Phones" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Mobile Phones" class="dc-plat-img" width="16.75" height="16.75" style="flex-shrink: 0; max-width: none; width: auto; height: 16.75px;" src="images/platforms/mobile-phone.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="UltraHD Blu-ray" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="UltraHD Blu-ray" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="UltraHD Blu-ray" class="dc-plat-img" width="10.14" height="10.14" style="flex-shrink: 0; max-width: none; width: auto; height: 10.14px;" src="images/platforms/blu-ray-ultra-hd.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Blu-ray" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Blu-ray" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Blu-ray" class="dc-plat-img" width="10.14" height="10.14" style="flex-shrink: 0; max-width: none; width: auto; height: 10.14px;" src="images/platforms/blu-ray.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Digital Streaming" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Digital Streaming" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Digital Streaming" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/cast.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="DVD" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="DVD" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="DVD" class="dc-plat-img" width="10.14" height="10.14" style="flex-shrink: 0; max-width: none; width: auto; height: 10.14px;" src="images/platforms/dvd.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="LaserDisc" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="LaserDisc" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="LaserDisc" class="dc-plat-img" width="10.14" height="10.14" style="flex-shrink: 0; max-width: none; width: auto; height: 10.14px;" src="images/platforms/laserdisc.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Compact Disc (CD)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Compact Disc (CD)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Compact Disc (CD)" class="dc-plat-img" width="10.14" height="10.14" style="flex-shrink: 0; max-width: none; width: auto; height: 10.14px;" src="images/platforms/compact-disc.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="VHS Tapes" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="VHS Tapes" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="VHS Tapes" class="dc-plat-img" width="10.14" height="10.14" style="flex-shrink: 0; max-width: none; width: auto; height: 10.14px;" src="images/platforms/vhs.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Book" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Book" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Book" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/book.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Youtube" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Youtube" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Youtube" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/youtube.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Fan Translation" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Fan Translation" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Fan Translation" class="dc-plat-img" width="22" height="22" style="flex-shrink: 0; max-width: none; width: auto; height: 22px;" src="images/platforms/fan-translation.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Fan game movie video" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Fan game movie video" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Fan game movie video" class="dc-plat-img" width="22" height="22" style="flex-shrink: 0; max-width: none; width: auto; height: 22px;" src="images/platforms/fan-movie.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Fan Audiobook" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Fan Audiobook" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Fan Audiobook" class="dc-plat-img" width="22" height="22" style="flex-shrink: 0; max-width: none; width: auto; height: 22px;" src="images/platforms/fan-audiobook.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Fan story recap video" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Fan story recap video" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Fan story recap video" class="dc-plat-img" width="22" height="22" style="flex-shrink: 0; max-width: none; width: auto; height: 22px;" src="images/platforms/fan-recap.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="18" data-legend-item="Fan playthrough video" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="19"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="24" title="Fan playthrough video" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Fan playthrough video" class="dc-plat-img" width="22" height="22" style="flex-shrink: 0; max-width: none; width: auto; height: 22px;" src="images/platforms/fan-playthrough.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+      </div>
+    </div>
+
+    <h3 data-dc-tpl="20" id="page-size-icons" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; color: var(--color-neutral-400); margin: 0 0 var(--space-2);">PAGE SIZE ICONS</h3>
+    <div data-dc-tpl="21" style="margin: 0 0 var(--space-8);">
+      <span data-dc-tpl="22" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px;">
+        <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Windows (PC; Handheld; Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Windows (PC; Handheld; Digital)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/windows.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="macOS" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="macOS" class="dc-plat-img" width="16.5" height="16.5" style="flex-shrink: 0; max-width: none; width: auto; height: 16.5px;" src="images/platforms/macos.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Linux" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Linux" class="dc-plat-img" width="20" height="20" style="flex-shrink: 0; max-width: none; width: auto; height: 20px;" src="images/platforms/linux.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="GOG (PC)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="GOG (PC)" class="dc-plat-img" width="16.75" height="16.75" style="flex-shrink: 0; max-width: none; width: auto; height: 16.75px;" src="images/platforms/gog.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Steam (PC; Handheld)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Steam (PC; Handheld)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/steam.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Epic Games Store (PC)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Epic Games Store (PC)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/epic-games.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Xbox Series X/S (Physical; Digital; Optimized; FPS Boost; 360 Compatibility; One Compatibility)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Xbox Series X/S (Physical; Digital; Optimized; FPS Boost; 360 Compatibility; One Compatibility)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/xbox-xs.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Xbox One (Physical; Digital; Enhanced; Xbox One X Enhanced; 360 Compatibility)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Xbox One (Physical; Digital; Enhanced; Xbox One X Enhanced; 360 Compatibility)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/xbox-one.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Xbox 360 (Physical; Xbox Live Arcade)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Xbox 360 (Physical; Xbox Live Arcade)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/xbox-360.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Xbox Cloud Gaming" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Xbox Cloud Gaming" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/xbox-cloud.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="PlayStation VR2 (PS5)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation VR2 (PS5)" class="dc-plat-img" width="8.05" height="8.05" style="flex-shrink: 0; max-width: none; width: auto; height: 8.05px;" src="images/platforms/playstation-vr2.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="PlayStation 5 (Physical; Digital; PS4 Compatibility; Pro Enhanced)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation 5 (Physical; Digital; PS4 Compatibility; Pro Enhanced)" class="dc-plat-img" width="8.05" height="8.05" style="flex-shrink: 0; max-width: none; width: auto; height: 8.05px;" src="images/platforms/playstation5.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="PlayStation VR (PS4; PS5 Compatibility)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation VR (PS4; PS5 Compatibility)" class="dc-plat-img" width="8.05" height="8.05" style="flex-shrink: 0; max-width: none; width: auto; height: 8.05px;" src="images/platforms/playstation-vr.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="PlayStation 4 (Physical; Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation 4 (Physical; Digital)" class="dc-plat-img" width="8.05" height="8.05" style="flex-shrink: 0; max-width: none; width: auto; height: 8.05px;" src="images/platforms/playstation4.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="PlayStation 3 (Physical; Digital; PSone Compatibility; PS2 Compatibility)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation 3 (Physical; Digital; PSone Compatibility; PS2 Compatibility)" class="dc-plat-img" width="8.06" height="8.06" style="flex-shrink: 0; max-width: none; width: auto; height: 8.06px;" src="images/platforms/playstation3.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="PlayStation 2 (Physical; PSone Compatibility)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation 2 (Physical; PSone Compatibility)" class="dc-plat-img" width="8.05" height="8.05" style="flex-shrink: 0; max-width: none; width: auto; height: 8.05px;" src="images/platforms/playstation2.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="PlayStation Classic" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation Classic" class="dc-plat-img" width="8.48" height="8.48" style="flex-shrink: 0; max-width: none; width: auto; height: 8.48px;" src="images/platforms/playstation-classic.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="PlayStation (PSone) (Physical)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation (PSone) (Physical)" class="dc-plat-img" width="9" height="9" style="flex-shrink: 0; max-width: none; width: auto; height: 9px;" src="images/platforms/playstation1.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="PlayStation Vita (Physical; Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation Vita (Physical; Digital)" class="dc-plat-img" width="8.49" height="8.49" style="flex-shrink: 0; max-width: none; width: auto; height: 8.49px;" src="images/platforms/playstation-vita.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="PlayStation Portable (PSP) (Physical; Digital; Universal Media Disk)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation Portable (PSP) (Physical; Digital; Universal Media Disk)" class="dc-plat-img" width="8.24" height="8.24" style="flex-shrink: 0; max-width: none; width: auto; height: 8.24px;" src="images/platforms/playstation-portable.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="PlayStation Plus (PS Plus)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="PlayStation Plus (PS Plus)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/playstation-plus.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Nintendo Switch 2 (Physical; Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Switch 2 (Physical; Digital)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/nintendo-switch-2.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Nintendo Switch (Physical; Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Switch (Physical; Digital)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/nintendo-switch.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Nintendo Wii U (Physical; Virtual Console; WiiWare)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Wii U (Physical; Virtual Console; WiiWare)" class="dc-plat-img" width="10.99" height="10.99" style="flex-shrink: 0; max-width: none; width: auto; height: 10.99px;" src="images/platforms/nintendo-wii-u.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Nintendo Wii (Physical; Virtual Console; WiiWare)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Wii (Physical; Virtual Console; WiiWare)" class="dc-plat-img" width="10.99" height="10.99" style="flex-shrink: 0; max-width: none; width: auto; height: 10.99px;" src="images/platforms/nintendo-wii.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Nintendo GameCube (Physical)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo GameCube (Physical)" class="dc-plat-img" width="18.5" height="18.5" style="flex-shrink: 0; max-width: none; width: auto; height: 18.5px;" src="images/platforms/nintendo-gamecube.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Super Nintendo Entertainment System (SNES) Classic Edition" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Super Nintendo Entertainment System (SNES) Classic Edition" class="dc-plat-img" width="9.61" height="9.61" style="flex-shrink: 0; max-width: none; width: auto; height: 9.61px;" src="images/platforms/nintendo-snes-classic-edition.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Super Nintendo Entertainment System (SNES) (Physical)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Super Nintendo Entertainment System (SNES) (Physical)" class="dc-plat-img" width="14.25" height="14.25" style="flex-shrink: 0; max-width: none; width: auto; height: 14.25px; filter: grayscale(100%);" src="images/platforms/nintendo-snes.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Nintendo NES Classic Edition" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo NES Classic Edition" class="dc-plat-img" width="9.61" height="9.61" style="flex-shrink: 0; max-width: none; width: auto; height: 9.61px;" src="images/platforms/nintendo-nes-classic-edition.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Nintendo Entertainment System (NES / FC) (Physical)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Entertainment System (NES / FC) (Physical)" class="dc-plat-img" width="9.25" height="9.25" style="flex-shrink: 0; max-width: none; width: auto; height: 9.25px;" src="images/platforms/nintendo-nes-fc.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Nintendo Entertainment System (Physical)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Entertainment System (Physical)" class="dc-plat-img" width="9.61" height="9.61" style="flex-shrink: 0; max-width: none; width: auto; height: 9.61px;" src="images/platforms/nintendo-nes.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Nintendo Famicom (Physical; Japan Only)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Famicom (Physical; Japan Only)" class="dc-plat-img" width="9.61" height="9.61" style="flex-shrink: 0; max-width: none; width: auto; height: 9.61px;" src="images/platforms/nintendo-fc.svg">
+      
+      
+      
+      <span data-dc-tpl="37" style="font-size: 10.8px; font-style: italic; font-variant: small-caps; padding-left: 1px;">(jp)</span>
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Nintendo 3DS (Physical; Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo 3DS (Physical; Digital)" class="dc-plat-img" width="10.4" height="10.4" style="flex-shrink: 0; max-width: none; width: auto; height: 10.4px;" src="images/platforms/nintendo-3ds.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Nintendo DS (Physical; DSi Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo DS (Physical; DSi Digital)" class="dc-plat-img" width="10.4" height="10.4" style="flex-shrink: 0; max-width: none; width: auto; height: 10.4px;" src="images/platforms/nintendo-ds.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Game Boy Advance (Physical)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Game Boy Advance (Physical)" class="dc-plat-img" width="12.5" height="12.5" style="flex-shrink: 0; max-width: none; width: auto; height: 12.5px;" src="images/platforms/nintendo-game-boy-advance.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Nintendo Game Boy (Physical)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Nintendo Game Boy (Physical)" class="dc-plat-img" width="12.5" height="12.5" style="flex-shrink: 0; max-width: none; width: auto; height: 12.5px;" src="images/platforms/nintendo-game-boy.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Ouya" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Ouya" class="dc-plat-img" width="13.5" height="13.5" style="flex-shrink: 0; max-width: none; width: auto; height: 13.5px;" src="images/platforms/ouya.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Arcade" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Arcade" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/arcade.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="WonderSwan Color (Physical; Japan Only)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="WonderSwan Color (Physical; Japan Only)" class="dc-plat-img" width="15.93" height="15.93" style="flex-shrink: 0; max-width: none; width: auto; height: 15.93px;" src="images/platforms/wonderswan.svg">
+      
+      
+      
+      <span data-dc-tpl="37" style="font-size: 10.8px; font-style: italic; font-variant: small-caps; padding-left: 1px;">(jp)</span>
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="MSX2 (Physical; Japan Only)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="MSX2 (Physical; Japan Only)" class="dc-plat-img" width="12.93" height="12.93" style="flex-shrink: 0; max-width: none; width: auto; height: 12.93px;" src="images/platforms/msx2.svg">
+      
+      
+      
+      <span data-dc-tpl="37" style="font-size: 10.8px; font-style: italic; font-variant: small-caps; padding-left: 1px;">(jp)</span>
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="MSX (Physical; Japan Only)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="MSX (Physical; Japan Only)" class="dc-plat-img" width="12.73" height="12.73" style="flex-shrink: 0; max-width: none; width: auto; height: 12.73px;" src="images/platforms/msx.svg">
+      
+      
+      
+      <span data-dc-tpl="37" style="font-size: 10.8px; font-style: italic; font-variant: small-caps; padding-left: 1px;">(jp)</span>
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Sharp X1 (Physical; Japan Only)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Sharp X1 (Physical; Japan Only)" class="dc-plat-img" width="10.25" height="10.25" style="flex-shrink: 0; max-width: none; width: auto; height: 10.25px;" src="images/platforms/sharp-x1.svg">
+      
+      
+      
+      <span data-dc-tpl="37" style="font-size: 10.8px; font-style: italic; font-variant: small-caps; padding-left: 1px;">(jp)</span>
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="NEC PC-8801mkII SR (Physical; Japan Only)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="NEC PC-8801mkII SR (Physical; Japan Only)" class="dc-plat-img" width="8.875" height="8.875" style="flex-shrink: 0; max-width: none; width: auto; height: 8.875px;" src="images/platforms/pc8801.svg">
+      
+      
+      <span data-dc-tpl="35" style="font-size: 9.75px; margin-left: 3px; line-height: 1; display: flex; align-items: center; margin-top: 1px; font-variant: normal;"><span class="sc-interp">mkII SR</span></span>
+      <span data-dc-tpl="37" style="font-size: 10.8px; font-style: italic; font-variant: small-caps; padding-left: 1px;">(jp)</span>
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Browser" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Browser" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/globe.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Android" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Android" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/android2.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="iOS" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="iOS" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/apple.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Apple Arcade" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Apple Arcade" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/apple-arcade.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Amazon App Store" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Amazon App Store" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/amazon.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Facebook (Messenger)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Facebook (Messenger)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/facebook.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Windows Phone" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Windows Phone" class="dc-plat-img" width="17.25" height="17.25" style="flex-shrink: 0; max-width: none; width: auto; height: 17.25px;" src="images/platforms/windows-phone.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Mobile Phones" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Mobile Phones" class="dc-plat-img" width="16.75" height="16.75" style="flex-shrink: 0; max-width: none; width: auto; height: 16.75px;" src="images/platforms/mobile-phone.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="UltraHD Blu-ray" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="UltraHD Blu-ray" class="dc-plat-img" width="10.14" height="10.14" style="flex-shrink: 0; max-width: none; width: auto; height: 10.14px;" src="images/platforms/blu-ray-ultra-hd.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Blu-ray" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Blu-ray" class="dc-plat-img" width="10.14" height="10.14" style="flex-shrink: 0; max-width: none; width: auto; height: 10.14px;" src="images/platforms/blu-ray.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Digital Streaming" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Digital Streaming" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/cast.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="DVD" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="DVD" class="dc-plat-img" width="10.14" height="10.14" style="flex-shrink: 0; max-width: none; width: auto; height: 10.14px;" src="images/platforms/dvd.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="LaserDisc" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="LaserDisc" class="dc-plat-img" width="10.14" height="10.14" style="flex-shrink: 0; max-width: none; width: auto; height: 10.14px;" src="images/platforms/laserdisc.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Compact Disc (CD)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Compact Disc (CD)" class="dc-plat-img" width="10.14" height="10.14" style="flex-shrink: 0; max-width: none; width: auto; height: 10.14px;" src="images/platforms/compact-disc.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="VHS Tapes" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="VHS Tapes" class="dc-plat-img" width="10.14" height="10.14" style="flex-shrink: 0; max-width: none; width: auto; height: 10.14px;" src="images/platforms/vhs.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Book" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Book" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/book.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Youtube" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Youtube" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/youtube.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Fan Translation" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Fan Translation" class="dc-plat-img" width="22" height="22" style="flex-shrink: 0; max-width: none; width: auto; height: 22px;" src="images/platforms/fan-translation.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Fan game movie video" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Fan game movie video" class="dc-plat-img" width="22" height="22" style="flex-shrink: 0; max-width: none; width: auto; height: 22px;" src="images/platforms/fan-movie.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Fan Audiobook" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Fan Audiobook" class="dc-plat-img" width="22" height="22" style="flex-shrink: 0; max-width: none; width: auto; height: 22px;" src="images/platforms/fan-audiobook.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Fan story recap video" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Fan story recap video" class="dc-plat-img" width="22" height="22" style="flex-shrink: 0; max-width: none; width: auto; height: 22px;" src="images/platforms/fan-recap.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="24">
+  <span data-dc-tpl="24" title="Fan playthrough video" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="29" alt="Fan playthrough video" class="dc-plat-img" width="22" height="22" style="flex-shrink: 0; max-width: none; width: auto; height: 22px;" src="images/platforms/fan-playthrough.svg">
+      
+      
+      
+      
+      
+    </span>
+    
+  </span></div>
+      </span>
+    </div>
+
+    <div data-dc-tpl="25" style="height: 1px; background: linear-gradient(to right, transparent, var(--color-neutral-700), transparent); margin: 0 0 var(--space-6);"></div>
+
+    <div data-dc-tpl="26" id="help-wanted">
+      <div class="sc-host" data-sc-name="HelpWanted" data-dc-tpl="27"><span data-dc-tpl="5" style="display: flex; align-items: baseline; gap: 6px; margin: 0 0 var(--space-2);">
+  <h3 data-dc-tpl="6" id="help-wanted" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; color: var(--color-neutral-400); margin: 0px; scroll-margin-top: 60px;">HELP WANTED</h3>
+  <a data-dc-tpl="7" href="#help-wanted" title="Link to this section" style="color: var(--color-neutral-500); text-decoration: none; font-size: 14px; opacity: 0; transition: opacity .15s;">¶</a></span><ul data-dc-tpl="8" style="color: var(--color-neutral-500); font-size: 12px; line-height: 1.7; margin: 0 0 var(--space-6); padding-left: 1.2em;">
+  
+    <li data-dc-tpl="10"><span class="sc-interp">A better light/dark colour inversion for the Linux (Tux) icon</span></li>
+  
+    <li data-dc-tpl="10"><span class="sc-interp">Replace icons without an explicit license: MSX2, PC-8801</span></li>
+  
+    <li data-dc-tpl="10"><span class="sc-interp">Replace icons with one that's more legible at small sizes: Arcade, PS Plus</span></li>
+  
+    <li data-dc-tpl="10"><span class="sc-interp">Optical-size passes where an icon reads larger or smaller than its neighbours at page size</span></li>
+  </ul></div>
+    </div>
+
+    <div class="sc-host" data-sc-name="Footer" data-dc-tpl="28"><p data-dc-tpl="26" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">© <span class="sc-interp">2026</span> Vertex Industries, with help from the community.
+  <span class="sc-interp">This page is </span><a data-dc-tpl="36" href="https://github.com/vertex-order/platforms/blob/main/LICENSE" target="_blank" rel="noopener" style="color: var(--color-neutral-500);"><span class="sc-interp">MIT</span></a><span class="sc-interp"> licensed.</span>
+   See <a data-dc-tpl="39" href="https://github.com/vertex-order/platforms/blob/main/NOTICE.md" target="_blank" rel="noopener" style="color: var(--color-neutral-500);">NOTICE</a> for third-party parts.</p>
+  <p data-dc-tpl="56" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">Icons considered fair use and only used for communicating historical platform availability at a glance; platform icons remain the property of their&nbsp;owners.</p><p data-dc-tpl="59" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">Not affiliated with <span class="sc-interp">any of the above brands, franchises, companies, or people</span>.</p></div>
+  </div></div></div></div>
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  renderVals() {
+    const platformIcons = (typeof window !== 'undefined' && window.PLATFORM_ICONS) || [];
+    const SITE = (typeof window !== 'undefined' && window.SITE_CONFIG) || {};
+    return {
+      platformIcons,
+      metaTitle: SITE.title || 'Platforms legend — Vertex Order',
+      metaDescription: SITE.description || '',
+      helpWantedItems: (typeof window !== 'undefined' && window.HELP_WANTED_ITEMS) || [],
+      siteDiscussionsUrl: (typeof window !== 'undefined' && window.SITE_CONFIG && window.SITE_CONFIG.discussionsUrl) || '',
+      footerNoticeUrl: 'https://github.com/vertex-order/platforms/blob/main/NOTICE.md',
+      footerLicense: [
+        { text: 'This page is ' },
+        { text: 'MIT', url: 'https://github.com/vertex-order/platforms/blob/main/LICENSE' },
+        { text: ' licensed.' },
+      ],
+      footerEntities: [],
+    };
+  }
+}
+</script>
+
+
+<script>(function(){var s=document.getElementById("dc-root-ssr");if(!s)return;new MutationObserver(function(_,o){if(document.getElementById("dc-root")){s.remove();o.disconnect();}}).observe(document.body,{childList:true,subtree:true});})();</script></body></html>
