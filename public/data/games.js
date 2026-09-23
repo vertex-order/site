@@ -1,0 +1,25 @@
+// Game franchises. Each entry: { title, by (optional), href (optional link to a full order-list site), firstPublished (optional year) }.
+// schema: franchise-list.schema.json
+window.GAME_FRANCHISES = [
+  { title: "Assassin's Creed", by: "Ubisoft" },
+  { title: "Bravely Default", by: "Square Enix" },
+  { title: "Deus Ex", by: "Eidos Montreal" },
+  { title: "Devil May Cry", by: "Capcom" },
+  { title: "Dragon Quest", by: "Square Enix" },
+  { title: "Final Fantasy", by: "Square Enix", href: "https://vertex-order.github.io/final-fantasy/" },
+  { title: "Halo", by: "Bungie" },
+  { title: "Hitman", by: "IO Interactive" },
+  { title: "Kingdom Hearts", by: "Square Enix", href: "https://vertex-order.github.io/kingdom-hearts/" },
+  { title: "Mario RPGs", by: "Nintendo" },
+  { title: "Mana", by: "Square Enix" },
+  { title: "Metal Gear Solid", by: "Konami" },
+  { title: "Nier", by: "Square Enix" },
+  { title: "Ogre", by: "Square Enix" },
+  { title: "Persona", by: "Atlus" },
+  { title: "Pokémon", by: "Game Freak" },
+  { title: "SaGa", by: "Square Enix" },
+  { title: "Star Ocean", by: "Square Enix" },
+  { title: "Super Mario", by: "Nintendo" },
+  { title: "The Legend of Zelda", by: "Nintendo" },
+  { title: "Tomb Raider" },
+];
