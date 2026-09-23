@@ -142,7 +142,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
     <div style="max-width: 760px; margin: 0 auto; height: 44px; display: flex; align-items: center; gap: var(--space-3); padding: 0 var(--space-4); padding-right: calc(var(--space-4) + {{ navReservedRightPx }});">
       <sc-if value="{{ navShowTitle }}" hint-placeholder-val="{{ true }}">
       <div style="display: flex; flex-direction: column; align-self: flex-start; gap: 1px; margin-top: 11px; margin-left: {{ navTitleMarginLeft }};">
-        <span style="font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal); font-size: 13px; line-height: 1; white-space: nowrap; color: var(--color-text);">{{ siteName }} <span title="Vertex Industries, that's us!">Vertex</span> Order</span>
+        <span style="font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal); font-size: 13px; line-height: 1; white-space: nowrap; color: var(--color-text);">{{ siteName }} <span title="Vertex Projects, that's us!">Vertex</span> Order</span>
         <span style="font-size: 9px; line-height: 1; white-space: nowrap; color: var(--color-neutral-600); margin-top: 2px;">Updated: {{ lastUpdatedShort }}</span>
       </div>
       </sc-if>
@@ -209,7 +209,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
         </div>
       </sc-if>
       <sc-if value="{{ navShowCheckList }}" hint-placeholder-val="{{ true }}">
-      <a href="https://vertex-order.github.io" target="_blank" rel="noopener" title="More lists from Vertex Industries" style="margin-left: auto; margin-right: 8px; display: flex; align-items: center; height: 26px; font-size: 11px; line-height: 1.15; text-align: right; color: var(--color-neutral-400); text-decoration: none; white-space: nowrap;">Check out our<br>other lists ↗</a>
+      <a href="https://order.vertexprojects.org" target="_blank" rel="noopener" title="More lists from Vertex Projects" style="margin-left: auto; margin-right: 8px; display: flex; align-items: center; height: 26px; font-size: 11px; line-height: 1.15; text-align: right; color: var(--color-neutral-400); text-decoration: none; white-space: nowrap;">Check out our<br>other lists ↗</a>
       </sc-if>
       <sc-if value="{{ navShowTheme }}" hint-placeholder-val="{{ true }}">
       <button onClick="{{ toggleTheme }}" title="Toggle light/dark mode" style="width: 26px; height: 26px; flex-shrink: 0; border-radius: var(--radius-sm); border: 1px solid var(--color-divider); background: var(--color-surface); color: var(--color-text); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 13px; margin-right: {{ navToggleMarginRight }}; margin-left: {{ themeMarginLeft }};">
@@ -223,7 +223,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
   <div style="position: fixed; top: calc(var(--space-3) - var(--space-2)); left: 0; right: 0; z-index: 10; max-width: 760px; margin: 0 auto; padding: 0 var(--space-4); padding-right: calc(var(--space-4) + {{ navReservedRightPx }}); display: flex; justify-content: flex-end; align-items: center; pointer-events: none;">
     <div style="pointer-events: auto; display: flex; align-items: center; gap: var(--space-3); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); margin-right: {{ navFloatingWidgetMarginRight }};">
       <sc-if value="{{ navShowCheckList }}" hint-placeholder-val="{{ true }}">
-      <a href="https://vertex-order.github.io" target="_blank" rel="noopener" title="More lists from Vertex Industries" style="height: 36px; display: flex; align-items: center; font-size: 12.5px; line-height: 1.15; text-align: right; color: var(--color-neutral-400); text-decoration: none; white-space: nowrap;">Check out our<br>other lists ↗</a>
+      <a href="https://order.vertexprojects.org" target="_blank" rel="noopener" title="More lists from Vertex Projects" style="height: 36px; display: flex; align-items: center; font-size: 12.5px; line-height: 1.15; text-align: right; color: var(--color-neutral-400); text-decoration: none; white-space: nowrap;">Check out our<br>other lists ↗</a>
       </sc-if>
       <sc-if value="{{ navShowTheme }}" hint-placeholder-val="{{ true }}">
       <button onClick="{{ toggleTheme }}" title="Toggle light/dark mode" style="width: 36px; height: 36px; flex-shrink: 0; border-radius: var(--radius-md); border: 1px solid var(--color-divider); background: var(--color-surface); color: var(--color-text); display: flex; align-items: center; justify-content: center; cursor: pointer;">
@@ -294,7 +294,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
         </div>
         </sc-if>
         <sc-if value="{{ hideCheckListInMenu }}" hint-placeholder-val="{{ false }}">
-        <a href="https://vertex-order.github.io" target="_blank" rel="noopener" style="font-size: 12px; color: var(--color-neutral-400); text-decoration: none;">Check out our other lists ↗</a>
+        <a href="https://order.vertexprojects.org" target="_blank" rel="noopener" style="font-size: 12px; color: var(--color-neutral-400); text-decoration: none;">Check out our other lists ↗</a>
         </sc-if>
         <sc-if value="{{ hideThemeInMenu }}" hint-placeholder-val="{{ false }}">
         <button onClick="{{ toggleTheme }}" style="font-size: 12px; height: 30px; border-radius: var(--radius-sm); border: 1px solid var(--color-divider); background: var(--color-surface); color: var(--color-text); display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer;">
@@ -308,7 +308,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
 
   <nav class="nav" style="padding: var(--space-3) 0;">
     <div style="max-width: 760px; margin: 0 auto; padding: 0 var(--space-4); width: 100%;">
-      <div class="nav-brand" style="margin-left: {{ navTitleMarginLeft }}; font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal);">{{ siteName }} — <span title="Vertex Industries, that's us!">Vertex</span> Order</div>
+      <div class="nav-brand" style="margin-left: {{ navTitleMarginLeft }}; font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal);">{{ siteName }} — <span title="Vertex Projects, that's us!">Vertex</span> Order</div>
     </div>
   </nav>
 
@@ -340,7 +340,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
   <div data-dc-tpl="63" style="position: fixed; top: calc(var(--space-3) - var(--space-2)); left: 0px; right: 0px; z-index: 10; max-width: 760px; margin: 0px auto; padding-right: calc(var(--space-4) + 0px); display: flex; justify-content: flex-end; align-items: center; pointer-events: none;">
     <div data-dc-tpl="64" style="pointer-events: auto; display: flex; align-items: center; gap: var(--space-3); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); margin-right: -109.4px;">
       
-      <a data-dc-tpl="66" href="https://vertex-order.github.io" target="_blank" rel="noopener" title="More lists from Vertex Industries" style="height: 36px; display: flex; align-items: center; font-size: 12.5px; line-height: 1.15; text-align: right; color: var(--color-neutral-400); text-decoration: none; white-space: nowrap;">Check out our<br data-dc-tpl="67">other lists ↗</a>
+      <a data-dc-tpl="66" href="https://order.vertexprojects.org" target="_blank" rel="noopener" title="More lists from Vertex Projects" style="height: 36px; display: flex; align-items: center; font-size: 12.5px; line-height: 1.15; text-align: right; color: var(--color-neutral-400); text-decoration: none; white-space: nowrap;">Check out our<br data-dc-tpl="67">other lists ↗</a>
       
       
       <button data-dc-tpl="69" title="Toggle light/dark mode" style="width: 36px; height: 36px; flex-shrink: 0; border-radius: var(--radius-md); border: 1px solid var(--color-divider); background: var(--color-surface); color: var(--color-text); display: flex; align-items: center; justify-content: center; cursor: pointer;">
@@ -358,7 +358,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
 
   <nav data-dc-tpl="116" class="nav" style="padding: var(--space-3) 0;">
     <div data-dc-tpl="117" style="max-width: 760px; margin: 0px auto; padding: 0 var(--space-4); width: 100%;">
-      <div data-dc-tpl="118" class="nav-brand" style="margin-left: -96px; font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal);"><span class="sc-interp">Wyrmwatch</span> — <span data-dc-tpl="119" title="Vertex Industries, that's us!">Vertex</span> Order</div>
+      <div data-dc-tpl="118" class="nav-brand" style="margin-left: -96px; font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal);"><span class="sc-interp">Wyrmwatch</span> — <span data-dc-tpl="119" title="Vertex Projects, that's us!">Vertex</span> Order</div>
     </div>
   </nav>
 
@@ -2570,11 +2570,11 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
       
     </p>
   
-  <p data-dc-tpl="25" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-3) 0 0;">Last Updated: <span class="sc-interp">September 2026</span>.</p><p data-dc-tpl="26" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">© <span class="sc-interp">2026</span> Vertex Industries, with help from the community.
-  <span class="sc-interp">This page is </span><a data-dc-tpl="36" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener" style="color: var(--color-neutral-500);"><span class="sc-interp">CC BY-NC-SA 4.0</span></a><span class="sc-interp"> licensed.</span>
-   See <a data-dc-tpl="39" href="https://github.com/vertex-order/kit/blob/main/NOTICE.md" target="_blank" rel="noopener" style="color: var(--color-neutral-500);">NOTICE</a> for third-party parts.</p>
-  <p data-dc-tpl="56" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">Icons considered fair use and only used for communicating historical platform availability at a glance; platform icons remain the property of their&nbsp;owners.</p>
-  <p data-dc-tpl="58" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">Store links may lead to optional affiliate links at no cost to you, to help support the maintenance of Vertex Order lists.</p><p data-dc-tpl="59" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">Not affiliated with <span class="sc-interp">a fictional studio, Brightlance Interactive, or any of the above brands, franchises, companies, or people</span>.</p></div>
+  <p data-dc-tpl="25" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-3) 0 0;">Last Updated: <span class="sc-interp">September 2026</span>.</p><p data-dc-tpl="26" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">© <span class="sc-interp">2026</span> <a data-dc-tpl="27" href="https://vertexprojects.org" target="_blank" rel="noopener" style="color: inherit;">Vertex Projects</a>, with help from the community.
+  <span class="sc-interp">This page is </span><a data-dc-tpl="37" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener" style="color: var(--color-neutral-500);"><span class="sc-interp">CC BY-NC-SA 4.0</span></a><span class="sc-interp"> licensed.</span>
+   See <a data-dc-tpl="40" href="https://github.com/vertex-order/kit/blob/main/NOTICE.md" target="_blank" rel="noopener" style="color: var(--color-neutral-500);">NOTICE</a> for third-party parts.</p>
+  <p data-dc-tpl="57" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">Icons considered fair use and only used for communicating historical platform availability at a glance; platform icons remain the property of their&nbsp;owners.</p>
+  <p data-dc-tpl="59" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">Store links may lead to optional affiliate links at no cost to you, to help support the maintenance of Vertex Order lists.</p><p data-dc-tpl="60" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">Not affiliated with <span class="sc-interp">a fictional studio, Brightlance Interactive, or any of the above brands, franchises, companies, or people</span>.</p></div>
   </div></div></div></div>
 <script type="text/x-dc" data-dc-script="">
 // SITE_CONFIG/CREDITS come from site/data/{site,credits}.js (per-repo, not
