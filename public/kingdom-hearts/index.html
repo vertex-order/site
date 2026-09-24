@@ -166,6 +166,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
     <a ref="{{ checklistRow1MeasureRef }}" style="height: 36px; display: inline-flex; align-items: center; font-size: 12.5px; line-height: 1.15; text-align: right; white-space: nowrap;">Check out our<br>other lists ↗</a>
     <a ref="{{ checklistRow2MeasureRef }}" style="height: 26px; display: inline-flex; align-items: center; font-size: 11px; line-height: 1.15; text-align: right; white-space: nowrap;">Check out our<br>other lists ↗</a>
   </div>
+  <nav aria-label="Site navigation">
   <sc-if value="{{ scrolled }}" hint-placeholder-val="{{ false }}">
     <div style="position: fixed; top: 0; left: 0; right: 0; z-index: 20; height: 44px; background: var(--color-surface); border-bottom: 1px solid var(--color-divider);">
     <div style="max-width: 760px; margin: 0 auto; height: 44px; display: flex; align-items: center; gap: var(--space-3); padding: 0 var(--space-4); padding-right: calc(var(--space-4) + {{ navReservedRightPx }});">
@@ -346,12 +347,13 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
   </sc-if>
 
   <sc-if value="{{ cornerShowTitle }}" hint-placeholder-val="{{ true }}">
-  <nav class="nav" style="padding: var(--space-3) 0;">
+  <div class="nav" style="padding: var(--space-3) 0;">
     <div style="max-width: 760px; margin: 0 auto; padding: 0 var(--space-4); width: 100%;">
       <div class="nav-brand" style="margin-left: {{ navTitleMarginLeft }}; font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal);">{{ siteName }} — <span title="Vertex Projects, that's us!">Vertex</span> Order</div>
     </div>
-  </nav>
+  </div>
   </sc-if>
+  </nav>
 
   <main style="max-width: 760px; margin: 0 auto; padding: var(--space-8) var(--space-4) var(--space-8);">
 
@@ -406,38 +408,40 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
     <a data-dc-tpl="28" style="height: 36px; display: inline-flex; align-items: center; font-size: 12.5px; line-height: 1.15; text-align: right; white-space: nowrap;">Check out our<br data-dc-tpl="29">other lists ↗</a>
     <a data-dc-tpl="30" style="height: 26px; display: inline-flex; align-items: center; font-size: 11px; line-height: 1.15; text-align: right; white-space: nowrap;">Check out our<br data-dc-tpl="31">other lists ↗</a>
   </div>
+  <nav data-dc-tpl="32" aria-label="Site navigation">
   
   
-  <div data-dc-tpl="88" style="position: fixed; top: calc(var(--space-3) - var(--space-2)); left: 0px; right: 0px; z-index: 10; max-width: 760px; margin: 0px auto; padding-right: calc(var(--space-4) + 0px); display: flex; justify-content: flex-end; align-items: center; pointer-events: none;">
-    <div data-dc-tpl="89" style="pointer-events: auto; display: flex; align-items: center; gap: var(--space-3); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); margin-right: -109.4px;">
+  <div data-dc-tpl="89" style="position: fixed; top: calc(var(--space-3) - var(--space-2)); left: 0px; right: 0px; z-index: 10; max-width: 760px; margin: 0px auto; padding-right: calc(var(--space-4) + 0px); display: flex; justify-content: flex-end; align-items: center; pointer-events: none;">
+    <div data-dc-tpl="90" style="pointer-events: auto; display: flex; align-items: center; gap: var(--space-3); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); margin-right: -109.4px;">
       
-      <a data-dc-tpl="91" href="https://order.vertexprojects.org" target="_blank" rel="noopener" title="More lists from Vertex Projects" style="height: 36px; display: flex; align-items: center; font-size: 12.5px; line-height: 1.15; text-align: right; color: var(--color-neutral-400); text-decoration: none; white-space: nowrap;">Check out our<br data-dc-tpl="92">other lists ↗</a>
+      <a data-dc-tpl="92" href="https://order.vertexprojects.org" target="_blank" rel="noopener" title="More lists from Vertex Projects" style="height: 36px; display: flex; align-items: center; font-size: 12.5px; line-height: 1.15; text-align: right; color: var(--color-neutral-400); text-decoration: none; white-space: nowrap;">Check out our<br data-dc-tpl="93">other lists ↗</a>
       
       
-      <button data-dc-tpl="94" title="Toggle light/dark mode" style="width: 36px; height: 36px; flex-shrink: 0; border-radius: var(--radius-md); border: 1px solid var(--color-divider); background: var(--color-surface); color: var(--color-text); display: flex; align-items: center; justify-content: center; cursor: pointer;">
-        <i data-dc-tpl="95" class="bi bi-moon-stars"></i>
+      <button data-dc-tpl="95" title="Toggle light/dark mode" style="width: 36px; height: 36px; flex-shrink: 0; border-radius: var(--radius-md); border: 1px solid var(--color-divider); background: var(--color-surface); color: var(--color-text); display: flex; align-items: center; justify-content: center; cursor: pointer;">
+        <i data-dc-tpl="96" class="bi bi-moon-stars"></i>
       </button>
       
     </div>
   </div>
   
 
-  <div class="sc-host" data-sc-name="Metadata" data-dc-tpl="96"></div>
-  <div class="sc-host" data-sc-name="BackToTop" data-dc-tpl="97"></div>
+  <div class="sc-host" data-sc-name="Metadata" data-dc-tpl="97"></div>
+  <div class="sc-host" data-sc-name="BackToTop" data-dc-tpl="98"></div>
 
   
 
   
-  <nav data-dc-tpl="146" class="nav" style="padding: var(--space-3) 0;">
-    <div data-dc-tpl="147" style="max-width: 760px; margin: 0px auto; padding: 0 var(--space-4); width: 100%;">
-      <div data-dc-tpl="148" class="nav-brand" style="margin-left: -96px; font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal);"><span class="sc-interp">Kingdom Hearts</span> — <span data-dc-tpl="149" title="Vertex Projects, that's us!">Vertex</span> Order</div>
+  <div data-dc-tpl="147" class="nav" style="padding: var(--space-3) 0;">
+    <div data-dc-tpl="148" style="max-width: 760px; margin: 0px auto; padding: 0 var(--space-4); width: 100%;">
+      <div data-dc-tpl="149" class="nav-brand" style="margin-left: -96px; font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal);"><span class="sc-interp">Kingdom Hearts</span> — <span data-dc-tpl="150" title="Vertex Projects, that's us!">Vertex</span> Order</div>
     </div>
-  </nav>
+  </div>
   
+  </nav>
 
-  <main data-dc-tpl="150" style="max-width: 760px; margin: 0px auto; padding: var(--space-8) var(--space-4) var(--space-8);">
+  <main data-dc-tpl="151" style="max-width: 760px; margin: 0px auto; padding: var(--space-8) var(--space-4) var(--space-8);">
 
-    <div class="sc-host" data-sc-name="Intro" data-dc-tpl="151"><h1 data-dc-tpl="5" style="font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal); font-size: 40px; margin: var(--space-6) 0 0;"><span class="sc-interp">Kingdom Hearts Vertex Order</span></h1>
+    <div class="sc-host" data-sc-name="Intro" data-dc-tpl="152"><h1 data-dc-tpl="5" style="font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal); font-size: 40px; margin: var(--space-6) 0 0;"><span class="sc-interp">Kingdom Hearts Vertex Order</span></h1>
   <p data-dc-tpl="7" style="color: var(--color-neutral-600); font-size: 11px; margin: 4px 0 var(--space-3);">Last Updated: <span class="sc-interp">August 2026</span></p><p data-dc-tpl="8" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; max-width: 620px; margin: 0 0 var(--space-3);">
   <span class="sc-interp">A recommended way to experience the Kingdom Hearts franchise, listing the mainline games alongside their remakes, manga, and novels. Optional extras are marked — skip them and the series still holds together.</span></p><p data-dc-tpl="20" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; max-width: 620px; margin: 0 0 var(--space-6);"><span class="sc-interp">1 mainline entries; 1 series, 3 games, 2 books, and 2 comics. Oh my! Where to start?</span></p><p data-dc-tpl="21" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; margin: var(--space-2) 0 0;">
   <span data-dc-tpl="22" style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 2px;">
@@ -449,7 +453,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
     <a data-dc-tpl="29" href="#new-players" title="Link to this section" style="color: var(--color-neutral-500); text-decoration: none; font-size: 13px; opacity: 0; transition: opacity .15s;">¶</a>
   </span></p><p data-dc-tpl="30" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; margin: 0px;">If you've never played a Kingdom Hearts game, start with <em data-dc-tpl="31"><a data-dc-tpl="32" href="#entry-KH-0" style="color: inherit;">Kingdom Hearts (2002)</a></em> and follow the series in narrative order from there.</p></div>
 
-    <div class="sc-host" data-sc-name="InPageControls" data-dc-tpl="152"><div data-dc-tpl="5" style="max-width: 620px; margin: var(--space-3) 0 var(--space-6); display: flex; flex-direction: column; gap: var(--space-3);">
+    <div class="sc-host" data-sc-name="InPageControls" data-dc-tpl="153"><div data-dc-tpl="5" style="max-width: 620px; margin: var(--space-3) 0 var(--space-6); display: flex; flex-direction: column; gap: var(--space-3);">
   <p data-dc-tpl="6" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; margin: var(--space-2) 0 0;"><span data-dc-tpl="7" style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 2px;"><strong data-dc-tpl="8" id="our-order" style="color: var(--color-text); font-weight: 500; font-size: 24px;">Our order</strong><a data-dc-tpl="9" href="#our-order" title="Link to this section" style="color: var(--color-neutral-500); text-decoration: none; font-size: 14px; opacity: 0; transition: opacity .15s;">¶</a></span> We offer four different ways to organize the titles within each series.</p>
   <p data-dc-tpl="10" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; margin: 0px;"><strong data-dc-tpl="11" style="color: var(--color-text); font-weight: 500;">Narrative order;</strong> our recommendation. Protects the story's big reveals from prequels that would spoil them, while avoiding the jumps in time that release order can cause. The mainline entry usually comes first, then sequels, then prequels, then spinoffs, for the most cohesive read of the story's key moments.</p>
   <p data-dc-tpl="12" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; margin: 0px;"><strong data-dc-tpl="13" style="color: var(--color-text); font-weight: 500;">Chronological order;</strong> not always perfectly possible to pin down. Best if you've already played the mainline entry, since prequels and side stories can spoil later reveals. Lets you experience the whole timeline start to finish, though some side stories are hard to place exactly.</p>
@@ -583,7 +587,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
   <input data-dc-tpl="49" accept="application/json" aria-label="Restore progress" style="display: none;" type="file"></div></div>
 
     
-      <div class="sc-host" data-sc-name="SeriesSection" data-dc-tpl="154"><section data-dc-tpl="5" id="series-KH" style="margin-bottom: var(--space-8);">
+      <div class="sc-host" data-sc-name="SeriesSection" data-dc-tpl="155"><section data-dc-tpl="5" id="series-KH" style="margin-bottom: var(--space-8);">
   <div data-dc-tpl="6" style="height: 1px; background: linear-gradient(to right, transparent, var(--color-neutral-700), transparent); margin-bottom: var(--space-8);"></div>
   <div data-dc-tpl="7" style="display: flex; align-items: baseline; gap: var(--space-3); margin-bottom: var(--space-4);">
     <span data-dc-tpl="8" style="font-family: var(--font-heading); color: var(--color-accent-300); font-size: 14px; letter-spacing: 0.06em;"><span class="sc-interp">SERIES KH</span></span>
@@ -1995,9 +1999,9 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
   </div></section></div>
     
 
-    <div data-dc-tpl="155" style="height: 1px; background: linear-gradient(to right, transparent, var(--color-neutral-700), transparent); margin-bottom: var(--space-4);"></div>
+    <div data-dc-tpl="156" style="height: 1px; background: linear-gradient(to right, transparent, var(--color-neutral-700), transparent); margin-bottom: var(--space-4);"></div>
 
-    <div class="sc-host" data-sc-name="FAQ" data-dc-tpl="156"><span data-dc-tpl="5" style="display: flex; align-items: baseline; gap: 6px; margin: 0 0 var(--space-2);">
+    <div class="sc-host" data-sc-name="FAQ" data-dc-tpl="157"><span data-dc-tpl="5" style="display: flex; align-items: baseline; gap: 6px; margin: 0 0 var(--space-2);">
   <h3 data-dc-tpl="6" id="faq" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; color: var(--color-neutral-400); margin: 0px; scroll-margin-top: 60px;">FAQ</h3>
   <a data-dc-tpl="7" href="#faq" title="Link to this section" style="color: var(--color-neutral-500); text-decoration: none; font-size: 14px; opacity: 0; transition: opacity .15s;">¶</a></span><div data-dc-tpl="8" style="margin: 0 0 var(--space-6); display: flex; flex-direction: column; gap: var(--space-3);">
   
@@ -2166,8 +2170,8 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
     </div>
   </div></div>
 
-    <div class="sc-host" data-sc-name="HelpWanted" data-dc-tpl="157"><span data-dc-tpl="5" style="display: flex; align-items: baseline; gap: 6px; margin: 0 0 var(--space-2);">
-  <h3 data-dc-tpl="6" id="help-wanted" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; color: var(--color-neutral-400); margin: 0px; scroll-margin-top: 60px;">HELP WANTED</h3>
+    <div class="sc-host" data-sc-name="HelpWanted" data-dc-tpl="158"><span data-dc-tpl="5" style="display: flex; align-items: baseline; gap: 6px; margin: 0 0 var(--space-2);">
+  <h2 data-dc-tpl="6" id="help-wanted" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; color: var(--color-neutral-400); margin: 0px; scroll-margin-top: 60px;">HELP WANTED</h2>
   <a data-dc-tpl="7" href="#help-wanted" title="Link to this section" style="color: var(--color-neutral-500); text-decoration: none; font-size: 14px; opacity: 0; transition: opacity .15s;">¶</a></span><ul data-dc-tpl="8" style="color: var(--color-neutral-500); font-size: 12px; line-height: 1.7; margin: 0 0 var(--space-6); padding-left: 1.2em;">
   
     <li data-dc-tpl="10"><span class="sc-interp">Add Physical platform release options</span></li>
@@ -2185,7 +2189,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
     <li data-dc-tpl="10"><span class="sc-interp">Correct AI hallucinations and improper unrequested changes</span></li>
   </ul></div>
 
-    <div class="sc-host" data-sc-name="Footer" data-dc-tpl="158">
+    <div class="sc-host" data-sc-name="Footer" data-dc-tpl="159">
   <span data-dc-tpl="6" style="display: flex; align-items: baseline; gap: 6px; margin: 0 0 var(--space-2);">
     <h3 data-dc-tpl="7" id="credits" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; color: var(--color-neutral-400); margin: 0px; scroll-margin-top: 60px;">CREDITS</h3>
     <a data-dc-tpl="8" href="#credits" title="Link to this section" style="color: var(--color-neutral-500); text-decoration: none; font-size: 14px; opacity: 0; transition: opacity .15s;">¶</a>
