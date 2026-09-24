@@ -136,8 +136,10 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
 </style>
 </helmet>
 <dc-import name="Metadata" title="{{ metaTitle }}" description="{{ metaDescription }}" hint-size="0,0"></dc-import>
+<nav aria-label="Site navigation">
 <dc-import name="ThemeToggle" hint-size="36px,36px"></dc-import>
 <dc-import name="BackToTop" content-width="1040" right-offset="-56" hint-size="0,0"></dc-import>
+</nav>
 <div style="min-height: 100vh; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body);">
   <main style="max-width: 1040px; margin: 0 auto; padding: var(--space-8) var(--space-4);">
     <dc-import name="Intro" hint-size="auto,100px" style="display: block;"></dc-import>
@@ -216,539 +218,539 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
 </div>
 
 </x-dc>
-<div id="dc-root-ssr"><div class="sc-host" data-sc-name="index"><div class="sc-host" data-sc-name="Metadata" data-dc-tpl="9"></div><div class="sc-host" data-sc-name="ThemeToggle" data-dc-tpl="10"><button data-dc-tpl="5" title="Toggle light/dark mode" style="position: fixed; top: var(--space-4); right: var(--space-4); z-index: 10; width: 36px; height: 36px; border-radius: var(--radius-md); border: 1px solid var(--color-divider); background: var(--color-surface); color: var(--color-text); display: flex; align-items: center; justify-content: center; cursor: pointer;" class="scp0 scp1">
+<div id="dc-root-ssr"><div class="sc-host" data-sc-name="index"><div class="sc-host" data-sc-name="Metadata" data-dc-tpl="9"></div><nav data-dc-tpl="10" aria-label="Site navigation"><div class="sc-host" data-sc-name="ThemeToggle" data-dc-tpl="11"><button data-dc-tpl="5" title="Toggle light/dark mode" style="position: fixed; top: var(--space-4); right: var(--space-4); z-index: 10; width: 36px; height: 36px; border-radius: var(--radius-md); border: 1px solid var(--color-divider); background: var(--color-surface); color: var(--color-text); display: flex; align-items: center; justify-content: center; cursor: pointer;" class="scp0 scp1">
   <svg width="17" height="17" viewBox="0 0 256 256" fill="currentColor"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path></svg>
-</button></div><div class="sc-host" data-sc-name="BackToTop" data-dc-tpl="11"></div><div data-dc-tpl="12" style="min-height: 100vh; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body);">
-  <main data-dc-tpl="13" style="max-width: 1040px; margin: 0px auto; padding: var(--space-8) var(--space-4);">
-    <div class="sc-host" data-sc-name="Intro" data-dc-tpl="14"><h1 data-dc-tpl="3" style="font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal); font-size: 32px; margin: 0 0 var(--space-2);"><span data-dc-tpl="4" title="Vertex Projects, that's us!">Vertex</span> Order</h1><p data-dc-tpl="5" style="color: var(--color-neutral-400); font-size: 15px; line-height: 1.6; margin: 0 0 var(--space-8);">Recommended ways to experience your favorite franchises, series by series.</p></div>
+</button></div><div class="sc-host" data-sc-name="BackToTop" data-dc-tpl="12"></div></nav><div data-dc-tpl="13" style="min-height: 100vh; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body);">
+  <main data-dc-tpl="14" style="max-width: 1040px; margin: 0px auto; padding: var(--space-8) var(--space-4);">
+    <div class="sc-host" data-sc-name="Intro" data-dc-tpl="15"><h1 data-dc-tpl="3" style="font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal); font-size: 32px; margin: 0 0 var(--space-2);"><span data-dc-tpl="4" title="Vertex Projects, that's us!">Vertex</span> Order</h1><p data-dc-tpl="5" style="color: var(--color-neutral-400); font-size: 15px; line-height: 1.6; margin: 0 0 var(--space-8);">Recommended ways to experience your favorite franchises, series by series.</p></div>
 
-    <h2 data-dc-tpl="15" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-neutral-400); margin: 0 0 var(--space-3);">Game Franchises</h2>
-    <div data-dc-tpl="16" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-3); margin-bottom: var(--space-8);">
+    <h2 data-dc-tpl="16" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-neutral-400); margin: 0 0 var(--space-3);">Game Franchises</h2>
+    <div data-dc-tpl="17" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-3); margin-bottom: var(--space-8);">
       
         
-          <a data-dc-tpl="19" href="https://order.vertexprojects.org/final-fantasy/" class="card elev-sm" style="text-decoration: none; color: inherit; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: var(--space-4);">
-            <div data-dc-tpl="20">
-              <div data-dc-tpl="21" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Final Fantasy</span></div>
-              <div data-dc-tpl="23" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
+          <a data-dc-tpl="20" href="https://order.vertexprojects.org/final-fantasy/" class="card elev-sm" style="text-decoration: none; color: inherit; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: var(--space-4);">
+            <div data-dc-tpl="21">
+              <div data-dc-tpl="22" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Final Fantasy</span></div>
+              <div data-dc-tpl="24" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
             </div>
-            <svg data-dc-tpl="24" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" style="color: var(--color-accent-400); flex-shrink: 0;"><path data-dc-tpl="25" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
+            <svg data-dc-tpl="25" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" style="color: var(--color-accent-400); flex-shrink: 0;"><path data-dc-tpl="26" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
           </a>
         
         
       
         
-          <a data-dc-tpl="19" href="https://order.vertexprojects.org/kingdom-hearts/" class="card elev-sm" style="text-decoration: none; color: inherit; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: var(--space-4);">
-            <div data-dc-tpl="20">
-              <div data-dc-tpl="21" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Kingdom Hearts</span></div>
-              <div data-dc-tpl="23" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
+          <a data-dc-tpl="20" href="https://order.vertexprojects.org/kingdom-hearts/" class="card elev-sm" style="text-decoration: none; color: inherit; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: var(--space-4);">
+            <div data-dc-tpl="21">
+              <div data-dc-tpl="22" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Kingdom Hearts</span></div>
+              <div data-dc-tpl="24" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
             </div>
-            <svg data-dc-tpl="24" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" style="color: var(--color-accent-400); flex-shrink: 0;"><path data-dc-tpl="25" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
+            <svg data-dc-tpl="25" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" style="color: var(--color-accent-400); flex-shrink: 0;"><path data-dc-tpl="26" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
           </a>
         
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Assassin's Creed</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Ubisoft</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Assassin's Creed</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Ubisoft</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Bravely Default</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Bravely Default</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Deus Ex</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Eidos Montreal</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Deus Ex</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Eidos Montreal</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Devil May Cry</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Capcom</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Devil May Cry</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Capcom</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Dragon Quest</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Dragon Quest</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Halo</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Bungie</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Halo</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Bungie</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Hitman</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by IO Interactive</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Hitman</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by IO Interactive</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Mario RPGs</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Nintendo</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Mario RPGs</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Nintendo</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Mana</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Mana</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Metal Gear Solid</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Konami</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Metal Gear Solid</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Konami</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Nier</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Nier</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Ogre</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Ogre</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Persona</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Atlus</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Persona</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Atlus</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Pokémon</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Game Freak</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Pokémon</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Game Freak</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">SaGa</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">SaGa</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Star Ocean</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Star Ocean</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Square Enix</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Super Mario</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Nintendo</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Super Mario</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Nintendo</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Legend of Zelda</span></div>
-            <div data-dc-tpl="30" class="card-meta"><span class="sc-interp">by Nintendo</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Legend of Zelda</span></div>
+            <div data-dc-tpl="31" class="card-meta"><span class="sc-interp">by Nintendo</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="27" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="28" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Tomb Raider</span></div>
+          <div data-dc-tpl="28" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="29" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Tomb Raider</span></div>
             
           </div>
         
       
     </div>
 
-    <h2 data-dc-tpl="31" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-neutral-400); margin: 0 0 var(--space-3);">Movie &amp; TV Franchises</h2>
-    <div data-dc-tpl="32" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-3); margin-bottom: var(--space-8);">
+    <h2 data-dc-tpl="32" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-neutral-400); margin: 0 0 var(--space-3);">Movie &amp; TV Franchises</h2>
+    <div data-dc-tpl="33" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-3); margin-bottom: var(--space-8);">
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Alien / Predator</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Alien / Predator</span></div>
             
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">DC Cinematic Universe (DCU)</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">DC Cinematic Universe (DCU)</span></div>
             
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Doctor Who</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Doctor Who</span></div>
             
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Ghostbusters</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Ghostbusters</span></div>
             
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Indiana Jones</span></div>
-            <div data-dc-tpl="46" class="card-meta"><span class="sc-interp">by George Lucas</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Indiana Jones</span></div>
+            <div data-dc-tpl="47" class="card-meta"><span class="sc-interp">by George Lucas</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">James Bond</span></div>
-            <div data-dc-tpl="46" class="card-meta"><span class="sc-interp">by Ian Fleming</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">James Bond</span></div>
+            <div data-dc-tpl="47" class="card-meta"><span class="sc-interp">by Ian Fleming</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Jurassic Park</span></div>
-            <div data-dc-tpl="46" class="card-meta"><span class="sc-interp">by Michael Crichton</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Jurassic Park</span></div>
+            <div data-dc-tpl="47" class="card-meta"><span class="sc-interp">by Michael Crichton</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Law &amp; Order</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Law &amp; Order</span></div>
             
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Marvel Cinematic Universe (MCU)</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Marvel Cinematic Universe (MCU)</span></div>
             
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Mission Impossible</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Mission Impossible</span></div>
             
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Nikita</span></div>
-            <div data-dc-tpl="46" class="card-meta"><span class="sc-interp">by Luc Besson</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Nikita</span></div>
+            <div data-dc-tpl="47" class="card-meta"><span class="sc-interp">by Luc Besson</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Planet of the Apes</span></div>
-            <div data-dc-tpl="46" class="card-meta"><span class="sc-interp">by Pierre Boulle</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Planet of the Apes</span></div>
+            <div data-dc-tpl="47" class="card-meta"><span class="sc-interp">by Pierre Boulle</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Star Trek</span></div>
-            <div data-dc-tpl="46" class="card-meta"><span class="sc-interp">by Gene Roddenberry</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Star Trek</span></div>
+            <div data-dc-tpl="47" class="card-meta"><span class="sc-interp">by Gene Roddenberry</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Star Wars</span></div>
-            <div data-dc-tpl="46" class="card-meta"><span class="sc-interp">by George Lucas</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Star Wars</span></div>
+            <div data-dc-tpl="47" class="card-meta"><span class="sc-interp">by George Lucas</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Stargate</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Stargate</span></div>
             
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Fast &amp; Furious</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Fast &amp; Furious</span></div>
             
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Matrix</span></div>
-            <div data-dc-tpl="46" class="card-meta"><span class="sc-interp">by The Wachowskis</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Matrix</span></div>
+            <div data-dc-tpl="47" class="card-meta"><span class="sc-interp">by The Wachowskis</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="43" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="44" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Transformers</span></div>
+          <div data-dc-tpl="44" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="45" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Transformers</span></div>
             
           </div>
         
       
     </div>
 
-    <h2 data-dc-tpl="47" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-neutral-400); margin: 0 0 var(--space-3);">Book Franchises</h2>
-    <div data-dc-tpl="48" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-3);">
+    <h2 data-dc-tpl="48" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-neutral-400); margin: 0 0 var(--space-3);">Book Franchises</h2>
+    <div data-dc-tpl="49" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-3);">
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">A Song of Ice and Fire</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by George R. R. Martin</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">A Song of Ice and Fire</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by George R. R. Martin</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Cosmere</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Brandon Sanderson</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Cosmere</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Brandon Sanderson</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Discworld</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Terry Pratchett</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Discworld</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Terry Pratchett</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Dragonriders of Pern</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by McCaffrey</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Dragonriders of Pern</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by McCaffrey</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Dune</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Frank Herbert</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Dune</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Frank Herbert</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Earthsea</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Ursula K. Le Guin</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Earthsea</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Ursula K. Le Guin</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Ender saga</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Orson Scott Card</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Ender saga</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Orson Scott Card</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Foundation</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Isaac Asimov</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Foundation</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Isaac Asimov</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Ghost in the Shell</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Masamune Shirow</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Ghost in the Shell</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Masamune Shirow</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Harry Potter</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by J. K. Rowling</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Harry Potter</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by J. K. Rowling</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Sherlock Holmes</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Arthur Conan Doyle</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Sherlock Holmes</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Arthur Conan Doyle</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Chronicles of Narnia</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by C. S. Lewis</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Chronicles of Narnia</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by C. S. Lewis</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Dresden Files</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Jim Butcher</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Dresden Files</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Jim Butcher</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Expanse</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by James S. A. Corey</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Expanse</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by James S. A. Corey</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Hitchhiker's Guide to the Galaxy</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Douglas Adams</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Hitchhiker's Guide to the Galaxy</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Douglas Adams</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Hunger Games</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Suzanne Collins</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Hunger Games</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Suzanne Collins</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Shannara series</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Terry Brooks</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Shannara series</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Terry Brooks</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Sword of Truth</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Terry Goodkind</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Sword of Truth</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Terry Goodkind</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Wheel of Time</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Robert Jordan</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Wheel of Time</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Robert Jordan</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Witcher</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Andrzej Sapkowski</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Witcher</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Andrzej Sapkowski</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Wonderful Wizard of Oz</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by L. Frank Baum</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">The Wonderful Wizard of Oz</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by L. Frank Baum</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Thursday Next</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Jasper Fforde</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Thursday Next</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Jasper Fforde</span></div>
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Tolkien's legendarium</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Tolkien's legendarium</span></div>
             
           </div>
         
       
         
         
-          <div data-dc-tpl="59" class="card" style="opacity: 0.5;">
-            <div data-dc-tpl="60" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Vorkosigan Saga</span></div>
-            <div data-dc-tpl="62" class="card-meta"><span class="sc-interp">by Lois McMaster Bujold</span></div>
+          <div data-dc-tpl="60" class="card" style="opacity: 0.5;">
+            <div data-dc-tpl="61" class="card-title" style="font-size: 18px; margin-bottom: 2px;"><span class="sc-interp">Vorkosigan Saga</span></div>
+            <div data-dc-tpl="63" class="card-meta"><span class="sc-interp">by Lois McMaster Bujold</span></div>
           </div>
         
       
     </div>
 
-    <div data-dc-tpl="63" style="margin: var(--space-8) 0 var(--space-6);">
-      <div class="sc-host" data-sc-name="FAQ" data-dc-tpl="64"><span data-dc-tpl="5" style="display: flex; align-items: baseline; gap: 6px; margin: 0 0 var(--space-2);">
+    <div data-dc-tpl="64" style="margin: var(--space-8) 0 var(--space-6);">
+      <div class="sc-host" data-sc-name="FAQ" data-dc-tpl="65"><span data-dc-tpl="5" style="display: flex; align-items: baseline; gap: 6px; margin: 0 0 var(--space-2);">
   <h3 data-dc-tpl="6" id="faq" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; color: var(--color-neutral-400); margin: 0px; scroll-margin-top: 60px;">FAQ</h3>
   <a data-dc-tpl="7" href="#faq" title="Link to this section" style="color: var(--color-neutral-500); text-decoration: none; font-size: 14px; opacity: 0; transition: opacity .15s;">¶</a></span><div data-dc-tpl="8" style="margin: 0 0 var(--space-6); display: flex; flex-direction: column; gap: var(--space-3);">
   
@@ -791,9 +793,9 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
   </div></div>
     </div>
 
-    <div data-dc-tpl="65" style="height: 1px; background: linear-gradient(to right, transparent, var(--color-neutral-700), transparent); margin: var(--space-8) 0 var(--space-6);"></div>
+    <div data-dc-tpl="66" style="height: 1px; background: linear-gradient(to right, transparent, var(--color-neutral-700), transparent); margin: var(--space-8) 0 var(--space-6);"></div>
 
-    <div class="sc-host" data-sc-name="Footer" data-dc-tpl="66"><p data-dc-tpl="26" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">© <span class="sc-interp">2026</span> <a data-dc-tpl="27" href="https://vertexprojects.org" target="_blank" rel="noopener" style="color: inherit;">Vertex Projects</a>, with help from the community.
+    <div class="sc-host" data-sc-name="Footer" data-dc-tpl="67"><p data-dc-tpl="26" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">© <span class="sc-interp">2026</span> <a data-dc-tpl="27" href="https://vertexprojects.org" target="_blank" rel="noopener" style="color: inherit;">Vertex Projects</a>, with help from the community.
   <span class="sc-interp">This page is </span><a data-dc-tpl="37" href="https://github.com/vertex-order/home/blob/main/LICENSE" target="_blank" rel="noopener" style="color: var(--color-neutral-500);"><span class="sc-interp">MIT</span></a><span class="sc-interp"> licensed.</span>
    See <a data-dc-tpl="40" href="https://github.com/vertex-order/home/blob/main/NOTICE.md" target="_blank" rel="noopener" style="color: var(--color-neutral-500);">NOTICE</a> for third-party parts.</p><p data-dc-tpl="60" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">Not affiliated with <span class="sc-interp">any of the above brands, franchises, companies, or people</span>.</p></div>
   </main></div></div></div>
