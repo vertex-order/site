@@ -498,9 +498,9 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
     </div>
   </fieldset></div><p data-dc-tpl="26" style="color: var(--color-neutral-500); font-size: 13px; margin: var(--space-6) 0 0;">Jump to series:</p><div data-dc-tpl="27" style="display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-2) 0 var(--space-4);">
   
-    <a data-dc-tpl="29" href="#series-Upcoming" class="tag tag-outline" title="Upcoming Releases"><span class="sc-interp">Upcoming</span></a>
+    <a data-dc-tpl="29" href="#series-Upcoming" class="tag tag-outline"><span class="sc-interp">Upcoming</span></a>
   
-    <a data-dc-tpl="29" href="#series-Recent" class="tag tag-outline" title="Recently Released"><span class="sc-interp">Recent</span></a>
+    <a data-dc-tpl="29" href="#series-Recent" class="tag tag-outline"><span class="sc-interp">Recent</span></a>
   
     <a data-dc-tpl="29" href="#series-WW" class="tag tag-outline" title="Wyrmwatch"><span class="sc-interp">WW</span></a>
   
@@ -3547,7 +3547,8 @@ class Component extends DCLogic {
       return {
       ...s,
       note,
-      navLabel: s.num + ' — ' + s.title,
+      navLabel: s.num === s.title ? s.num : (s.num + ' — ' + s.title),
+      tagTooltip: s.num === s.title ? null : s.title,
       eyebrow: 'SERIES ' + s.num,
       id: 'series-' + s.num,
       anchor: '#series-' + s.num,
