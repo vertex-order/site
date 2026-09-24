@@ -460,7 +460,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
       
         <option data-dc-tpl="21" value="#series-FAN"><span class="sc-interp">FAN — Fan Projects</span></option>
       
-        <option data-dc-tpl="21" value="#series-Other"><span class="sc-interp">Other — Other</span></option>
+        <option data-dc-tpl="21" value="#series-Other"><span class="sc-interp">Other — Other titles</span></option>
       
         <option data-dc-tpl="21" value="#series-AN"><span class="sc-interp">AN — Artniks</span></option>
       
@@ -560,9 +560,9 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
     </div>
   </fieldset></div><p data-dc-tpl="26" style="color: var(--color-neutral-500); font-size: 13px; margin: var(--space-6) 0 0;">Jump to series:</p><div data-dc-tpl="27" style="display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-2) 0 var(--space-4);">
   
-    <a data-dc-tpl="29" href="#series-Upcoming" class="tag tag-outline" title="Upcoming Releases"><span class="sc-interp">Upcoming</span></a>
+    <a data-dc-tpl="29" href="#series-Upcoming" class="tag tag-outline"><span class="sc-interp">Upcoming</span></a>
   
-    <a data-dc-tpl="29" href="#series-Recent" class="tag tag-outline" title="Recently Released"><span class="sc-interp">Recent</span></a>
+    <a data-dc-tpl="29" href="#series-Recent" class="tag tag-outline"><span class="sc-interp">Recent</span></a>
   
     <a data-dc-tpl="29" href="#series-I" class="tag tag-outline" title="Final Fantasy I"><span class="sc-interp">I</span></a>
   
@@ -620,7 +620,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
   
     <a data-dc-tpl="29" href="#series-FAN" class="tag tag-outline" title="Fan Projects"><span class="sc-interp">FAN</span></a>
   
-    <a data-dc-tpl="29" href="#series-Other" class="tag tag-outline" title="Other"><span class="sc-interp">Other</span></a>
+    <a data-dc-tpl="29" href="#series-Other" class="tag tag-outline" title="Other titles"><span class="sc-interp">Other</span></a>
   
     <a data-dc-tpl="29" href="#series-AN" class="tag tag-outline" title="Artniks"><span class="sc-interp">AN</span></a>
   
@@ -41419,7 +41419,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
   <div data-dc-tpl="7" style="display: flex; align-items: baseline; gap: var(--space-3); margin-bottom: var(--space-4);">
     <span data-dc-tpl="8" style="font-family: var(--font-heading); color: var(--color-accent-300); font-size: 14px; letter-spacing: 0.06em;"><span class="sc-interp">SERIES Other</span></span>
   </div>
-  <h2 data-dc-tpl="9" style="font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal); font-size: 26px; margin: 0 0 var(--space-4); display: flex; align-items: baseline; gap: var(--space-2);"><span data-dc-tpl="10"><span class="sc-interp">Other</span></span><a data-dc-tpl="14" href="#series-Other" title="Link to this series" style="color: var(--color-neutral-500); text-decoration: none; font-size: 16px; opacity: 0; transition: opacity .15s; white-space: nowrap;">¶</a></h2>
+  <h2 data-dc-tpl="9" style="font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal); font-size: 26px; margin: 0 0 var(--space-4); display: flex; align-items: baseline; gap: var(--space-2);"><span data-dc-tpl="10"><span class="sc-interp">Other titles</span></span><a data-dc-tpl="14" href="#series-Other" title="Link to this series" style="color: var(--color-neutral-500); text-decoration: none; font-size: 16px; opacity: 0; transition: opacity .15s; white-space: nowrap;">¶</a></h2>
 
   
     <div data-dc-tpl="16" style="max-width: 720px; margin: 0 0 var(--space-4); display: flex; flex-direction: column; gap: var(--space-3);">
@@ -45103,7 +45103,8 @@ class Component extends DCLogic {
       return {
       ...s,
       note,
-      navLabel: s.num + ' — ' + s.title,
+      navLabel: s.num === s.title ? s.num : (s.num + ' — ' + s.title),
+      tagTooltip: s.num === s.title ? null : s.title,
       eyebrow: 'SERIES ' + s.num,
       id: 'series-' + s.num,
       anchor: '#series-' + s.num,
