@@ -139,7 +139,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
 <dc-import name="ThemeToggle" hint-size="36px,36px"></dc-import>
 <dc-import name="BackToTop" content-width="1040" right-offset="-56" hint-size="0,0"></dc-import>
 <div style="min-height: 100vh; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body);">
-  <div style="max-width: 1040px; margin: 0 auto; padding: var(--space-8) var(--space-4);">
+  <main style="max-width: 1040px; margin: 0 auto; padding: var(--space-8) var(--space-4);">
     <dc-import name="Intro" hint-size="auto,100px" style="display: block;"></dc-import>
 
     <h2 style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-neutral-400); margin: 0 0 var(--space-3);">Game Franchises</h2>
@@ -212,14 +212,14 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
     <div style="height: 1px; background: linear-gradient(to right, transparent, var(--color-neutral-700), transparent); margin: var(--space-8) 0 var(--space-6);"></div>
 
     <dc-import name="Footer" license="{{ footerLicense }}" notice-url="{{ footerNoticeUrl }}" show-fair-use="{{ false }}" show-affiliate-disclosure="{{ false }}" hint-size="auto,100px" style="display: block;"></dc-import>
-  </div>
+  </main>
 </div>
 
 </x-dc>
 <div id="dc-root-ssr"><div class="sc-host" data-sc-name="index"><div class="sc-host" data-sc-name="Metadata" data-dc-tpl="9"></div><div class="sc-host" data-sc-name="ThemeToggle" data-dc-tpl="10"><button data-dc-tpl="5" title="Toggle light/dark mode" style="position: fixed; top: var(--space-4); right: var(--space-4); z-index: 10; width: 36px; height: 36px; border-radius: var(--radius-md); border: 1px solid var(--color-divider); background: var(--color-surface); color: var(--color-text); display: flex; align-items: center; justify-content: center; cursor: pointer;" class="scp0 scp1">
   <svg width="17" height="17" viewBox="0 0 256 256" fill="currentColor"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path></svg>
 </button></div><div class="sc-host" data-sc-name="BackToTop" data-dc-tpl="11"></div><div data-dc-tpl="12" style="min-height: 100vh; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body);">
-  <div data-dc-tpl="13" style="max-width: 1040px; margin: 0px auto; padding: var(--space-8) var(--space-4);">
+  <main data-dc-tpl="13" style="max-width: 1040px; margin: 0px auto; padding: var(--space-8) var(--space-4);">
     <div class="sc-host" data-sc-name="Intro" data-dc-tpl="14"><h1 data-dc-tpl="3" style="font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal); font-size: 32px; margin: 0 0 var(--space-2);"><span data-dc-tpl="4" title="Vertex Projects, that's us!">Vertex</span> Order</h1><p data-dc-tpl="5" style="color: var(--color-neutral-400); font-size: 15px; line-height: 1.6; margin: 0 0 var(--space-8);">Recommended ways to experience your favorite franchises, series by series.</p></div>
 
     <h2 data-dc-tpl="15" style="font-family: var(--font-heading); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-neutral-400); margin: 0 0 var(--space-3);">Game Franchises</h2>
@@ -796,7 +796,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
     <div class="sc-host" data-sc-name="Footer" data-dc-tpl="66"><p data-dc-tpl="26" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">© <span class="sc-interp">2026</span> <a data-dc-tpl="27" href="https://vertexprojects.org" target="_blank" rel="noopener" style="color: inherit;">Vertex Projects</a>, with help from the community.
   <span class="sc-interp">This page is </span><a data-dc-tpl="37" href="https://github.com/vertex-order/home/blob/main/LICENSE" target="_blank" rel="noopener" style="color: var(--color-neutral-500);"><span class="sc-interp">MIT</span></a><span class="sc-interp"> licensed.</span>
    See <a data-dc-tpl="40" href="https://github.com/vertex-order/home/blob/main/NOTICE.md" target="_blank" rel="noopener" style="color: var(--color-neutral-500);">NOTICE</a> for third-party parts.</p><p data-dc-tpl="60" style="color: var(--color-neutral-600); font-size: 11px; margin: var(--space-2) 0 0;">Not affiliated with <span class="sc-interp">any of the above brands, franchises, companies, or people</span>.</p></div>
-  </div></div></div></div>
+  </main></div></div></div>
 <script type="text/x-dc" data-dc-script="">
 function mapFranchise(f) {
   const byLabel = f.by ? ('by ' + f.by + (f.firstPublished ? ' \u00b7 ' + f.firstPublished : '')) : null;
