@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['V'] = { num: 'V', chronoOrder: 500, recommendedOrder: 500, title: 'Final Fantasy V', note: 'For the first 7 years, this series was only available in Japan.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['V'] = { num: 'V', chronoOrder: 500, recommendedOrder: 500, title: 'Final Fantasy V', note: 'For the first 7 years, this series was only available in Japan.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, recommendedOrder: 100,
     title: 'Final Fantasy V', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_V', titleDate: '1992-12-06',

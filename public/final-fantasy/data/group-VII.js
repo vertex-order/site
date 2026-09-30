@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['VII'] = { num: 'VII', chronoOrder: 700, recommendedOrder: 700, title: 'Compilation of Final Fantasy VII', url: 'https://wikipedia.org/wiki/Compilation_of_Final_Fantasy_VII', note: [
+// schema: group.schema.json
+window.__ffGroupReg['VII'] = { num: 'VII', chronoOrder: 700, recommendedOrder: 700, title: 'Compilation of Final Fantasy VII', url: 'https://wikipedia.org/wiki/Compilation_of_Final_Fantasy_VII', note: [
   [{ text: 'The first 3D Final Fantasy, the start of the PlayStation era, ' }, { tipText: 'FMVs', tip: 'Full-Motion Video' }, { text: ', and one of the most fleshed-out series.' }],
 ], media: [
   {

@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['VIII'] = { num: 'VIII', chronoOrder: 800, recommendedOrder: 800, title: 'Final Fantasy VIII', note: 'A more grounded, character-driven entry, centered on a love story and experimental mechanics.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['VIII'] = { num: 'VIII', chronoOrder: 800, recommendedOrder: 800, title: 'Final Fantasy VIII', note: 'A more grounded, character-driven entry, centered on a love story and experimental mechanics.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, recommendedOrder: 100,
     title: 'Final Fantasy VIII', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_VIII', titleDate: '1999-02-11',

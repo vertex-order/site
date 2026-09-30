@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['X'] = { num: 'X', chronoOrder: 1000, recommendedOrder: 1000, title: 'Final Fantasy X', note: 'The first to feature voice acting and direct game sequels, the start of the PlayStation 2 era.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['X'] = { num: 'X', chronoOrder: 1000, recommendedOrder: 1000, title: 'Final Fantasy X', note: 'The first to feature voice acting and direct game sequels, the start of the PlayStation 2 era.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, recommendedOrder: 100,
     title: 'Final Fantasy X', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_X', titleDate: '2001-07-19',

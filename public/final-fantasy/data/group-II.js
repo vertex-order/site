@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['II'] = { num: 'II', chronoOrder: 200, recommendedOrder: 200, title: 'Final Fantasy II', note: 'For the first 14 years, this series was only available in Japan.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, recommendedOrder: 200, title: 'Final Fantasy II', note: 'For the first 14 years, this series was only available in Japan.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, recommendedOrder: 100,
     title: 'Final Fantasy II', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_II', titleDate: '1988-12-17',

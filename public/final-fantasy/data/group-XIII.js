@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['XIII'] = { num: 'XIII', chronoOrder: 1400, recommendedOrder: 1400, title: 'Fabula Nova Crystallis – Final Fantasy XIII', note: 'With stories revolving around crystals associated with deities, the series marks the start of the cross-platform launch era, with PlayStation 3 and its Xbox debut on the Xbox 360.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['XIII'] = { num: 'XIII', chronoOrder: 1400, recommendedOrder: 1400, title: 'Fabula Nova Crystallis – Final Fantasy XIII', note: 'With stories revolving around crystals associated with deities, the series marks the start of the cross-platform launch era, with PlayStation 3 and its Xbox debut on the Xbox 360.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, recommendedOrder: 100,
     title: 'Final Fantasy XIII', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_XIII', titleDate: '2009-12-17',

@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['III'] = { num: 'III', chronoOrder: 300, recommendedOrder: 300, title: 'Final Fantasy III', note: 'It was 16 years until a 3D remake brought this series outside Japan, and a total of 31 years until the original pixel art version did.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['III'] = { num: 'III', chronoOrder: 300, recommendedOrder: 300, title: 'Final Fantasy III', note: 'It was 16 years until a 3D remake brought this series outside Japan, and a total of 31 years until the original pixel art version did.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, recommendedOrder: 100,
     title: 'Final Fantasy III', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_III', titleDate: '1990-04-27',

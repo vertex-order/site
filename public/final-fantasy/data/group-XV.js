@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['XV'] = { num: 'XV', chronoOrder: 1600, recommendedOrder: 1600, title: 'Final Fantasy XV Universe', url: 'https://wikipedia.org/wiki/List_of_Final_Fantasy_video_games#Final_Fantasy_XV_Universe', note: [
+// schema: group.schema.json
+window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, recommendedOrder: 1600, title: 'Final Fantasy XV Universe', url: 'https://wikipedia.org/wiki/List_of_Final_Fantasy_video_games#Final_Fantasy_XV_Universe', note: [
   [{ text: 'Loosely connected to ' }, { emText: 'Fabula Nova Crystallis – Final Fantasy XIII' }, { text: ' (optional to play first), XV was designed from the start as a multi-media story across games, TV, movies, and manga.' }],
 ], media: [
   {

@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['EX'] = { num: 'EX', chronoOrder: 1520, recommendedOrder: 1520, title: 'Explorers', note: 'Features a unique multiplayer aspect, and lets you customize your party for each quest-driven encounter.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['EX'] = { num: 'EX', chronoOrder: 1520, recommendedOrder: 1520, title: 'Explorers', note: 'Features a unique multiplayer aspect, and lets you customize your party for each quest-driven encounter.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, recommendedOrder: 100,
     title: 'Final Fantasy Explorers', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_Explorers', titleDate: '2014-12-18',

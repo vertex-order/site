@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['I'] = { num: 'I', chronoOrder: 100, recommendedOrder: 100, title: 'Final Fantasy I', note: [
+// schema: group.schema.json
+window.__ffGroupReg['I'] = { num: 'I', chronoOrder: 100, recommendedOrder: 100, title: 'Final Fantasy I', note: [
   [{ text: 'Where it all began, during the ' }, { tipText: 'NES', tip: 'Nintendo Entertainment System' }, { text: ' era, initially in limited 8-bit graphics.' }],
 ], media: [
   {

@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 1500, title: 'Final Fantasy XIV', note: 'The second MMO in the franchise, and its longest story by far — one overarching tale still unfolding through new content.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 1500, title: 'Final Fantasy XIV', note: 'The second MMO in the franchise, and its longest story by far — one overarching tale still unfolding through new content.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, recommendedOrder: 100,
     title: 'Final Fantasy XIV: Online ~1.0~', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_XIV_(2010_video_game)', titleDate: '2010-09-30',

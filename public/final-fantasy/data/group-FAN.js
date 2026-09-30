@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['FAN'] = { num: 'FAN', chronoOrder: 1790, recommendedOrder: 1790, title: 'Fan Projects', note: 'Unofficial, usually unsanctioned, fan projects set in the Final Fantasy universe that are mostly original and could be considered of high quality.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['FAN'] = { num: 'FAN', chronoOrder: 1790, recommendedOrder: 1790, title: 'Fan Projects', note: 'Unofficial, usually unsanctioned, fan projects set in the Final Fantasy universe that are mostly original and could be considered of high quality.', media: [
   {
     mediaType: 'Game', chronoOrder: 100, recommendedOrder: 100,
     title: 'Final Fantasy Renaissance', titleUrl: 'https://www.rengames.us/ffr', titleDate: '2024',

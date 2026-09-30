@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['IX'] = { num: 'IX', chronoOrder: 900, recommendedOrder: 900, title: 'Final Fantasy IX', note: 'A retrospective entry, returning to the medieval style of the earlier games.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['IX'] = { num: 'IX', chronoOrder: 900, recommendedOrder: 900, title: 'Final Fantasy IX', note: 'A retrospective entry, returning to the medieval style of the earlier games.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, recommendedOrder: 100,
     title: 'Final Fantasy IX', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_IX', titleDate: '2000-07-07',

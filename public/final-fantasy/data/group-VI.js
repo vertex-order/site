@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['VI'] = { num: 'VI', chronoOrder: 600, recommendedOrder: 600, title: 'Final Fantasy VI', note: 'The last mainline entry to feature 2D sprite graphics, especially outside of mobile games.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['VI'] = { num: 'VI', chronoOrder: 600, recommendedOrder: 600, title: 'Final Fantasy VI', note: 'The last mainline entry to feature 2D sprite graphics, especially outside of mobile games.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, recommendedOrder: 100,
     title: 'Final Fantasy VI', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_VI', titleDate: '1994-04-02',

@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['FFU'] = { num: 'FFU', chronoOrder: 1050, recommendedOrder: 1050, title: 'Final Fantasy: Unlimited', note: 'The first anime in the franchise.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['FFU'] = { num: 'FFU', chronoOrder: 1050, recommendedOrder: 1050, title: 'Final Fantasy: Unlimited', note: 'The first anime in the franchise.', media: [
   {
     mediaType: 'TV', chronoOrder: 0, recommendedOrder: 100,
     title: 'Final Fantasy: Unlimited', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy:_Unlimited', titleDate: '2001-10-02',

@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['TR'] = { num: 'TR', chronoOrder: 1510, recommendedOrder: 1510, title: 'Theatrhythm', note: 'A rhythm spin-off, mashing up elements and music from across the franchise, and occasionally outside franchises altogether.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['TR'] = { num: 'TR', chronoOrder: 1510, recommendedOrder: 1510, title: 'Theatrhythm', note: 'A rhythm spin-off, mashing up elements and music from across the franchise, and occasionally outside franchises altogether.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, recommendedOrder: 100,
     title: 'Theatrhythm Final Fantasy', titleUrl: 'https://wikipedia.org/wiki/Theatrhythm_Final_Fantasy', titleDate: '2012-02-16',

@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['DFF'] = { num: 'DFF', chronoOrder: 1390, recommendedOrder: 1390, title: 'Dissidia Final Fantasy', note: "Final Fantasy's take on the fighting game genre. Titles contain elements and characters from other Final Fantasy entries, and thus could be considered a mash-up or alternate universe.", media: [
+// schema: group.schema.json
+window.__ffGroupReg['DFF'] = { num: 'DFF', chronoOrder: 1390, recommendedOrder: 1390, title: 'Dissidia Final Fantasy', note: "Final Fantasy's take on the fighting game genre. Titles contain elements and characters from other Final Fantasy entries, and thus could be considered a mash-up or alternate universe.", media: [
   {
     mediaType: 'Game', chronoOrder: -100, recommendedOrder: 50,
     title: 'Dissidia Duodecim Prologus Final Fantasy', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Dissidia_Duodecim_Prologus_Final_Fantasy', titleDate: '2011-01-18',

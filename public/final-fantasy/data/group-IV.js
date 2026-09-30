@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400, title: 'Final Fantasy IV', note: [
+// schema: group.schema.json
+window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400, title: 'Final Fantasy IV', note: [
   [{ text: 'The first Final Fantasy to be made in glorious 16-bit graphics, initially during the ' }, { tipText: 'SNES', tip: 'Super Nintendo Entertainment System' }, { text: ' era.' }],
 ], media: [
   {

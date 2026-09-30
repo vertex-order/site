@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['SW'] = { num: 'SW', chronoOrder: 950, recommendedOrder: 950, title: 'Spirits Within', url: 'https://wikipedia.org/wiki/Final_Fantasy:_The_Spirits_Within', note: "A bold departure into science fiction and photorealistic CG, laying the groundwork for the series' future cinematic ambitions.", media: [
+// schema: group.schema.json
+window.__ffGroupReg['SW'] = { num: 'SW', chronoOrder: 950, recommendedOrder: 950, title: 'Spirits Within', url: 'https://wikipedia.org/wiki/Final_Fantasy:_The_Spirits_Within', note: "A bold departure into science fiction and photorealistic CG, laying the groundwork for the series' future cinematic ambitions.", media: [
   {
     mediaType: 'Movie', chronoOrder: 0, recommendedOrder: 100,
     title: 'Final Fantasy: The Spirits Within', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy:_The_Spirits_Within', titleDate: '2001-07-02',

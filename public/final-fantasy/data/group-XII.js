@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['XII'] = { num: 'XII', chronoOrder: 1300, recommendedOrder: 1300, title: 'Ivalice Alliance – Final Fantasy XII', url: 'https://wikipedia.org/wiki/Ivalice', note: [
+// schema: group.schema.json
+window.__ffGroupReg['XII'] = { num: 'XII', chronoOrder: 1300, recommendedOrder: 1300, title: 'Ivalice Alliance – Final Fantasy XII', url: 'https://wikipedia.org/wiki/Ivalice', note: [
   [{ text: 'The titular title, a ' }, { emText: 'classic rpg' }, { text: ', is known for its divisive customizable auto-battle system. The series is also notable for ' }, { emText: 'Final Fantasy Tactics' }, { text: ' and several ' }, { emText: 'turn-based tactical rpgs' }, { text: ', which almost deserve their own series.' }],
 ], media: [
   {

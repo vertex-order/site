@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['DM'] = { num: 'DM', chronoOrder: 1450, recommendedOrder: 1450, title: 'Dimensions', note: 'An original mobile-first entry that paved the way for bringing most of the 2D franchise to mobile, without gacha and microtransactions.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['DM'] = { num: 'DM', chronoOrder: 1450, recommendedOrder: 1450, title: 'Dimensions', note: 'An original mobile-first entry that paved the way for bringing most of the 2D franchise to mobile, without gacha and microtransactions.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, recommendedOrder: 100,
     title: 'Final Fantasy Dimensions', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_Dimensions', titleDate: '2010-09-06',

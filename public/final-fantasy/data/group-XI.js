@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['XI'] = { num: 'XI', chronoOrder: 1100, recommendedOrder: 1100, title: 'Final Fantasy XI', note: 'The first MMO in the franchise, told as a string of largely self-contained story arcs. Story complete. Also sports a long-running book spin-off series.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, recommendedOrder: 1100, title: 'Final Fantasy XI', note: 'The first MMO in the franchise, told as a string of largely self-contained story arcs. Story complete. Also sports a long-running book spin-off series.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, recommendedOrder: 100,
     title: 'Final Fantasy XI: Online', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_XI', titleDate: '2002-05-16',

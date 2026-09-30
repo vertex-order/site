@@ -1,5 +1,5 @@
-// schema: series.schema.json
-window.__ffSeriesReg['WD'] = { num: 'WD', chronoOrder: 1580, recommendedOrder: 1580, title: 'World', note: 'Light hearted spin-off mixing chibi art and humor, aimed at a younger audience with plenty of throwbacks to previous titles.', media: [
+// schema: group.schema.json
+window.__ffGroupReg['WD'] = { num: 'WD', chronoOrder: 1580, recommendedOrder: 1580, title: 'World', note: 'Light hearted spin-off mixing chibi art and humor, aimed at a younger audience with plenty of throwbacks to previous titles.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, recommendedOrder: 100,
     title: 'World of Final Fantasy', titleUrl: 'https://wikipedia.org/wiki/World_of_Final_Fantasy', titleDate: '2016-10-25',
