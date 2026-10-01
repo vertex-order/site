@@ -2376,9 +2376,9 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
     </span>
     
   </a></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="186">
-  <a data-dc-tpl="7" href="https://www.youtube.com/results?search_query=Kingdom%20Hearts%20358%2F2%20Days%20Theater%20Mode%20game%20movie" target="_blank" rel="noopener" title="Unofficial (Youtube)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;" class="scp3">
+  <a data-dc-tpl="7" href="https://www.youtube.com/results?search_query=Kingdom%20Hearts%20358%2F2%20Days%20Theater%20Mode%20game%20movie" target="_blank" rel="noopener" title="Fan combined movie video (Youtube)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;" class="scp3">
     <span data-dc-tpl="8" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
-      <img data-dc-tpl="10" alt="Unofficial (Youtube)" class="dc-plat-img" width="22" height="22" style="flex-shrink: 0; max-width: none; width: auto; height: 22px;" src="images/platforms/fan-movie.svg">
+      <img data-dc-tpl="10" alt="Fan combined movie video (Youtube)" class="dc-plat-img" width="22" height="22" style="flex-shrink: 0; max-width: none; width: auto; height: 22px;" src="images/platforms/fan-movie.svg">
       
       
       
@@ -7017,10 +7017,8 @@ class Component extends DCLogic {
     const base = master.get(src.key);
     if (!base) return src;
     const merged = { ...base, ...src };
-    if (src.name === undefined) {
-      const baseName = base.name.replace(/\s*\([^()]*\)\s*$/, '');
-      merged.name = src.paren ? `${baseName} (${src.paren})` : baseName;
-    }
+    const baseName = src.name !== undefined ? src.name : base.name.replace(/\s*\([^()]*\)\s*$/, '');
+    merged.name = src.paren ? `${baseName} (${src.paren})` : baseName;
     if (src.jpTag) merged.name += ' (Japan Only)';
     else if (src.nonJpTag) merged.name += ' (Non-Japan Only)';
     if (src.terminated) merged.name += '; terminated';
