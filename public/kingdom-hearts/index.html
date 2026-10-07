@@ -445,7 +445,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
 
     <div class="sc-host" data-sc-name="Intro" data-dc-tpl="152"><h1 data-dc-tpl="5" style="font-family: var(--font-display, var(--font-heading)); font-weight: var(--font-display-weight, 500); letter-spacing: var(--font-display-tracking, normal); font-size: 40px; margin: var(--space-6) 0 0;"><span class="sc-interp">Kingdom Hearts Vertex Order</span></h1>
   <p data-dc-tpl="7" style="color: var(--color-neutral-600); font-size: 11px; margin: 4px 0 var(--space-3);">Last Updated: <span class="sc-interp">August 2026</span></p><p data-dc-tpl="8" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; max-width: 620px; margin: 0 0 var(--space-3);">
-  <span class="sc-interp">A recommended way to experience the Kingdom Hearts franchise, listing the mainline games alongside their remakes, manga, and novels. Optional extras are marked — skip them and the series still holds together.</span></p><p data-dc-tpl="20" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; max-width: 620px; margin: 0 0 var(--space-6);"><span class="sc-interp">1 mainline entries; 1 group, 22 games, 1 expansions &amp; DLC, 1 movies &amp; videos, 9 books, and 5 comics. Oh my! Where to start?</span></p><p data-dc-tpl="21" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; margin: var(--space-2) 0 0;">
+  <span class="sc-interp">A recommended way to experience the Kingdom Hearts franchise, listing the mainline games alongside their remakes, manga, and novels. Optional extras are marked — skip them and the series still holds together.</span></p><p data-dc-tpl="20" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; max-width: 620px; margin: 0 0 var(--space-6);"><span class="sc-interp">4 mainline entries; 1 group, 22 games, 1 expansions &amp; DLC, 1 movies &amp; videos, 9 books, and 5 comics. Oh my! Where to start?</span></p><p data-dc-tpl="21" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; margin: var(--space-2) 0 0;">
   <span data-dc-tpl="22" style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 2px;">
     <strong data-dc-tpl="23" id="where-to-start" style="color: var(--color-text); font-weight: 500; font-size: 24px; scroll-margin-top: 70px;">Where to start?</strong>
     <a data-dc-tpl="24" href="#where-to-start" title="Link to this section" style="color: var(--color-neutral-500); text-decoration: none; font-size: 14px; opacity: 0; transition: opacity .15s;">¶</a>
@@ -9414,7 +9414,7 @@ class Component extends DCLogic {
       { key: 'showPlatforms', label: 'Platforms', checked: showPlatforms },
       { key: 'showLanguages', label: 'Languages', checked: showLanguages },
     ].map(o => ({ ...o, toggle: () => this.toggleColumn(o.key) }));
-    const mainlineCount = raw.filter(s => (s.media || []).some(m => m.primary.mainline)).length;
+    const mainlineCount = raw.reduce((n, s) => n + (s.media || []).filter(m => m.primary.mainline).length, 0);
     const mediaCounts = {};
     const mediaChecked = {};
     let pageSkippedTotal = 0;
