@@ -10,7 +10,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
     ],
     primary: {
       mainline: true, tags: ['MMORPG', 'Monthly subscription', 'Terminated'],
-      bylineParts: [
+      tagParts: [
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Monthly subscription · Terminated' },
       ],
@@ -48,7 +48,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
     ],
     primary: {
       tags: ['Sequel', 'MMORPG', 'Monthly subscription'],
-      bylineParts: [
+      tagParts: [
         { text: 'Sequel · ' },
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Monthly subscription' },
@@ -97,7 +97,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
     primary: {
       tags: ['Expansion', 'MMORPG', 'Monthly subscription'],
       subtitle: 'Expansion',
-      bylineParts: [
+      tagParts: [
         { text: 'Expansion · ' },
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Monthly subscription' },
@@ -123,7 +123,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
     primary: {
       tags: ['Expansion', 'MMORPG', 'Monthly subscription'],
       subtitle: 'Expansion',
-      bylineParts: [
+      tagParts: [
         { text: 'Expansion · ' },
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Monthly subscription' },
@@ -149,7 +149,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
     primary: {
       tags: ['Expansion', 'MMORPG', 'Monthly subscription'],
       subtitle: 'Expansion',
-      bylineParts: [
+      tagParts: [
         { text: 'Expansion · ' },
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Monthly subscription' },
@@ -175,7 +175,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
     primary: {
       tags: ['Expansion', 'MMORPG', 'Monthly subscription'],
       subtitle: 'Expansion',
-      bylineParts: [
+      tagParts: [
         { text: 'Expansion · ' },
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Monthly subscription' },
@@ -201,7 +201,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
     primary: {
       tags: ['Expansion', 'MMORPG', 'Monthly subscription'],
       subtitle: 'Expansion',
-      bylineParts: [
+      tagParts: [
         { text: 'Expansion · ' },
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Monthly subscription' },
@@ -227,7 +227,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
     primary: {
       tags: ['Expansion', 'MMORPG', 'Monthly subscription'],
       subtitle: 'Expansion',
-      bylineParts: [
+      tagParts: [
         { text: 'Expansion · ' },
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Monthly subscription' },
@@ -355,6 +355,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
       ],
       platforms: [
         { key: 'book', name: 'Manga', url: 'https://squareenixmangaandbooks.square-enix-games.com/en-us/product/9781646092352' },
+        { key: 'fan-audiobook', name: 'Fan manga dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XIV: Eorzea Academy', searchSuffix: 'manga dub', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', noResults: true },
       ],
     },
@@ -378,6 +379,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
       platforms: [
         { key: 'book', name: 'Manga', jpTag: true },
         { key: 'fan-translation', search: 'duckduckgo', searchTitle: "Final Fantasy XIV ~Lalafell-sensei's Gonna Teach Ya!~" },
+        { key: 'fan-audiobook', name: 'Fan manga dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: "Final Fantasy XIV Lalafell-sensei's Gonna Teach Ya!", searchSuffix: 'manga dub', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: "Final Fantasy XIV ~Lalafell-sensei's Gonna Teach Ya!~", noResults: true },
       ],
     },

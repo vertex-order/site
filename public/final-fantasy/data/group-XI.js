@@ -10,7 +10,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, recommendedOrder: 11
     primary: {
       mainline: true, tags: ['MMORPG', 'Monthly subscription'],
       subtitle: 'Base Game',
-      bylineParts: [
+      tagParts: [
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Monthly subscription' },
       ],
@@ -49,7 +49,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, recommendedOrder: 11
     primary: {
       tags: ['Expansion', 'MMORPG', 'Monthly subscription'],
       subtitle: 'Expansion',
-      bylineParts: [
+      tagParts: [
         { text: 'Expansion · ' },
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Monthly subscription' },
@@ -71,7 +71,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, recommendedOrder: 11
     primary: {
       tags: ['Expansion', 'MMORPG', 'Monthly subscription'],
       subtitle: 'Expansion',
-      bylineParts: [
+      tagParts: [
         { text: 'Expansion · ' },
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Monthly subscription' },
@@ -97,7 +97,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, recommendedOrder: 11
     primary: {
       tags: ['Expansion', 'MMORPG', 'Monthly subscription'],
       subtitle: 'Expansion',
-      bylineParts: [
+      tagParts: [
         { text: 'Expansion · ' },
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Monthly subscription' },
@@ -123,7 +123,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, recommendedOrder: 11
     primary: {
       tags: ['Expansion', 'MMORPG', 'Monthly subscription'],
       subtitle: 'Expansion',
-      bylineParts: [
+      tagParts: [
         { text: 'Expansion · ' },
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Monthly subscription' },
@@ -149,7 +149,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, recommendedOrder: 11
     primary: {
       tags: ['Expansion', 'MMORPG', 'Monthly subscription'],
       subtitle: 'Expansion',
-      bylineParts: [
+      tagParts: [
         { text: 'Expansion · ' },
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Monthly subscription' },
@@ -205,6 +205,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, recommendedOrder: 11
       platforms: [
         { key: 'book', name: 'Manhwa', jpTag: true },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
+        { key: 'fan-audiobook', name: 'Fan manhwa dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI The Out of Orders', searchSuffix: 'manhwa dub', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI The Out of Orders', noResults: true },
       ],
     },
@@ -255,6 +256,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, recommendedOrder: 11
       platforms: [
         { key: 'book', name: 'Manga', jpTag: true },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
+        { key: 'fan-audiobook', name: 'Fan manga dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Prayer of the Wind', searchSuffix: 'manga dub', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Prayer of the Wind comic', searchSuffix: '', noResults: true },
       ],
     },
@@ -1080,6 +1082,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, recommendedOrder: 11
       platforms: [
         { key: 'book', name: 'Manga', jpTag: true },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
+        { key: 'fan-audiobook', name: 'Fan manga dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Lightning Brigade Encyclopedia', searchSuffix: 'manga dub', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Lightning Brigade Decennial Encyclopedia', noResults: true },
       ],
     },
@@ -1127,6 +1130,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, recommendedOrder: 11
       platforms: [
         { key: 'book', name: 'Manga', jpTag: true },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
+        { key: 'fan-audiobook', name: 'Fan manga dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Minagawa Fumio Illustrations', searchSuffix: 'manga dub', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Minagawa Fumio Illustrations', searchSuffix: '', noResults: true },
       ],
     },
@@ -1146,6 +1150,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, recommendedOrder: 11
       ],
       platforms: [
         { key: 'book', name: 'Manga', url: 'https://breezewiki.com/finalfantasy/wiki/Aloha_Iroha#External_links' },
+        { key: 'fan-audiobook', name: 'Fan manga dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Aloha Iroha', searchSuffix: 'manga dub', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', noResults: true },
       ],
     },
@@ -1199,7 +1204,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, recommendedOrder: 11
     ],
     primary: {
       tags: ['Optional', 'Spin-off', 'MMORPG', 'Mobile', 'Jobs', 'Active Time Battle', 'Terminated'],
-      bylineParts: [
+      tagParts: [
         { text: 'Optional · Spin-off · ' },
         { abbrTerm: 'MMORPG', abbrDef: 'Massively Multiplayer Online Role-Playing Game' },
         { text: ' · Mobile · Jobs · Active Time Battle · Terminated' },
