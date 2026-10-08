@@ -391,8 +391,6 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
       
         <option data-dc-tpl="16" value="B"><span class="sc-interp">Chronological</span></option>
       
-        <option data-dc-tpl="16" value="C"><span class="sc-interp">Release order</span></option>
-      
         <option data-dc-tpl="16" value="D"><span class="sc-interp">Overall release order</span></option>
       
     </select>
@@ -482,8 +480,6 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
   <p data-dc-tpl="10" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; margin: 0px;"><strong data-dc-tpl="11" style="color: var(--color-text); font-weight: 500;">Narrative order;</strong> our recommendation. Protects the story's big reveals from prequels that would spoil them, while avoiding the jumps in time that release order can cause. The mainline entry usually comes first, then sequels, then prequels, then spinoffs, for the most cohesive read of the story's key moments.</p>
   <p data-dc-tpl="12" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; margin: 0px;"><strong data-dc-tpl="13" style="color: var(--color-text); font-weight: 500;">Chronological order;</strong> not always perfectly possible to pin down. Best if you've already played the mainline entry, since prequels and side stories can spoil later reveals. Lets you experience the whole timeline start to finish, though some side stories are hard to place exactly.</p>
   
-  <p data-dc-tpl="15" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; margin: 0px;"><strong data-dc-tpl="16" style="color: var(--color-text); font-weight: 500;">Release order;</strong> within a <span class="sc-interp">group</span>, the order things actually came out, which tends to jump around in the story's own timeline. Some argue this reflects how the authors intended the story to unfold, but marketing and sales decisions at the time usually mattered more.</p>
-  
   <p data-dc-tpl="17" style="color: var(--color-neutral-300); font-size: 16px; line-height: 1.6; margin: 0px;"><strong data-dc-tpl="18" style="color: var(--color-text); font-weight: 500;">Overall Release order;</strong> no <span class="sc-interp">group</span> groupings, just everything in the order it came out. How us old timers experienced things. The mainline entries stay in order, but the extra material has you jumping between <span class="sc-interp">groups</span> constantly rather than staying within one, and remakes that add new story need some allowances made for where they fall.</p></div><div data-dc-tpl="19" style="max-width: 620px; margin: 0 0 var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);">
   <fieldset data-dc-tpl="20" id="order-to-display" style="border: medium; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: var(--space-2);">
     <legend data-dc-tpl="21" style="color: var(--color-neutral-500); font-size: 13px; margin: 0px; padding: 0px;">Order to display:</legend>
@@ -497,11 +493,6 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
         <label data-dc-tpl="24" style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 14px; color: var(--color-neutral-300);">
           <input data-dc-tpl="25" style="width: 16px; height: 16px; accent-color: var(--color-accent); cursor: pointer;" type="radio" name="pathMode">
           <span class="sc-interp">Chronological order</span>
-        </label>
-      
-        <label data-dc-tpl="24" style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 14px; color: var(--color-neutral-300);">
-          <input data-dc-tpl="25" style="width: 16px; height: 16px; accent-color: var(--color-accent); cursor: pointer;" type="radio" name="pathMode">
-          <span class="sc-interp">Release order</span>
         </label>
       
         <label data-dc-tpl="24" style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 14px; color: var(--color-neutral-300);">
@@ -8739,6 +8730,10 @@ const GROUP_LABEL_PLURAL = SITE.groupLabelPlural || (GROUP_LABEL + 's');
 const GROUP_LABEL_LOWER = GROUP_LABEL.toLowerCase();
 const GROUP_LABEL_PLURAL_LOWER = GROUP_LABEL_PLURAL.toLowerCase();
 const GROUP_LABEL_UPPER = GROUP_LABEL.toUpperCase();
+// Per-group "Release order" (mode C) only makes sense when groups are separate
+// timelines. A repo whose groups are just navigation clusters over one timeline
+// opts out with SITE_CONFIG.groupReleaseOrder = false; mode D (overall) remains.
+const GROUP_RELEASE_ORDER = SITE.groupReleaseOrder !== false;
 const MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 function lastUpdatedShortText() {
   if (!LAST_UPDATED) return '';
@@ -9268,13 +9263,14 @@ class Component extends DCLogic {
     const toggleHamburgerMenu = () => this.toggleHamburgerMenu();
     const closeHamburgerMenu = () => this.closeHamburgerMenu();
     const lastUpdatedShort = lastUpdatedShortText();
-    const mode = this.state.pathMode || 'A';
+    const storedMode = this.state.pathMode || 'A';
+    const mode = storedMode === 'C' && !GROUP_RELEASE_ORDER ? 'D' : storedMode;
     const pathOptions = [
       { key: 'A', label: 'Narrative order', shortLabel: 'Narrative order' },
       { key: 'B', label: 'Chronological order', shortLabel: 'Chronological' },
       { key: 'C', label: 'Release order', shortLabel: 'Release order' },
       { key: 'D', label: 'Overall release order', shortLabel: 'Overall release order' },
-    ].filter(o => o.key !== 'C' || (this.state.rawGroups || []).length > 1).map(o => ({ ...o, checked: o.key === mode, select: () => this.setPathMode(o.key) }));
+    ].filter(o => o.key !== 'C' || (GROUP_RELEASE_ORDER && (this.state.rawGroups || []).length > 1)).map(o => ({ ...o, checked: o.key === mode, select: () => this.setPathMode(o.key) }));
     const onOrderChange = e => this.setPathMode(e.target.value);
     const onJumpChange = e => { if (e.target.value) location.hash = e.target.value; };
     const notScrolled = !this.state.scrolled;
@@ -10063,7 +10059,7 @@ class Component extends DCLogic {
     const footerEntities = SITE.entities || [];
     const footerDisclosures = SITE.disclosures || [];
     const metaDescription = SITE.description || taglinePlainText(SITE.tagline);
-    return { lastUpdatedShort, metaTitle: introTitle, metaDescription, groups: displayGroups, groupLabel: GROUP_LABEL, groupLabelLower: GROUP_LABEL_LOWER, groupLabelPluralLower: GROUP_LABEL_PLURAL_LOWER, groupLabelUpper: GROUP_LABEL_UPPER, pathOptions, showReleaseOrder: (this.state.rawGroups || []).length > 1, effectiveTheme, themeIcon, toggleTheme, navShowLanguages, navShowTheme, navShowDisplay, navShowTitle, navShowCheckList, navShowOrder, navShowJump, navShowProgress, navProgressVisible, navShowRightGroup, navGroupMarginRight, cornerShowTitle, cornerShowCheckList, cornerShowTheme, navTitleMarginLeft, navAnyHidden, navReservedRightPx, navFloatingWidgetMarginRight, navHamburgerTopPx, sideBySide, stacked, showCol2, showStackedRL, hideTitleInMenu, hideOrderInMenu, hideJumpInMenu, hideLanguagesInMenu, hideDisplayInMenu, hideCheckListInMenu, hideThemeInMenu, hideProgressInMenu, hamburgerOpen, toggleHamburgerMenu, closeHamburgerMenu, mode, onOrderChange, onJumpChange, scrolled: this.state.scrolled, notScrolled, jumpRef, activeAnchor: this.state.activeAnchor, languageOptions, langMenuOpen, toggleLangMenu, closeLangMenu, displayMenuOpen, toggleDisplayMenu, closeDisplayMenu, navProgress, displayToggles, showRating, showLength, showPlatforms, showLanguages, siteName: SITE.name || '', ourOrderAnchor, introTitle, introLastUpdated: LAST_UPDATED, introTagline, introStatsText, footerCredits, footerFoundingYear, footerLicense, footerNoticeUrl, footerEntities, footerDisclosures, faqItems: window.FAQ_ITEMS || [], helpWantedItems: window.HELP_WANTED_ITEMS || [], backupProgress: this.backupProgress, triggerRestore: this.triggerRestore, restoreProgress: this.restoreProgress, restoreInputRef: this.restoreInputRef, titleRow1MeasureRef: this.titleRow1MeasureRef, titleRow2MeasureRef: this.titleRow2MeasureRef, orderMeasureRef: this.orderMeasureRef, jumpMeasureRef: this.jumpMeasureRef, languagesMeasureRef: this.languagesMeasureRef, displayMeasureRef: this.displayMeasureRef, checklistRow1MeasureRef: this.checklistRow1MeasureRef, checklistRow2MeasureRef: this.checklistRow2MeasureRef };
+    return { lastUpdatedShort, metaTitle: introTitle, metaDescription, groups: displayGroups, groupLabel: GROUP_LABEL, groupLabelLower: GROUP_LABEL_LOWER, groupLabelPluralLower: GROUP_LABEL_PLURAL_LOWER, groupLabelUpper: GROUP_LABEL_UPPER, pathOptions, showReleaseOrder: GROUP_RELEASE_ORDER && (this.state.rawGroups || []).length > 1, effectiveTheme, themeIcon, toggleTheme, navShowLanguages, navShowTheme, navShowDisplay, navShowTitle, navShowCheckList, navShowOrder, navShowJump, navShowProgress, navProgressVisible, navShowRightGroup, navGroupMarginRight, cornerShowTitle, cornerShowCheckList, cornerShowTheme, navTitleMarginLeft, navAnyHidden, navReservedRightPx, navFloatingWidgetMarginRight, navHamburgerTopPx, sideBySide, stacked, showCol2, showStackedRL, hideTitleInMenu, hideOrderInMenu, hideJumpInMenu, hideLanguagesInMenu, hideDisplayInMenu, hideCheckListInMenu, hideThemeInMenu, hideProgressInMenu, hamburgerOpen, toggleHamburgerMenu, closeHamburgerMenu, mode, onOrderChange, onJumpChange, scrolled: this.state.scrolled, notScrolled, jumpRef, activeAnchor: this.state.activeAnchor, languageOptions, langMenuOpen, toggleLangMenu, closeLangMenu, displayMenuOpen, toggleDisplayMenu, closeDisplayMenu, navProgress, displayToggles, showRating, showLength, showPlatforms, showLanguages, siteName: SITE.name || '', ourOrderAnchor, introTitle, introLastUpdated: LAST_UPDATED, introTagline, introStatsText, footerCredits, footerFoundingYear, footerLicense, footerNoticeUrl, footerEntities, footerDisclosures, faqItems: window.FAQ_ITEMS || [], helpWantedItems: window.HELP_WANTED_ITEMS || [], backupProgress: this.backupProgress, triggerRestore: this.triggerRestore, restoreProgress: this.restoreProgress, restoreInputRef: this.restoreInputRef, titleRow1MeasureRef: this.titleRow1MeasureRef, titleRow2MeasureRef: this.titleRow2MeasureRef, orderMeasureRef: this.orderMeasureRef, jumpMeasureRef: this.jumpMeasureRef, languagesMeasureRef: this.languagesMeasureRef, displayMeasureRef: this.displayMeasureRef, checklistRow1MeasureRef: this.checklistRow1MeasureRef, checklistRow2MeasureRef: this.checklistRow2MeasureRef };
   }
 }
 </script>
