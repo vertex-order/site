@@ -257,9 +257,10 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
       ],
       helpWanted: true,
       platforms: [
-        { key: 'book', name: 'Novel', jpTag: true },
+        { key: 'book', name: 'Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy XIV Winds of Eorzea', searchQualifier: 'novel' },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', noResults: true },
+        { key: 'fan-audiobook', search: 'youtube', noResults: true },
       ],
     },
   },
@@ -282,6 +283,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
       platforms: [
         { key: 'globe', name: 'Official website', url: 'https://na.finalfantasyxiv.com/lodestone/playguide/#side_storyes' },
         { key: 'fan-recap', name: 'Fan story summaries (wiki)', url: 'https://breezewiki.com/finalfantasy/wiki/Side_Stories#List_of_stories' },
+        { key: 'fan-audiobook', search: 'youtube', noResults: true },
       ],
     },
   },
@@ -307,6 +309,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
       platforms: [
         { key: 'book', name: 'Short Stories', url: 'https://squareenixmangaandbooks.square-enix-games.com/en-us/product/9781646091850' },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XIV: Chronicles of Light', noResults: true },
+        { key: 'fan-audiobook', search: 'youtube', noResults: true },
       ],
     },
   },
@@ -331,6 +334,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
       platforms: [
         { key: 'book', name: 'Short Stories', url: 'https://squareenixmangaandbooks.square-enix-games.com/en-us/product/9781646094196' },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XIV: Chronicles of Light, Volume II', noResults: true },
+        { key: 'fan-audiobook', search: 'youtube', noResults: true },
       ],
     },
   },
@@ -377,7 +381,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
         { score: 'NYR', url: 'https://www.goodreads.com/book/show/69172609', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Manga', jpTag: true },
+        { key: 'book', name: 'Manga', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: "Final Fantasy XIV ~Lalafell-sensei's Gonna Teach Ya!~", searchQualifier: 'manga' },
         { key: 'fan-translation', search: 'duckduckgo', searchTitle: "Final Fantasy XIV ~Lalafell-sensei's Gonna Teach Ya!~" },
         { key: 'fan-audiobook', name: 'Fan manga dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: "Final Fantasy XIV Lalafell-sensei's Gonna Teach Ya!", searchSuffix: 'manga dub', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: "Final Fantasy XIV ~Lalafell-sensei's Gonna Teach Ya!~", noResults: true },
@@ -398,7 +402,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
       ],
       helpWanted: true,
       platforms: [
-        { key: 'book', name: 'Novel', jpTag: true },
+        { key: 'book', name: 'Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: "Final Fantasy XIV A Realm Reborn Adventure Log: Hero's Eggs Vol.1", searchQualifier: 'novel' },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
         {
           key: 'fan-recap',
@@ -406,6 +410,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
           search: 'youtube',
           noResults: true,
         },
+        { key: 'fan-audiobook', search: 'youtube', noResults: true },
       ],
     },
   },
@@ -413,7 +418,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
     mediaType: 'Book', chronoOrder: 5200, recommendedOrder: 885,
     title: 'Final Fantasy XIV Picture Book: The Namazu and the Greatest Gift', titleUrl: 'https://squareenixmangaandbooks.square-enix-games.com/en-us/product/9781646091447', titleDate: '2022-08-09',
     mediaDesc: [
-      [{ text: 'When their river starts running dry, the catfish-like Namazu set out on a quest to make it rain, needing to find a "thing that no one has ever seen." Entry also found in our ' }, { emText: 'Picture Books' }, { text: ' series.' }],
+      [{ text: 'When their river starts running dry, the catfish-like Namazu set out on a quest to make it rain, needing to find a "thing that no one has ever seen." Entry also found in our ' }, { emLinkText: 'Picture Books', emLinkUrl: '#entry-PB-final-fantasy-xiv-picture-book-the-namazu-and-the-greatest-gift-2022' }, { text: ' series.' }],
     ],
     primary: {
       tags: ['Optional', 'Tie-in', 'Picture Book'],
@@ -431,6 +436,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
       platforms: [
         { key: 'book', name: 'Picture Book', url: 'https://squareenixmangaandbooks.square-enix-games.com/en-us/product/9781646091447' },
         { key: 'fan-movie', search: 'youtube', searchQualifier: 'reading', searchSuffix: '' },
+        { key: 'fan-audiobook', search: 'youtube', noResults: true },
       ],
     },
   },
@@ -438,7 +444,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
     mediaType: 'Book', chronoOrder: 7200, recommendedOrder: 890,
     title: 'Final Fantasy XIV Picture Book: Me and the Cornservant', titleUrl: 'https://squareenixmangaandbooks.square-enix-games.com/en-us/product/9798899100833', titleDate: '2027-04-13',
     mediaDesc: [
-      [{ text: 'A child stumbles upon a strange, corn-like creature that no adult can see, and after a curious poke sends its head flying off, an adventure with the Cornservant begins. Entry also found in our ' }, { emText: 'Picture Books' }, { text: ' series.' }],
+      [{ text: 'A child stumbles upon a strange, corn-like creature that no adult can see, and after a curious poke sends its head flying off, an adventure with the Cornservant begins. Entry also found in our ' }, { emLinkText: 'Picture Books', emLinkUrl: '#entry-PB-final-fantasy-xiv-picture-book-me-and-the-cornservant-2027' }, { text: ' series.' }],
     ],
     primary: {
       tags: ['Optional', 'Tie-in', 'Picture Book'],
@@ -463,6 +469,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, recommendedOrder: 
           searchSuffix: '',
           noResults: true,
         },
+        { key: 'fan-audiobook', search: 'youtube', noResults: true },
       ],
     },
   },

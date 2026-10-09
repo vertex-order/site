@@ -170,6 +170,7 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, recommendedOrder: 200
   {
     mediaType: 'Book', chronoOrder: 500, recommendedOrder: 300,
     title: "Final Fantasy II Nightmare's Labyrinth", titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_II_Muma_no_Meiky%C5%AB', titleDate: '1989-03-20',
+    by: [{ role: 'adapted', names: 'Kenji Terada' }],
     mediaDesc: [
       [{ text: 'Novelization of ' }, { emLinkText: 'II (1988)', emLinkUrl: '#entry-II-final-fantasy-ii-1988' }, { text: '. Includes additional scenarios and story changes, which could be considered an alternate universe retelling. Released as ' }, { emText: 'Final Fantasy II Muma no Meikyū' }, { text: '.' }],
     ],
@@ -185,23 +186,25 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, recommendedOrder: 200
         { score: 'NYR', url: 'https://www.goodreads.com/book/show/77954969', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Novel', jpTag: true },
+        { key: 'book', name: 'Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: "Final Fantasy II Muma no Meikyū Nightmare's Labyrinth", searchQualifier: 'novel' },
         {
           key: 'fan-translation',
           url: 'https://duckduckgo.com/?q=Final%20Fantasy%20II%20Muma%20no%20Meiky%C5%AB%20Nightmare%27s%20Labyrinth%20translation&t=h_',
         },
         { key: 'fan-recap', name: 'Fan story recap video of II (1988)', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy II' },
+        { key: 'fan-audiobook', paren: 'Youtube', search: 'youtube', searchTitle: "Final Fantasy II Nightmare's Labyrinth" },
       ],
     },
   },
   {
     mediaType: 'Book', chronoOrder: 620, recommendedOrder: 410,
     title: 'Final Fantasy II: Dragon Treasures', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_II_Hih%C5%8D_no_Dragon', titleDate: '1988-12',
+    by: 'Naomi Inoue',
     mediaDesc: [
       'A gamebook set in the world of Final Fantasy II. Centers on Princess Marie of Fynn, an original character combining traits of Maria and Hilda, alongside Firion, Guy, and Minwu. Released as ファイナルファンタジーII 秘宝のドラゴン (Final Fantasy II Hihō no Dragon).',
     ],
     primary: {
-      tags: ['Optional', 'Alternate Universe', 'Gamebook'],
+      tags: ['Optional', 'Side-story', 'Gamebook'],
       subtitle: 'Book',
       length: '283p',
       languages: [
@@ -211,7 +214,7 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, recommendedOrder: 200
         { score: 'NYR', url: 'https://www.goodreads.com/book/show/102713430', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Gamebook', jpTag: true },
+        { key: 'book', name: 'Gamebook', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy II Hihō no Dragon', searchQualifier: 'gamebook' },
         { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy II Hihō no Dragon', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', noResults: true },
       ],
@@ -220,6 +223,7 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, recommendedOrder: 200
   {
     mediaType: 'Book', chronoOrder: 630, recommendedOrder: 415,
     title: 'Final Fantasy II: Journey to Victory', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_II_Sh%C5%8Dri_e_no_Tabidachi', titleDate: '1988',
+    by: 'Tatsumi Yamashita',
     mediaDesc: [
       [{ text: 'A gamebook telling a side story set during the events of ' }, { emLinkText: 'II (1988)', emLinkUrl: '#entry-II-final-fantasy-ii-1988' }, { text: ' and starring a young rebel as its protagonist. Released as ファイナルファンタジーII 勝利への旅立ち (Final Fantasy II Shōri e no Tabidachi).' }],
     ],
@@ -231,7 +235,7 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, recommendedOrder: 200
       ],
       helpWanted: true,
       platforms: [
-        { key: 'book', name: 'Gamebook', jpTag: true },
+        { key: 'book', name: 'Gamebook', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy II Shōri e no Tabidachi', searchQualifier: 'gamebook' },
         { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy II Shōri e no Tabidachi', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', noResults: true },
       ],
@@ -240,6 +244,7 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, recommendedOrder: 200
   {
     mediaType: 'Comic', chronoOrder: 600, recommendedOrder: 400,
     title: 'Final Fantasy II ~Manga~', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_(manga)#Behind_the_scenes', titleDate: '1989-12',
+    by: [{ role: 'adapted', names: 'Yuu Kaimeiji' }],
     mediaDesc: [
       [{ text: 'Adaptation of ' }, { emLinkText: 'II (1988)', emLinkUrl: '#entry-II-final-fantasy-ii-1988' }, { text: ' as a manga with what can be assumed are many story changes like the previous comic adaptation, which could be considered an alternate universe retelling. It was cancelled before completion.' }],
     ],
@@ -252,7 +257,7 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, recommendedOrder: 200
       ],
       helpWanted: true,
       platforms: [
-        { key: 'book', name: 'Manga', jpTag: true },
+        { key: 'book', name: 'Manga', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy II', searchQualifier: 'manga' },
         { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy II manga', noResults: true },
         { key: 'fan-audiobook', name: 'Fan manga dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy II', searchSuffix: 'manga dub', noResults: true },
         { key: 'fan-recap', name: 'Fan story recap video of II (1988)', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy II' },
@@ -262,14 +267,15 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, recommendedOrder: 200
   {
     mediaType: 'Book', chronoOrder: 700, recommendedOrder: 450,
     title: 'Final Fantasy I・II・III: Memory of Heroes ~II~', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_I_*_II_*_III:_Memory_of_Heroes', titleDate: '2012-10-25',
+    by: [{ role: 'adapted', names: 'Takashi Umemura' }],
     mediaDesc: [
-      [{ text: 'A short story following Firion, Maria, and Guy, young survivors of the Empire of Palamecia’s war against the rebels of Fynn, as they join the fight against the Empire’s expansion. The book also contains a short story each for Final Fantasy I and Final Fantasy III. Also known as ' }, { emText: 'Final Fantasy ~Memory of Heroes~' }, { text: '.' }],
+      [{ text: 'Short story adaptation of ' }, { emLinkText: 'II (1988)', emLinkUrl: '#entry-II-final-fantasy-ii-1988' }, { text: '. The book also contains short story adaptations of ' }, { emLinkText: 'Final Fantasy (1987)', emLinkUrl: '#entry-I-final-fantasy-1987' }, { text: ' and ' }, { emLinkText: 'Final Fantasy III (1990)', emLinkUrl: '#entry-III-final-fantasy-iii-1990' }, { text: '. Also known as ' }, { emText: 'Final Fantasy ~Memory of Heroes~' }, { text: '.' }],
     ],
     primary: {
       tags: ['Optional', 'Short Stories'],
       subtitle: 'Book',
       languages: [
-        { value: 'JA', native: true },
+        { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/32993834' },
         { value: 'EN', url: 'https://www.goodreads.com/book/show/45731773-final-fantasy-i-ii-iii' },
         { value: 'ES', tip: 'Spanish (Castilian)', url: 'https://www.goodreads.com/book/show/63253999-final-fantasy-i-ii-iii' },
       ],
@@ -278,7 +284,7 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, recommendedOrder: 200
         { score: '3.24', url: 'https://www.goodreads.com/book/show/45731773-final-fantasy-i-ii-iii', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Short Stories' },
+        { key: 'book', name: 'Short Stories', url: 'https://www.goodreads.com/book/show/45731773-final-fantasy-i-ii-iii' },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy I・II・III: Memory of Heroes', noResults: true },
         {
           key: 'fan-audiobook',

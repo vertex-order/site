@@ -83,8 +83,8 @@ window.__ffGroupReg['XII'] = { num: 'XII', chronoOrder: 1300, recommendedOrder: 
             ],
           },
           {
-            label: 'Final Fantasy XII (2006)',
-            url: 'https://wikipedia.org/wiki/Final_Fantasy_XII',
+            title: 'Final Fantasy XII (2006)',
+            titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_XII',
             languages: [
               { value: 'JA', native: true },
               { value: 'EN' },
@@ -124,7 +124,7 @@ window.__ffGroupReg['XII'] = { num: 'XII', chronoOrder: 1300, recommendedOrder: 
       ],
       length: [{ value: '5 volumes,', br: true }, { value: '19 chapters' }],
       platforms: [
-        { key: 'book', name: 'Manga', jpTag: true },
+        { key: 'book', name: 'Manga', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy XII', searchQualifier: 'manga' },
         { key: 'fan-translation', url: 'https://somethingorotherscans.com/ffxii.php' },
         { key: 'fan-audiobook', name: 'Fan manga dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XII', searchSuffix: 'manga dub', noResults: true },
         { key: 'fan-recap', name: 'Fan story recap video of XII (2006)', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XII' },
@@ -317,8 +317,8 @@ window.__ffGroupReg['XII'] = { num: 'XII', chronoOrder: 1300, recommendedOrder: 
           ],
         },
         {
-          label: 'Final Fantasy Tactics (1997)',
-          url: 'https://wikipedia.org/wiki/Final_Fantasy_Tactics',
+          title: 'Final Fantasy Tactics (1997)',
+          titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_Tactics',
           languages: [
             { value: 'JA', native: true },
             { value: 'EN' },

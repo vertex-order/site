@@ -52,7 +52,6 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
       versions: [
         {
           subtitle: 'Edit', subtitleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_IV#Re-releases', subtitleDate: 2011,
-          label: 'Final Fantasy IV (1991)',
           helpWanted: true,
           languages: [
             { value: 'JA', native: true },
@@ -69,7 +68,6 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
         },
         {
           subtitle: 'Edit', subtitleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_IV#Re-releases', subtitleDate: 2009,
-          label: 'Final Fantasy IV (1991)',
           languages: [
             { value: 'JA', native: true },
           ],
@@ -82,7 +80,6 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
         },
         {
           subtitle: 'Edit', subtitleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_IV#Re-releases', subtitleDate: 2005,
-          label: 'Final Fantasy IV (1991)',
           helpWanted: true,
           languages: [
             { value: 'JA', native: true },
@@ -98,7 +95,6 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
         },
         {
           subtitle: 'Remaster', subtitleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_IV#Re-releases', subtitleDate: 2002,
-          label: 'Final Fantasy IV (1991)',
           languages: [
             { value: 'JA', native: true },
           ],
@@ -111,7 +107,6 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
         },
         {
           subtitle: 'Edit', subtitleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_IV#Re-releases', subtitleDate: 1997,
-          label: 'Final Fantasy IV (1991)',
           helpWanted: true,
           languages: [
             { value: 'JA', native: true },
@@ -131,8 +126,8 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
           ],
         },
         {
-          label: 'Final Fantasy IV (1991)',
-          url: 'https://wikipedia.org/wiki/Final_Fantasy_IV',
+          title: 'Final Fantasy IV (1991)',
+          titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_IV',
           helpWanted: true,
           languages: [
             { value: 'JA', native: true },
@@ -158,7 +153,6 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
     alts: [
       {
         subtitle: '3D Remake', subtitleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_IV_(2007_video_game)', subtitleDate: 2014,
-        label: 'Final Fantasy IV (2007, 3D Remake)',
         length: '30½h / 39h / 73h',
         languages: [
           { value: 'JA', native: true, voice: true },
@@ -233,13 +227,19 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
   },
   {
     mediaType: 'Book', chronoOrder: 500, recommendedOrder: 150,
-    title: 'Final Fantasy IV ~Novel~ Vol.1', titleUrl: 'https://wikipedia.org/wiki/List_of_Final_Fantasy_media#Novels_and_manga', titleDate: '2008-12-25',
+    title: 'Final Fantasy IV ~Novel~', titleUrl: 'https://wikipedia.org/wiki/List_of_Final_Fantasy_media#Novels_and_manga', titleDate: { start: '2008-12-25', end: '2009' },
+    by: [{ role: 'adapted', names: 'Ichiro Tezuka' }],
     mediaDesc: [
-      'The first of a two-volume novelization of Final Fantasy IV (1991).',
+      [
+        { text: 'Novelization of ' },
+        { emLinkText: 'IV (1991)', emLinkUrl: '#entry-IV-final-fantasy-iv-1991' },
+        { text: '.' },
+      ],
     ],
     primary: {
       tags: ['Optional', 'Spin-off', 'Novel'],
       subtitle: 'Book',
+      length: [{ value: '2 volumes' }],
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/50286956' },
       ],
@@ -247,16 +247,15 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
         { score: 'NYR', url: 'https://www.goodreads.com/book/show/50286956', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Novel', jpTag: true },
+        { key: 'book', name: 'Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy IV', searchQualifier: 'novel' },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
         { key: 'fan-recap', name: 'Fan story recap video of IV (1991)', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy IV' },
+        { key: 'fan-audiobook', search: 'youtube' },
       ],
     },
     alts: [
       {
         title: 'Final Fantasy IV: The Novel ~Fan Project~', titleUrl: 'https://www.fanfiction.net/s/904359/1/Final-Fantasy-IV-The-Novel', titleDate: 2002,
-        label: 'Final Fantasy IV: The Novel ~Fan Project~ (2002)',
-        url: 'https://www.fanfiction.net/s/904359/1/Final-Fantasy-IV-The-Novel',
         length: '27 chapters',
         languages: [
           { value: 'EN' },
@@ -265,32 +264,16 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
           { key: 'book', url: 'https://www.fanfiction.net/s/904359/1/Final-Fantasy-IV-The-Novel' },
         ],
         versionDesc: [
-          'Fan novelization of Final Fantasy IV (1991) 3D Remake (2007) and IV: The After Years (2008). This is the story of Cecil Harvey, a dark knight whose journey for redemption draws himself, his best friend Kain and Rosa into a dangerous battle for their planet.',
+          [
+            { text: 'Fan novelization of ' },
+            { emLinkText: 'IV (1991) 3D Remake (2007)', emLinkUrl: '#entry-IV-final-fantasy-iv-1991-or-x-3d-remake-2007' },
+            { text: ' and ' },
+            { emLinkText: 'The After Years (2008)', emLinkUrl: '#entry-IV-final-fantasy-iv-the-after-years-2008' },
+            { text: '. This is the story of Cecil Harvey, a dark knight whose journey for redemption draws himself, his best friend Kain and Rosa into a dangerous battle for their planet.' },
+          ],
         ],
       },
     ],
-  },
-  {
-    mediaType: 'Book', chronoOrder: 510, recommendedOrder: 151,
-    title: 'Final Fantasy IV ~Novel~ Vol.2', titleUrl: 'https://wikipedia.org/wiki/List_of_Final_Fantasy_media#Novels_and_manga', titleDate: '2009',
-    mediaDesc: [
-      'The second of a two-volume novelization of Final Fantasy IV (1991).',
-    ],
-    primary: {
-      tags: ['Optional', 'Spin-off', 'Novel'],
-      subtitle: 'Book',
-      languages: [
-        { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77457241' },
-      ],
-      ratings: [
-        { score: 'NYR', url: 'https://www.goodreads.com/book/show/77457241', key: 'goodreads' },
-      ],
-      platforms: [
-        { key: 'book', name: 'Novel', jpTag: true },
-        { key: 'fan-translation', search: 'duckduckgo', noResults: true },
-        { key: 'fan-recap', name: 'Fan story recap video of IV (1991)', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy IV' },
-      ],
-    },
   },
   {
     mediaType: 'Game', chronoOrder: 1000, recommendedOrder: 200,
@@ -314,6 +297,7 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
       platforms: [
         { key: 'fan-movie', search: 'youtube', searchTitle: 'Final Fantasy IV Interlude' },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy IV Interlude', noResults: true },
+        { key: 'fan-audiobook', search: 'youtube' },
         { key: 'fan-playthrough', search: 'youtube', searchTitle: 'Final Fantasy IV Interlude' },
         { key: 'playstation-portable', paren: 'Physical' },
       ],
@@ -379,7 +363,6 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
     alts: [
       {
         subtitle: '3D Remake', subtitleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_IV:_The_After_Years', subtitleDate: 2013,
-        label: 'Final Fantasy IV: The After Years (2013, 3D Remake)',
         profileUrl: 'https://www.jp.square-enix.com/ff4tay/en/',
         languages: [
           { value: 'EN' },
@@ -400,7 +383,11 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
           { key: 'apple-arcade', url: 'https://apps.apple.com/app/ff-iv-the-after-years/id6504608150' },
         ],
         versionDesc: [
-          'This remake carries over 3D graphics from Final Fantasy IV 3D Remake, revamps the Band mechanic, removes the level cap, and adds four new Lunar superbosses. All versions support cloud saves.',
+          [
+            { text: 'This remake carries over 3D graphics from ' },
+            { emLinkText: 'IV 3D Remake (2014)', emLinkUrl: '#entry-IV-final-fantasy-iv-1991-or' },
+            { text: ', revamps the Band mechanic, removes the level cap, and adds four new Lunar superbosses. All versions support cloud saves.' },
+          ],
         ],
       },
     ],
@@ -408,13 +395,17 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
   {
     mediaType: 'Book', chronoOrder: 2500, recommendedOrder: 350,
     title: 'Final Fantasy IV: The After ~Novel~', titleUrl: 'https://wikipedia.org/wiki/List_of_Final_Fantasy_media#Novels_and_manga', titleDate: '2009-03-26',
+    by: [{ role: 'adapted', names: 'Ichiro Tezuka' }],
     mediaDesc: [
-      'A novelization of Final Fantasy IV: The After Years (2008).',
+      [
+        { text: 'Novelization of ' },
+        { emLinkText: 'The After Years (2008)', emLinkUrl: '#entry-IV-final-fantasy-iv-the-after-years-2008' },
+        { text: '.' },
+      ],
     ],
     primary: {
       tags: ['Optional', 'Spin-off', 'Novel'],
       subtitle: 'Book',
-      helpWanted: true,
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77476002' },
       ],
@@ -422,9 +413,10 @@ window.__ffGroupReg['IV'] = { num: 'IV', chronoOrder: 400, recommendedOrder: 400
         { score: 'NYR', url: 'https://www.goodreads.com/book/show/77476002', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Novel', jpTag: true },
+        { key: 'book', name: 'Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy IV: The After Years', searchQualifier: 'novel' },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
         { key: 'fan-recap', name: 'Fan story recap video of The After Years (2008)', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy IV: The After Years' },
+        { key: 'fan-audiobook', search: 'youtube', searchTitle: 'Final Fantasy IV: The After Years' },
       ],
     },
   },
