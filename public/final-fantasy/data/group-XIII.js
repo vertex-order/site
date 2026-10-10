@@ -487,19 +487,23 @@ window.__ffGroupReg['XIII'] = { num: 'XIII', chronoOrder: 1400, recommendedOrder
   },
   {
     mediaType: 'Comic', chronoOrder: 99900, recommendedOrder: 945,
-    title: 'Final Fantasy Type-0: The Ice Reaper', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_Type-0_Side_Story:_The_Ice_Reaper', titleDate: '2012-09-22',
+    title: 'Final Fantasy Type-0: The Ice Reaper', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_Type-0_Side_Story:_The_Ice_Reaper', titleDate: { start: '2012-05', end: '2014-02' },
+    by: [{ role: 'written', names: 'Tetsuya Nomura' }, { role: 'illustrated', names: 'Takatoshi Shiozawa' }],
     mediaDesc: [
-      [{ text: 'A manga set nine years before ' }, { emLinkText: 'Type-0 (2011)', emLinkUrl: '#entry-XIII-final-fantasy-type-0-2011' }, { text: ", following Kurasame Susaya's time as a student of Akademeia and member of the Four Champions of Rubrum. Kurasame, determined to prove himself worthy of promotion out of Class Third, survives a deadly attack by Concordian outlaws that kills most of his classmates. May also be known as " }, { emText: 'Final Fantasy Type-0 Side Story: The Ice Reaper' }, { text: ', or ' }, { emText: 'Final Fantasy Type-0 Side Story: The Reaper of the Icy Blade' }, { text: '.' }],
+      [{ text: 'A manga set nine years before ' }, { emLinkText: 'Type-0 (2011)', emLinkUrl: '#entry-XIII-final-fantasy-type-0-2011' }, { text: ", following Kurasame Susaya's time as a student of Akademeia and member of the Four Champions of Rubrum. Kurasame, determined to prove himself worthy of promotion out of Class Third, survives a deadly attack by Concordian outlaws that kills most of his classmates." }],
+      [{ text: 'May also be known as ' }, { emText: 'Final Fantasy Type-0 Side Story: The Ice Reaper' }, { text: ', or ' }, { emText: 'Final Fantasy Type-0 Side Story: The Reaper of the Icy Blade' }, { text: '.' }],
     ],
     primary: {
       tags: ['Optional', 'Prequel', 'Manga'],
       subtitle: 'Comic',
+      profileUrl: 'https://yenpress.com/series/final-fantasy-type-0-side-story',
       length: '5 volumes',
       languages: [
         { value: 'EN', url: 'https://www.goodreads.com/book/show/25112890-final-fantasy-type-0-side-story-vol-1' },
         { value: 'FR', url: 'https://www.goodreads.com/book/show/28932172-final-fantasy-type-0---le-guerrier-l-p-e-de-glace-vol-1' },
         { value: 'DE', url: 'https://www.goodreads.com/book/show/35604088-final-fantasy---type-0' },
         { value: 'ES', tip: 'Spanish (Castilian)', url: 'https://www.goodreads.com/book/show/42945374-final-fantasy-type-0-el-verdugo-de-hielo-1' },
+        { value: 'IT', url: 'https://www.goodreads.com/book/show/35130808-final-fantasy-type-0-il-mietitore-dalla-spada-di-ghiaccio-vol-1-5' },
         {
           value: 'JA',
           native: true,
@@ -510,9 +514,9 @@ window.__ffGroupReg['XIII'] = { num: 'XIII', chronoOrder: 1400, recommendedOrder
         { score: '3.95', url: 'https://www.goodreads.com/book/show/25112890-final-fantasy-type-0-side-story-vol-1', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Manga', url: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_Type-0_Side_Story:_The_Ice_Reaper#External_links' },
+        { key: 'book', name: 'Manga', url: 'https://www.goodreads.com/series/177013-final-fantasy-type-0-side-story' },
         { key: 'fan-audiobook', name: 'Fan manga dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy Type-0: The Ice Reaper', searchSuffix: 'manga dub', noResults: true },
-        { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy Type-0 Side Story: The Ice Reaper', noResults: true },
+        { key: 'fan-recap', name: 'Fan story recap', url: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_Type-0_Side_Story:_The_Ice_Reaper#Story' },
       ],
     },
   },
@@ -523,17 +527,17 @@ window.__ffGroupReg['XIII'] = { num: 'XIII', chronoOrder: 1400, recommendedOrder
     mediaDesc: [
       [{ text: 'A novelization of ' }, { emLinkText: 'Type-0 (2011)', emLinkUrl: '#entry-XIII-final-fantasy-type-0-2011' }, { text: ' in two volumes: ' }, { emText: 'Change the World -The Answer-' }, { text: ' (Vol.1) and ' }, { emText: 'Change the World -The Penultimate Truth-' }, { text: ' (Vol.2, 最後から二番目の真実).' }],
       [{ text: "Vol.1 follows Izana Kunagiri as he searches for cadet Ace amid the chaos of the war against the Militesi Empire, recalling how he arrived at his current situation. Vol.2 depicts the cycle previous to the one seen in the game, so its plot diverges from the game's." }],
-      [{ text: 'Also known as ' }, { emText: 'Final Fantasy Type-0 ~The Last Truth~' }, { text: ', the title of its French edition, which collects both volumes.' }],
+      [{ text: 'Also known as ' }, { emText: 'Final Fantasy Type-0 ~The Last Truth~' }, { text: ', the title of its French omnibus edition collecting both volumes.' }],
     ],
     primary: {
       tags: ['Optional', 'Novel'],
       subtitle: 'Book',
-      profileUrl: 'https://magazine.jp.square-enix.com/gamebooks/search?s=27',
+      profileUrl: 'https://magazine.jp.square-enix.com/gamebooks/search?s=27&q=Change+the+World',
       length: '2 volumes',
       languages: [
-        { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/84822449' },
+        { value: 'JA', native: true, url: 'https://magazine.jp.square-enix.com/gamebooks/search?s=27&q=Change+the+World' },
         { value: 'FR', url: 'https://www.goodreads.com/book/show/49536638-final-fantasy-type-0---the-last-truth' },
-        { value: 'EN', tip: 'English (fan translation)' },
+        { value: 'EN', tip: 'English (fan translation)', url: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_Type-0:_Change_the_World_-The_Answer-#External_links' },
         { value: '…?' },
       ],
       helpWanted: true,
@@ -541,7 +545,7 @@ window.__ffGroupReg['XIII'] = { num: 'XIII', chronoOrder: 1400, recommendedOrder
         { score: '4.05', url: 'https://www.goodreads.com/book/show/49536638-final-fantasy-type-0---the-last-truth', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy type-0 The Answer', searchQualifier: 'novel' },
+        { key: 'book', name: 'Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchQualifier: 'novel' },
         { key: 'fan-translation', url: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_Type-0:_Change_the_World_-The_Answer-#External_links' },
         {
           key: 'fan-recap',
