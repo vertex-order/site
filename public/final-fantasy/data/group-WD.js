@@ -1,5 +1,5 @@
 // schema: group.schema.json
-window.__ffGroupReg['WD'] = { num: 'WD', chronoOrder: 1580, narrativeOrder: 1580, title: 'World', note: 'Light hearted spin-off mixing chibi art and humor, aimed at a younger audience with plenty of throwbacks to previous titles.', media: [
+window.__ffGroupReg['WD'] = { num: 'WD', chronoOrder: 1580, narrativeOrder: 1580, title: 'World', note: 'Light hearted spin-off mashing up characters from across the franchise in chibi art and humor, aimed at a younger audience with plenty of throwbacks to previous titles.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, narrativeOrder: 100,
     title: 'World of Final Fantasy', titleUrl: 'https://wikipedia.org/wiki/World_of_Final_Fantasy', titleDate: '2016-10-25',
@@ -7,7 +7,7 @@ window.__ffGroupReg['WD'] = { num: 'WD', chronoOrder: 1580, narrativeOrder: 1580
       [{ text: 'Takes place in Grymoire, a world of coexisting Final Fantasy locations. The story follows siblings Lann and Reynn, who possess the power to tame monsters called Mirages, and are sent to Grymoire to reclaim their lost memories and thwart the plans of the Bahamutian Army.' }],
     ],
     primary: {
-      tags: ['RPG', 'Single-player', 'Active Time Battle'],
+      tags: ['Essential', 'RPG', 'Single-player', 'Active Time Battle'],
       subtitle: 'Remake', subtitleUrl: 'https://wikipedia.org/wiki/World_of_Final_Fantasy#World_of_Final_Fantasy_Maxima', subtitleDate: 2018,
       languages: [
         { value: 'JA', native: true, voice: true },
@@ -74,10 +74,11 @@ window.__ffGroupReg['WD'] = { num: 'WD', chronoOrder: 1580, narrativeOrder: 1580
     mediaType: 'Game', chronoOrder: 100, narrativeOrder: 200,
     title: 'World of Final Fantasy: Meli-Melo', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/World_of_Final_Fantasy:_Meli-Melo', titleDate: '2017-12-12',
     mediaDesc: [
-      [{ text: 'Similar gameplay to ' }, { emLinkText: 'World of Final Fantasy (2016)', emLinkUrl: '#entry-WD-world-of-final-fantasy-2016' }, { text: ', the game is now terminated.' }],
+      [{ text: 'Similar gameplay to ' }, { emLinkText: 'World of Final Fantasy (2016)', emLinkUrl: '#entry-WD-world-of-final-fantasy-2016' }, { text: '.' }],
     ],
     primary: {
-      tags: ['Optional', 'Spin-off', 'Monster-taming RPG', 'Multiplayer', 'Co-op', 'Mobile', 'In-app purchases', 'Terminated'],
+      tags: ['Monster-taming RPG', 'Multiplayer', 'Co-op', 'Mobile', 'In-app purchases'],
+      terminated: true,
       languages: [
         { value: 'JA', native: true },
       ],

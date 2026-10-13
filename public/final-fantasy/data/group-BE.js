@@ -1,5 +1,5 @@
 // schema: group.schema.json
-window.__ffGroupReg['BE'] = { num: 'BE', chronoOrder: 1550, narrativeOrder: 1550, title: 'Brave Exvius', note: 'A gacha mobile world remade into a standalone story driven turn-based RPG with modern pixel art. Incorporates original elements with existing titles, including other franchises altogether. Can be considered a bit of an alternate universe mashup spin-off.', media: [
+window.__ffGroupReg['BE'] = { num: 'BE', chronoOrder: 1550, narrativeOrder: 1550, title: 'Brave Exvius', note: 'A gacha mobile world remade into a standalone story driven turn-based RPG with modern pixel art. Incorporates original elements with existing titles, including other franchises altogether.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, narrativeOrder: 100,
     title: 'Final Fantasy Resonance', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_Resonance', titleDate: '2026-10-22',
@@ -8,7 +8,7 @@ window.__ffGroupReg['BE'] = { num: 'BE', chronoOrder: 1550, narrativeOrder: 1550
       [{ text: 'An adaptation of ' }, { emLinkText: 'Brave Exvius (2015)', emLinkUrl: '#entry-BE-final-fantasy-brave-exvius-2015' }, { text: "'s first story arc, incorporating elements and characters from other Final Fantasy titles as well as outside franchises. Graphics are in HD-2D." }],
     ],
     primary: {
-      tags: ['Turn-based RPG', 'Single-player'],
+      tags: ['Essential', 'Turn-based RPG', 'Single-player'],
       languages: [
         { value: 'JA', native: true, voice: true },
         { value: 'EN-US', voice: true },
@@ -42,10 +42,10 @@ window.__ffGroupReg['BE'] = { num: 'BE', chronoOrder: 1550, narrativeOrder: 1550
     title: 'Final Fantasy Brave Exvius', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_Brave_Exvius', titleDate: '2015-10-22',
     mediaDesc: [
       'Rain and Lasswell help fight off an attack on the Earth crystal. Incorporates elements and characters from other Final Fantasy titles, as well as outside franchises. Can be considered a bit of a mash-up.',
-      'Since the game is terminated we recommend you watch a fan story recap video or a playthrough.',
     ],
     primary: {
-      tags: ['Optional', 'Mobile', 'Turn-based RPG', 'Gacha', 'Terminated'],
+      tags: ['Mobile', 'Turn-based RPG', 'Gacha'],
+      terminated: true,
       languages: [
         { value: 'JA', native: true },
         { value: 'EN' },
@@ -73,7 +73,7 @@ window.__ffGroupReg['BE'] = { num: 'BE', chronoOrder: 1550, narrativeOrder: 1550
       [{ text: 'A 4-panel manga set in the world of ' }, { emLinkText: 'Brave Exvius (2015)', emLinkUrl: '#entry-BE-final-fantasy-brave-exvius-2015' }, { text: '.' }],
     ],
     primary: {
-      tags: ['Optional', 'Tie-in', 'Manga'],
+      tags: ['Tie-in', 'Manga'],
       subtitle: 'Comic',
       profileUrl: 'https://store.jp.square-enix.com/estore/g/g9784757557994/',
       length: '144p; B6',
@@ -99,7 +99,8 @@ window.__ffGroupReg['BE'] = { num: 'BE', chronoOrder: 1550, narrativeOrder: 1550
       'A clicker or incremental game.',
     ],
     primary: {
-      tags: ['Optional', 'Spin-off', 'Clicker', 'Terminated'],
+      tags: ['Clicker'],
+      terminated: true,
       languages: [
         { value: 'EN', native: true },
       ],
@@ -116,7 +117,8 @@ window.__ffGroupReg['BE'] = { num: 'BE', chronoOrder: 1550, narrativeOrder: 1550
       [{ text: 'War breaks out between five rival nations on Lapis in the distant past of ' }, { emLinkText: 'Brave Exvius (2015)', emLinkUrl: '#entry-BE-final-fantasy-brave-exvius-2015' }, { text: '.' }],
     ],
     primary: {
-      tags: ['Optional', 'Prequel', 'Tactical RPG', 'Mobile', 'Terminated'],
+      tags: ['Tactical RPG', 'Mobile'],
+      terminated: true,
       languages: [
         { value: 'JA', native: true },
         { value: 'EN' },
