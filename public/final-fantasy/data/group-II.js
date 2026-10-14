@@ -198,6 +198,28 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, narrativeOrder: 200, 
     },
   },
   {
+    mediaType: 'Book', chronoOrder: 610, narrativeOrder: 405,
+    title: 'Final Fantasy II: Battle to the Death with General Borghen!', titleUrl: 'https://finalfancast.com/category/games/final-fantasy-ii/', titleDate: '1988-01-13',
+    by: 'Ryūji Kōsaku and Hiroyuki Fukuda',
+    mediaDesc: [
+      'A gamebook set in the world of Final Fantasy II. Released as ファイナルファンタジーII 将軍ボーゲンとの死闘！ (Final Fantasy II Shōgun Bōgen to no Shitō!).',
+    ],
+    primary: {
+      tags: ['Gamebook'],
+      subtitle: 'Book',
+      length: '…?',
+      helpWanted: true,
+      languages: [
+        { value: 'JA', native: true },
+      ],
+      platforms: [
+        { key: 'book', name: 'Gamebook', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy II Shōgun Bōgen to no Shitō', searchQualifier: 'gamebook' },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy II Shōgun Bōgen to no Shitō', noResults: true },
+        { key: 'fan-recap', paren: 'Youtube', search: 'youtube', noResults: true },
+      ],
+    },
+  },
+  {
     mediaType: 'Book', chronoOrder: 620, narrativeOrder: 410,
     title: 'Final Fantasy II: Dragon Treasures', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_II_Hih%C5%8D_no_Dragon', titleDate: '1988-12',
     by: 'Naomi Inoue',
@@ -207,11 +229,9 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, narrativeOrder: 200, 
     primary: {
       tags: ['Gamebook'],
       subtitle: 'Book',
-      helpWanted: true,
       length: '283p',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/102713430' },
-        { value: '…?' },
       ],
       ratings: [
         { score: 'NYR', url: 'https://www.goodreads.com/book/show/102713430', key: 'goodreads' },
@@ -225,19 +245,18 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, narrativeOrder: 200, 
   },
   {
     mediaType: 'Book', chronoOrder: 630, narrativeOrder: 415,
-    title: 'Final Fantasy II: Journey to Victory', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_II_Sh%C5%8Dri_e_no_Tabidachi', titleDate: '1988',
+    title: 'Final Fantasy II: Journey to Victory', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_II_Sh%C5%8Dri_e_no_Tabidachi', titleDate: '1988-12-31',
     by: 'Tatsumi Yamashita',
     mediaDesc: [
-      [{ text: 'A gamebook telling a side story set during the events of ' }, { emLinkText: 'II (1988)', emLinkUrl: '#entry-II-final-fantasy-ii-1988' }, { text: ' and starring a young rebel as its protagonist. Released as ファイナルファンタジーII 勝利への旅立ち (Final Fantasy II Shōri e no Tabidachi).' }],
+      [{ text: 'A gamebook telling a side story set just before the main events of ' }, { emLinkText: 'II (1988)', emLinkUrl: '#entry-II-final-fantasy-ii-1988' }, { text: ' and starring Mid, an original character who joins the rebel army. Released as ファイナルファンタジーII 勝利への旅立ち (Final Fantasy II Shōri e no Tabidachi).' }],
     ],
     primary: {
       tags: ['Gamebook'],
       subtitle: 'Book',
+      length: '271p;A6',
       languages: [
         { value: 'JA', native: true },
-        { value: '…?' },
       ],
-      helpWanted: true,
       platforms: [
         { key: 'book', name: 'Gamebook', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy II Shōri e no Tabidachi', searchQualifier: 'gamebook' },
         { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy II Shōri e no Tabidachi', noResults: true },
@@ -258,9 +277,7 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, narrativeOrder: 200, 
       length: '~60p',
       languages: [
         { value: 'JA', native: true },
-        { value: '…?' },
       ],
-      helpWanted: true,
       platforms: [
         { key: 'book', name: 'Manga', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy II', searchQualifier: 'manga' },
         { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy II manga', noResults: true },
