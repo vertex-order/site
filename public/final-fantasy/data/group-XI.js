@@ -678,7 +678,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
   },
   {
     mediaType: 'Book', chronoOrder: 4600, narrativeOrder: 634, narrativeSection: 'Novels',
-    title: 'Final Fantasy XI ~Anthology~', titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Books#Short_Stories', titleDate: '2009-02',
+    title: 'Final Fantasy XI ~Anthology~', titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Books#Short_Stories', titleDate: '2009-01-30',
     mediaDesc: [
       [{ text: 'Anthology of three short stories.' }],
       [{ text: 'Book 29 in the series, released as アンソロジー短編集みんなで大冒険！！, also known as ' }, { emText: 'An Anthology of Short Stories: A Great Adventure for Everyone!!' }, { text: '.' }],
@@ -686,7 +686,6 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel', 'Short Stories'],
       subtitle: 'Book',
-      helpWanted: true,
       length: '311p; A6',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77470246' },
@@ -758,38 +757,23 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     title: 'Final Fantasy XI ~Love in the Sky 1·2·3!~', titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#Personal_Collection_-_Misc', titleDate: '2007-06',
     by: 'Fumio Minagawa',
     mediaDesc: [
-      [{ text: 'A short manga for ' }, { emText: 'XI' }, { text: ", released as 恋の空蝉1・2・3! (Koi no Utsusemi). Serialized in the Vana'diel Communications mook; the earliest known printing is the June 2007 Vana'diel Memoirs special appendix." }],
+      [{ text: 'A short manga for ' }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: ', released as 恋の空蝉1・2・3! (Koi no Utsusemi) and collected in the art book ' }, { emText: 'Final Fantasy XI Minagawa Fumio Illustrations' }, { text: " (ファイナルファンタジーXI 皆川史生イラストレーションズ). Originally serialized in the Vana'diel Communications mook." }],
     ],
     primary: {
       tags: ['Tie-in', 'Manga'],
       subtitle: 'Comic',
-      length: '…?',
-      helpWanted: true,
+      profileUrl: 'https://www.kadokawa.co.jp/product/321810000635/',
       languages: [
-        { value: 'JA', native: true },
+        { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/58665646' },
       ],
       ratings: [
-        { score: 'NYR', key: 'goodreads' },
+        { score: 'NYR', url: 'https://www.goodreads.com/book/show/58665646', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Manga', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy XI Love in the Sky 1 2 3', searchQualifier: 'manga' },
+        { key: 'book', name: 'Manga', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'ファイナルファンタジーXI 皆川史生イラストレーションズ' },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
         { key: 'fan-audiobook', name: 'Fan manga dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Love in the Sky 1 2 3', searchSuffix: 'manga dub', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Love in the Sky 1 2 3', searchSuffix: '', noResults: true },
-      ],
-      versions: [
-        {
-          title: 'Final Fantasy XI ~Minagawa Fumio Illustrations~ (2018)', titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Books#Illustrations',
-          languages: [
-            { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/58665646' },
-          ],
-          platforms: [
-            { key: 'book', name: 'Manga', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy XI Minagawa Fumio Illustrations', searchQualifier: 'manga' },
-          ],
-          versionDesc: [
-            "December 2018 art book collecting every episode plus an extra episode of this manga, with character art and the artist's other XI illustrations.",
-          ],
-        },
       ],
     },
   },
@@ -818,7 +802,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
   },
   {
     mediaType: 'Comic', chronoOrder: 5070, narrativeOrder: 637, narrativeSection: 'Main',
-    title: 'Final Fantasy XI ~Dengeki 4-Koma International~', titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#4-Koma', titleDate: '2004-09',
+    title: 'Final Fantasy XI ~Dengeki 4-Koma International~', titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#4-Koma', titleDate: '2004-08-27',
     by: 'Hijiri Emoto',
     mediaDesc: [
       [{ text: 'English-language four-panel comics about ' }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: ", with Japanese translations, plus English vocabulary and phrases for Vana'diel. Released as 電撃4コマインターナショナル ヴァナ・ディールで使える英単語/英会話." }],
@@ -840,40 +824,46 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
   },
   {
     mediaType: 'Comic', chronoOrder: 5075, narrativeOrder: 638, narrativeSection: 'Main',
-    title: 'Final Fantasy XI ~4-Panel Anthology Comic~', titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#4-Koma_-_Bros', titleDate: { start: '2004-10', end: '2006-03' },
+    title: 'Final Fantasy XI ~4-Panel Anthology Comic~', titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#4-Koma_-_Bros', titleDate: { start: '2004-09-25', end: '2006-02-25' },
     mediaDesc: [
-      [{ text: 'An anthology of four-panel comics by many artists about daily life in the world of ' }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: '. Released as 4コマアンソロジーコミック.' }],
+      [{ text: 'An anthology of four-panel comics by many artists about daily life in the world of ' }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: '. Released as ファイナルファンタジーXI 4コマアンソロジーコミック.' }],
     ],
     primary: {
       tags: ['Tie-in', 'Manga'],
       subtitle: 'Comic',
       length: '10 volumes',
-      helpWanted: true,
+      profileUrl: 'https://www.kadokawa.co.jp/product/search/?kw=%E3%83%95%E3%82%A1%E3%82%A4%E3%83%8A%E3%83%AB%E3%83%95%E3%82%A1%E3%83%B3%E3%82%BF%E3%82%B8%E3%83%BCXI%204%E3%82%B3%E3%83%9E',
       languages: [
-        { value: 'JA', native: true },
+        { value: 'JA', native: true, url: 'https://www.goodreads.com/search?q=%E3%83%95%E3%82%A1%E3%82%A4%E3%83%8A%E3%83%AB%E3%83%95%E3%82%A1%E3%83%B3%E3%82%BF%E3%82%B8%E3%83%BCXI%204%E3%82%B3%E3%83%9E' },
+      ],
+      ratings: [
+        { score: 'NYR', url: 'https://www.goodreads.com/book/show/77545544', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Manga', jpTag: true },
+        { key: 'book', name: 'Manga', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'ファイナルファンタジーXI 4コマアンソロジーコミック' },
       ],
     },
   },
   {
     mediaType: 'Comic', chronoOrder: 5080, narrativeOrder: 639, narrativeSection: 'Main',
-    title: "Final Fantasy XI ~The Beast's Path~", titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#4-Koma', titleDate: '2007-03',
+    title: "Final Fantasy XI ~The Beast's Path~", titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#4-Koma', titleDate: '2007-03-09',
     by: 'Hijiri Emoto',
     mediaDesc: [
-      [{ text: "A story four-panel comic following the Tarutaru Oru and his companions through a relaxed adventuring life in Vana'diel, across 27 chapters. Released as 獣の花道 FFXI・電撃の旅団外伝." }],
+      [{ text: "A story four-panel comic following the Tarutaru Oru and his companions through a relaxed adventuring life in Vana'diel. Released as 獣の花道 FFXI・電撃の旅団外伝." }],
     ],
     primary: {
       tags: ['Tie-in', 'Manga'],
       subtitle: 'Comic',
       length: '2 volumes',
-      helpWanted: true,
+      profileUrl: 'https://www.kadokawa.co.jp/product/search/?kw=%E7%8D%A3%E3%81%AE%E8%8A%B1%E9%81%93',
       languages: [
-        { value: 'JA', native: true },
+        { value: 'JA', native: true, url: 'https://www.goodreads.com/search?q=%E7%8D%A3%E3%81%AE%E8%8A%B1%E9%81%93' },
+      ],
+      ratings: [
+        { score: 'NYR', url: 'https://www.goodreads.com/book/show/77246831', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Manga', jpTag: true },
+        { key: 'book', name: 'Manga', jpTag: true, url: 'https://www.goodreads.com/search?q=%E7%8D%A3%E3%81%AE%E8%8A%B1%E9%81%93' },
       ],
     },
   },
@@ -906,15 +896,15 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       [{ text: 'A replica script for the reading drama\'s five strange tales: "Mimiroon\'s Sparkling Great Adventure", "Go For It! Allied Forces of Altana: Extreme Survival", "Seaside Serpent Taro", "A Small Gift For A Small Friend", and "Black Night Butterfly". Released as 朗読劇 : 異聞のウタイビト : 複製台本, also known as ' }, { emText: 'Reading Drama: Minstrel of Strange Tales: Replica Script' }, { text: '.' }],
     ],
     primary: {
-      tags: ['Tie-in', 'Novel'],
+      tags: ['Tie-in', 'Short Stories'],
       subtitle: 'Book',
-      helpWanted: true,
       length: '96p; B5',
+      profileUrl: 'https://store.kadokawa.co.jp/shop/g/g4942330227312/',
       languages: [
         { value: 'JA', native: true },
       ],
       platforms: [
-        { key: 'book', name: 'Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy XI Minstrel of Strange Tales: Replica Script', searchQualifier: 'novel' },
+        { key: 'book', name: 'Short Stories', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: '朗読劇 異聞のウタイビト 複製台本' },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Minstrel of Strange Tales', searchSuffix: '', noResults: true },
         { key: 'fan-audiobook', search: 'youtube', noResults: true },
@@ -928,15 +918,15 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       [{ text: 'A replica script for the reading drama\'s stories of love and reunion across time and space: "Temple of the Heart\'s Secret" (a Star Sibyl story), "Girl of the Underworld" (an Aphmau story), "Blue Mage Blues" (a Blue Mage story), and "Memoirs of the Many-Headed Hydra -Memories of Heroes-" (a Hydra Squadron story). Released as 朗読劇 : 夢幻のウタイビト : 複製台本, also known as ' }, { emText: 'Reading Drama: Minstrel of Fantasies: Replica Script' }, { text: '.' }],
     ],
     primary: {
-      tags: ['Tie-in', 'Novel'],
+      tags: ['Tie-in', 'Short Stories'],
       subtitle: 'Book',
-      helpWanted: true,
       length: '96p; B5',
+      profileUrl: 'https://store.kadokawa.co.jp/shop/g/g4942330370001/',
       languages: [
         { value: 'JA', native: true },
       ],
       platforms: [
-        { key: 'book', name: 'Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy XI Minstrel of Fantasies: Replica Script', searchQualifier: 'novel' },
+        { key: 'book', name: 'Short Stories', paren: 'DuckDuckGo; Digital; Physical', jpTag: true, search: 'duckduckgo', searchTitle: '朗読劇 夢幻のウタイビト 複製台本' },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Minstrel of Fantasies', searchSuffix: '', noResults: true },
         { key: 'fan-audiobook', search: 'youtube', noResults: true },

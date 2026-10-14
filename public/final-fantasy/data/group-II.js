@@ -199,29 +199,32 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, narrativeOrder: 200, 
   },
   {
     mediaType: 'Book', chronoOrder: 610, narrativeOrder: 405,
-    title: 'Final Fantasy II: Battle to the Death with General Borghen!', titleUrl: 'https://finalfancast.com/category/games/final-fantasy-ii/', titleDate: '1988-01-13',
-    by: 'Ryūji Kōsaku and Hiroyuki Fukuda',
+    title: 'Final Fantasy II: Battle to the Death with General Borghen!', titleUrl: 'https://www.goodreads.com/book/show/77945774', titleDate: '1989-01',
+    by: 'Ryūji Kōsaka',
     mediaDesc: [
-      'A gamebook set in the world of Final Fantasy II. Released as ファイナルファンタジーII 将軍ボーゲンとの死闘！ (Final Fantasy II Shōgun Bōgen to no Shitō!).',
+      'A gamebook set in the world of Final Fantasy II. Released as ファイナルファンタジー2 将軍ボーゲンとの死闘 (Final Fantasy II Shōgun Bōgen to no Shitō).',
     ],
     primary: {
       tags: ['Gamebook'],
       subtitle: 'Book',
-      length: '…?',
-      helpWanted: true,
+      length: '317p; A6',
+      profileUrl: 'https://ndlsearch.ndl.go.jp/books/R100000002-I000001956793',
       languages: [
-        { value: 'JA', native: true },
+        { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77945774' },
+      ],
+      ratings: [
+        { score: 'NYR', url: 'https://www.goodreads.com/book/show/77945774', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Gamebook', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy II Shōgun Bōgen to no Shitō', searchQualifier: 'gamebook' },
-        { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy II Shōgun Bōgen to no Shitō', noResults: true },
+        { key: 'book', name: 'Gamebook', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'ファイナルファンタジー2 将軍ボーゲンとの死闘', searchQualifier: 'gamebook' },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'ファイナルファンタジー2 将軍ボーゲンとの死闘', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', noResults: true },
       ],
     },
   },
   {
     mediaType: 'Book', chronoOrder: 620, narrativeOrder: 410,
-    title: 'Final Fantasy II: Dragon Treasures', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_II_Hih%C5%8D_no_Dragon', titleDate: '1988-12',
+    title: 'Final Fantasy II: Dragon Treasures', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_II_Hih%C5%8D_no_Dragon', titleDate: '1989-01',
     by: 'Naomi Inoue',
     mediaDesc: [
       'A gamebook set in the world of Final Fantasy II. Centers on Princess Marie of Fynn, an original character combining traits of Maria and Hilda, alongside Firion, Guy, and Minwu. Released as ファイナルファンタジーII 秘宝のドラゴン (Final Fantasy II Hihō no Dragon).',
@@ -229,7 +232,8 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, narrativeOrder: 200, 
     primary: {
       tags: ['Gamebook'],
       subtitle: 'Book',
-      length: '283p',
+      length: '283p; A6',
+      profileUrl: 'https://ndlsearch.ndl.go.jp/books/R100000001-I36111100548362',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/102713430' },
       ],
@@ -246,14 +250,14 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, narrativeOrder: 200, 
   {
     mediaType: 'Book', chronoOrder: 630, narrativeOrder: 415,
     title: 'Final Fantasy II: Journey to Victory', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_II_Sh%C5%8Dri_e_no_Tabidachi', titleDate: '1988-12-31',
-    by: 'Tatsumi Yamashita',
+    by: 'Naoko Uehara',
     mediaDesc: [
       [{ text: 'A gamebook telling a side story set just before the main events of ' }, { emLinkText: 'II (1988)', emLinkUrl: '#entry-II-final-fantasy-ii-1988' }, { text: ' and starring Mid, an original character who joins the rebel army. Released as ファイナルファンタジーII 勝利への旅立ち (Final Fantasy II Shōri e no Tabidachi).' }],
     ],
     primary: {
       tags: ['Gamebook'],
       subtitle: 'Book',
-      length: '271p;A6',
+      length: '271p; A6',
       languages: [
         { value: 'JA', native: true },
       ],
