@@ -3869,10 +3869,10 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
         <span data-dc-tpl="73" style="color: var(--color-neutral-500);">Platforms</span>
         <span data-dc-tpl="77" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 2px;">
           <span data-dc-tpl="79" role="button" tabindex="0" style="display: flex; cursor: pointer;"><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="80">
-  <span data-dc-tpl="24" title="Steam (PC; Digital)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+  <span data-dc-tpl="24" title="Steam (PC; Digital; see games)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
     <span data-dc-tpl="25" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
       
-      <img data-dc-tpl="29" alt="Steam (PC; Digital)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/steam.svg">
+      <img data-dc-tpl="29" alt="Steam (PC; Digital; see games)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/steam.svg">
       
       
       
@@ -5473,7 +5473,12 @@ class Component extends DCLogic {
       })(),
       ratings: this.resolveRatings(node.ratings),
       platforms: node.platforms && this.sortPls(node.platforms.map(pl => {
-        const r = this.resolvePl(pl, this.rowSearchTitle(node, titleSrc, inheritedSearch));
+        // An `opensContents` platform's tooltip gains "see <volumes>" in its
+        // paren, after any paren it already has (joined with '; ').
+        const plIn = pl.opensContents && node.contents
+          ? { ...pl, paren: (pl.paren ? pl.paren + '; ' : '') + 'see ' + (node.contentsLabel || 'volumes') }
+          : pl;
+        const r = this.resolvePl(plIn, this.rowSearchTitle(node, titleSrc, inheritedSearch));
         return { ...r, href: r.url || node.platformsUrl, noPlUrl: !pl.url && !pl.search, opensContents: !!pl.opensContents, wrapStyle: 'display: contents;' };
       })),
       descParas: toProseParas(node.versionDesc),
