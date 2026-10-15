@@ -81,9 +81,6 @@ window.__ffGroupReg['CC'] = { num: 'CC', chronoOrder: 1200, narrativeOrder: 1200
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77128941' },
       ],
-      ratings: [
-        { score: 'NYR', url: 'https://www.goodreads.com/book/show/77128941', key: 'goodreads' },
-      ],
       platforms: [
         { key: 'book', name: 'Manga', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'ファイナルファンタジー・クリスタルクロニクル はてなき空の向こうに' },
         { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy Crystal Chronicles Beyond the Endless Sky', noResults: true },
@@ -105,9 +102,6 @@ window.__ffGroupReg['CC'] = { num: 'CC', chronoOrder: 1200, narrativeOrder: 1200
       length: '351p; P',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77092424' },
-      ],
-      ratings: [
-        { score: 'NYR', url: 'https://www.goodreads.com/book/show/77092424', key: 'goodreads' },
       ],
       platforms: [
         { key: 'book', name: 'Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'FINAL FANTASY CRYSTAL CHRONICLES 小さな村の年代記' },
@@ -131,9 +125,6 @@ window.__ffGroupReg['CC'] = { num: 'CC', chronoOrder: 1200, narrativeOrder: 1200
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77600584' },
       ],
       profileUrl: 'https://magazine.jp.square-enix.com/top/comics/detail/9784757511224/',
-      ratings: [
-        { score: 'NYR', url: 'https://www.goodreads.com/book/show/77600584', key: 'goodreads' },
-      ],
       platforms: [
         { key: 'book', name: 'Manga', jpTag: true, url: 'https://www.goodreads.com/book/show/77600584' },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
@@ -272,9 +263,6 @@ window.__ffGroupReg['CC'] = { num: 'CC', chronoOrder: 1200, narrativeOrder: 1200
         { value: 'JA', native: true, url: 'https://www.goodreads.com/search?q=%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%83%95%E3%82%A7%E3%82%A4%E3%83%88%20%E5%83%95%E3%82%89%E3%81%AE%E4%B8%96%E7%95%8C' },
       ],
       profileUrl: 'https://www.kadokawa.co.jp/product/search/?kw=%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%83%95%E3%82%A7%E3%82%A4%E3%83%88%20%E5%83%95%E3%82%89%E3%81%AE%E4%B8%96%E7%95%8C',
-      ratings: [
-        { score: 'NYR', url: 'https://www.goodreads.com/book/show/77752739', key: 'goodreads' },
-      ],
       platforms: [
         { key: 'book', name: 'Novel', jpTag: true, url: 'https://www.goodreads.com/search?q=%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%83%95%E3%82%A7%E3%82%A4%E3%83%88%20%E5%83%95%E3%82%89%E3%81%AE%E4%B8%96%E7%95%8C' },
         { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy Crystal Chronicles Ring of Fates', searchQualifier: 'novel', noResults: true },
@@ -297,9 +285,6 @@ window.__ffGroupReg['CC'] = { num: 'CC', chronoOrder: 1200, narrativeOrder: 1200
         { value: 'JA', native: true, url: 'https://www.goodreads.com/search?q=%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%83%95%E3%82%A7%E3%82%A4%E3%83%88%204%E3%82%B3%E3%83%9E%E3%82%A2%E3%83%B3%E3%82%BD%E3%83%AD%E3%82%B8%E3%83%BC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF' },
       ],
       profileUrl: 'https://www.kadokawa.co.jp/product/search/?kw=%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%83%95%E3%82%A7%E3%82%A4%E3%83%88%204%E3%82%B3%E3%83%9E%E3%82%A2%E3%83%B3%E3%82%BD%E3%83%AD%E3%82%B8%E3%83%BC',
-      ratings: [
-        { score: 'NYR', url: 'https://www.goodreads.com/book/show/77740139', key: 'goodreads' },
-      ],
       platforms: [
         { key: 'book', name: 'Manga', jpTag: true, url: 'https://www.goodreads.com/search?q=%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%83%95%E3%82%A7%E3%82%A4%E3%83%88%204%E3%82%B3%E3%83%9E%E3%82%A2%E3%83%B3%E3%82%BD%E3%83%AD%E3%82%B8%E3%83%BC%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF' },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
