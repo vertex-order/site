@@ -156,19 +156,17 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       subtitle: 'Book',
       length: '286p; A6',
       profileUrl: 'https://www.kadokawa.co.jp/product/200700003832/',
-      helpWanted: true,
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/57214633' },
         { value: 'FR', url: 'https://www.goodreads.com/book/show/4641976-final-fantasy-xi-tome-1' },
         { value: 'DE', url: 'https://www.goodreads.com/book/show/4466888-final-fantasy-xi' },
         { value: 'EN', tip: 'English (fan translation)', url: 'https://duckduckgo.com/?q=Final%20Fantasy%20XI%20~Winds%20of%20Prayer~%20(Novel)%20english%20translation' },
-        { value: '…?' },
       ],
       ratings: [
         { score: '3.24', url: 'https://www.goodreads.com/book/show/4641976-final-fantasy-xi-tome-1', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Light Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy XI Winds of Prayer', searchQualifier: 'light novel' },
+        { key: 'book', name: 'Light Novel', url: 'https://www.goodreads.com/series/252821-final-fantasy-xi-online' },
         { key: 'fan-translation', search: 'duckduckgo' },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Winds of Prayer', noResults: true },
         { key: 'fan-audiobook', search: 'youtube', noResults: true },
@@ -208,7 +206,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel'],
       subtitle: 'Book',
-      helpWanted: true,
+      profileUrl: 'https://www.kadokawa.co.jp/product/200700003858/',
       length: '287p; A6',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/57520205' },
@@ -219,7 +217,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
         { score: '3.17', url: 'https://www.goodreads.com/book/show/43464316-final-fantasy-xi-tome-2', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Light Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy XI The Star Oath', searchQualifier: 'light novel' },
+        { key: 'book', name: 'Light Novel', url: 'https://www.goodreads.com/series/252821-final-fantasy-xi-online' },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI The Star Oath', noResults: true },
         { key: 'fan-audiobook', search: 'youtube', noResults: true },
@@ -228,7 +226,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
   },
   {
     mediaType: 'Comic', chronoOrder: 110, narrativeOrder: 605, narrativeSection: 'Novels',
-    title: 'Final Fantasy XI ~Winds of Prayer~ (Manga)', titleUrl: "https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#Personal_Collection_-_Vana'diel", titleDate: { start: '2008-09', end: '2010-03' },
+    title: 'Final Fantasy XI ~Winds of Prayer~ (Manga)', titleUrl: "https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#Personal_Collection_-_Vana'diel", titleDate: { start: '2008-09', end: '2010-11-15' },
     by: [{ role: 'adapted', names: 'You Satsuki' }],
     mediaDesc: [
       [{ text: 'Manga adaptation of ' }, { emLinkText: '~Winds of Prayer~ (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-winds-of-prayer-novel-2002' }, { text: '.' }],
@@ -237,6 +235,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Manga'],
       subtitle: 'Comic',
+      profileUrl: 'https://www.kadokawa.co.jp/product/search/?auth=%E6%B2%99%E6%9C%88%E3%82%86%E3%81%86&kw=%E7%A5%88%E3%82%8A%E3%81%AE%E9%A2%A8',
       length: '2 volumes',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/78009261' },
@@ -260,7 +259,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel'],
       subtitle: 'Book',
-      helpWanted: true,
+      profileUrl: 'https://www.kadokawa.co.jp/product/200700003876/',
       length: '287p; A6',
       languages: [
         { value: 'JA', native: true },
@@ -271,7 +270,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
         { score: '3.83', url: 'https://www.goodreads.com/book/show/43464376-final-fantasy-xi-tome-3', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Light Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy XI The Eternal Bond', searchQualifier: 'light novel' },
+        { key: 'book', name: 'Light Novel', url: 'https://www.goodreads.com/series/252821-final-fantasy-xi-online' },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI The Eternal Bond', noResults: true },
         { key: 'fan-audiobook', search: 'youtube', noResults: true },
@@ -290,7 +289,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       tags: ['Light Novel'],
       subtitle: 'Book',
       length: '3 volumes',
-      helpWanted: true,
+      profileUrl: 'https://www.kadokawa.co.jp/product/search/?kw=%E8%AD%B7%E3%82%8A%E3%81%AE%E5%89%A3',
       languages: [
         { value: 'JA', native: true },
         { value: 'FR', url: 'https://www.goodreads.com/book/show/43464339-final-fantasy-xi-tome-4' },
@@ -300,7 +299,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
         { score: '3.58', url: 'https://www.goodreads.com/book/show/43464339-final-fantasy-xi-tome-4', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Light Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy XI The Sword of Protection', searchQualifier: 'light novel' },
+        { key: 'book', name: 'Light Novel', url: 'https://www.goodreads.com/series/252821-final-fantasy-xi-online' },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI The Sword of Protection', noResults: true },
         { key: 'fan-audiobook', search: 'youtube', noResults: true },
@@ -319,17 +318,16 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       tags: ['Light Novel'],
       subtitle: 'Book',
       length: '255p; A6',
-      helpWanted: true,
+      profileUrl: 'https://www.kadokawa.co.jp/product/200700003939/',
       languages: [
         { value: 'JA', native: true },
         { value: 'DE', url: 'https://www.goodreads.com/book/show/4466882-final-fantasy-xi' },
-        { value: '…?' },
       ],
       ratings: [
         { score: '3.60', url: 'https://www.goodreads.com/book/show/4466882-final-fantasy-xi', key: 'goodreads' },
       ],
       platforms: [
-        { key: 'book', name: 'Light Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy XI Faraway Wings', searchQualifier: 'light novel' },
+        { key: 'book', name: 'Light Novel', url: 'https://www.goodreads.com/series/252821-final-fantasy-xi-online' },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Faraway Wings', noResults: true },
         { key: 'fan-audiobook', search: 'youtube', noResults: true },
@@ -348,14 +346,13 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       tags: ['Light Novel'],
       subtitle: 'Book',
       length: '3 volumes',
-      helpWanted: true,
+      profileUrl: 'https://www.kadokawa.co.jp/product/search/?auth=%E3%81%AF%E3%81%9B%E3%81%8C%E3%82%8F%E3%81%BF%E3%82%84%E3%81%B3&kw=%E9%A8%8E%E5%A3%AB%E3%81%AE%E8%AA%87%E3%82%8A',
       languages: [
         { value: 'JA', native: true },
         { value: 'DE', url: 'https://www.goodreads.com/book/show/4466881-final-fantasy-xi' },
-        { value: '…?' },
       ],
       platforms: [
-        { key: 'book', name: 'Light Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'Final Fantasy XI Pride of the Knight', searchQualifier: 'light novel' },
+        { key: 'book', name: 'Light Novel', url: 'https://www.goodreads.com/series/252821-final-fantasy-xi-online' },
         { key: 'fan-translation', search: 'duckduckgo', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Pride of the Knight', noResults: true },
         { key: 'fan-audiobook', search: 'youtube', noResults: true },
@@ -373,6 +370,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel'],
       subtitle: 'Book',
+      profileUrl: 'https://www.kadokawa.co.jp/product/200700004032/',
       length: '318p; A6',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77099305' },
@@ -396,6 +394,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel'],
       subtitle: 'Book',
+      profileUrl: 'https://www.kadokawa.co.jp/product/search/?kw=%E9%81%A0%E3%81%84%E9%A1%98%E3%81%84',
       length: '2 volumes',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77131146' },
@@ -419,6 +418,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel'],
       subtitle: 'Book',
+      profileUrl: 'https://www.kadokawa.co.jp/product/search/?auth=%E3%81%AF%E3%81%9B%E3%81%8C%E3%82%8F%E3%81%BF%E3%82%84%E3%81%B3&kw=%E6%96%B0%E3%81%9F%E3%81%AA%E5%A4%A2',
       length: '2 volumes',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77686446' },
@@ -442,6 +442,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel'],
       subtitle: 'Book',
+      profileUrl: 'https://www.kadokawa.co.jp/product/200700004129/',
       length: '287p; A6',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77163778' },
@@ -465,6 +466,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel'],
       subtitle: 'Book',
+      profileUrl: 'https://www.kadokawa.co.jp/product/search/?kw=%E3%82%A2%E3%83%88%E3%83%AB%E3%82%AC%E3%83%B3%E3%81%AE%E5%A8%98%E3%81%9F%E3%81%A1',
       length: '3 volumes',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77185190' },
@@ -488,6 +490,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel'],
       subtitle: 'Book',
+      profileUrl: 'https://www.kadokawa.co.jp/product/search/?kw=%E8%B3%A2%E8%80%85%E3%81%AE%E9%81%BA%E8%A8%80',
       length: '2 volumes',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77250550' },
@@ -533,7 +536,8 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel'],
       subtitle: 'Book',
-      length: '284p; A6',
+      profileUrl: 'https://www.kadokawa.co.jp/product/200707000165/',
+      length: '296p; A6',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/51275414' },
       ],
@@ -556,7 +560,8 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel'],
       subtitle: 'Book',
-      length: '254p; A6',
+      profileUrl: 'https://www.kadokawa.co.jp/product/200709000325/',
+      length: '264p; A6',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77698241' },
       ],
@@ -579,7 +584,8 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel'],
       subtitle: 'Book',
-      length: '287p; A6',
+      profileUrl: 'https://www.kadokawa.co.jp/product/200712000062/',
+      length: '264p; A6',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77709037' },
       ],
@@ -602,7 +608,8 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel'],
       subtitle: 'Book',
-      length: '313p; A6',
+      profileUrl: 'https://www.kadokawa.co.jp/product/200803000263/',
+      length: '328p; A6',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77438179' },
       ],
@@ -625,6 +632,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel'],
       subtitle: 'Book',
+      profileUrl: 'https://www.kadokawa.co.jp/product/search/?kw=%E5%BD%BC%E6%96%B9%E3%81%8B%E3%82%89%E3%81%AE%E4%BC%9D%E8%A8%80',
       length: '3 volumes',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77778217' },
@@ -647,7 +655,8 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel', 'Short Stories'],
       subtitle: 'Book',
-      length: '311p; A6',
+      profileUrl: 'https://www.kadokawa.co.jp/product/200812000129/',
+      length: '328p; A6',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77470246' },
       ],
@@ -670,6 +679,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Light Novel'],
       subtitle: 'Book',
+      profileUrl: 'https://www.kadokawa.co.jp/product/search/?kw=%E3%82%B6%E3%83%AB%E3%82%AB%E3%83%90%E3%83%BC%E3%83%89%E3%81%AE%E9%BC%93%E5%8B%95',
       length: '3 volumes',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77328971' },
@@ -692,7 +702,8 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     primary: {
       tags: ['Novel'],
       subtitle: 'Book',
-      length: '287p; B6',
+      profileUrl: 'https://www.kadokawa.co.jp/product/321509000280/',
+      length: '320p; B6',
       languages: [
         { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/69235773' },
       ],
