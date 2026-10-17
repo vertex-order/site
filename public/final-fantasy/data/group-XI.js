@@ -226,11 +226,11 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
   },
   {
     mediaType: 'Comic', chronoOrder: 110, narrativeOrder: 605, narrativeSection: 'Novels',
-    title: 'Final Fantasy XI ~Winds of Prayer~ (Manga)', titleUrl: "https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#Personal_Collection_-_Vana'diel", titleDate: { start: '2008-09', end: '2010-03' },
+    title: 'Final Fantasy XI ~Winds of Prayer~ (Manga)', titleUrl: "https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#Personal_Collection_-_Vana'diel", titleDate: { start: '2008-08-25', end: '2010-03-15' },
     by: [{ role: 'adapted', names: 'You Satsuki' }],
     mediaDesc: [
-      [{ text: 'Manga adaptation of ' }, { emLinkText: '~Winds of Prayer~ (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-winds-of-prayer-novel-2002' }, { text: '.' }],
-      [{ text: 'Released as 祈りの風, also known as ' }, { emText: 'Prayer of the Wind' }, { text: ', ' }, { emText: 'Wind of Prayer' }, { text: ' and ' }, { emText: 'Wind of Pray' }, { text: '.' }],
+      [{ text: 'Manga adaptation of ' }, { emLinkText: 'Winds of Prayer (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-winds-of-prayer-novel-2002' }, { text: '.' }],
+      [{ text: 'Released as 祈りの風, also known as ' }, { emText: 'Prayer of the Wind' }, { text: ', ' }, { emText: 'Wind of Prayer' }, { text: ' and ' }, { emText: 'Wind of Pray' }, { text: '. Originally published in ' }, { emLinkText: 'Vana Digest (2008)', emLinkUrl: '#entry-XI-final-fantasy-xi-vana-digest-2008' }, { text: '.' }],
     ],
     primary: {
       tags: ['Manga'],
@@ -785,6 +785,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       ],
       platforms: [
         { key: 'book', name: 'Manga', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo' },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy XI Anthology Comic', noResults: true },
       ],
     },
   },
@@ -819,6 +820,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       ],
       platforms: [
         { key: 'book', name: 'Manga', jpTag: true, opensContents: true },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy XI Ozora Anthology Comic', noResults: true },
       ],
     },
   },
@@ -826,7 +828,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     mediaType: 'Comic', chronoOrder: 5058, narrativeOrder: 636.8, narrativeSection: 'Main',
     title: 'Final Fantasy XI ~Artist Collections~', titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#Personal_Collection_-_Bros', titleDate: { start: '2005-02-25', end: '2010-09-15' },
     mediaDesc: [
-      [{ text: 'Single-artist collections of comics about ' }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: ', mixing story and gag, by contributors to the Enterbrain anthologies, plus three player-diary books.' }],
+      [{ text: 'Single-artist collections of comics about ' }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: ', mixing story and gag, by contributors to the Enterbrain anthologies, plus three player-diary books. Parts were originally published in ' }, { emLinkText: 'Vana Digest (2008)', emLinkUrl: '#entry-XI-final-fantasy-xi-vana-digest-2008' }, { text: '.' }],
     ],
     primary: {
       tags: ['Tie-in', 'Manga'],
@@ -862,6 +864,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       ],
       platforms: [
         { key: 'book', name: 'Manga', jpTag: true, opensContents: true },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy XI Artist Collections', noResults: true },
       ],
     },
   },
@@ -870,7 +873,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     title: 'Final Fantasy XI ~Claude and Haru~', titleUrl: "https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#Personal_Collection_-_Vana'diel", titleDate: { start: '2010-06-15', end: '2012-06-15' },
     by: 'Ootsukiberuno',
     mediaDesc: [
-      [{ text: 'A story manga about the knight Claude, the white mage Haru and their party, whose adventures in ' }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: ' take them to Aht Urhgan and into Dynamis.' }],
+      [{ text: 'A story manga about the knight Claude, the white mage Haru and their party, whose adventures in ' }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: ' take them to Aht Urhgan and into Dynamis. Parts were originally published in ' }, { emLinkText: 'Vana Digest (2008)', emLinkUrl: '#entry-XI-final-fantasy-xi-vana-digest-2008' }, { text: '.' }],
     ],
     primary: {
       tags: ['Tie-in', 'Manga'],
@@ -887,6 +890,38 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       ],
       platforms: [
         { key: 'book', name: 'Manga', jpTag: true, opensContents: true },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy XI Claude and Haru', noResults: true },
+      ],
+    },
+  },
+  {
+    mediaType: 'Comic', chronoOrder: 5059.5, narrativeOrder: 636.95, narrativeSection: 'Main',
+    title: 'Final Fantasy XI ~Vana Digest~', titleUrl: 'https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%83%B4%E3%82%A1%E3%83%8A%E9%80%9A', titleDate: { start: '2008-08-25', end: '2010-03-15' },
+    mediaDesc: [
+      [{ text: 'A comic anthology magazine about the adventurers and non-player characters of ' }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: ': short comics themed each volume on the NPCs of a country or a race, serials, and strips from guest artists. Released as コミックヴァナ通 (Comic Vana-tsu).' }],
+      [{ text: 'Also included elsewhere: ' }, { emLinkText: 'Winds of Prayer (Manga)', emLinkUrl: '#entry-XI-final-fantasy-xi-winds-of-prayer-manga-2008' }, { text: ', the Boy meets Girl series in ' }, { emLinkText: 'Claude and Haru', emLinkUrl: '#entry-XI-final-fantasy-xi-claude-and-haru-2010' }, { text: ' and Ribbon in ' }, { emLinkText: 'Artist Collections', emLinkUrl: '#entry-XI-final-fantasy-xi-artist-collections-2005' }, { text: '.' }],
+    ],
+    primary: {
+      tags: ['Tie-in', 'Manga'],
+      subtitle: 'Comic',
+      length: '7 volumes',
+      searchTitle: 'コミックヴァナ通',
+      profileUrl: 'https://www.kadokawa.co.jp/product/search/?kw=%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%83%B4%E3%82%A1%E3%83%8A%E9%80%9A',
+      languages: [
+        { value: 'JA', native: true, url: 'https://www.kadokawa.co.jp/product/search/?kw=%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%83%B4%E3%82%A1%E3%83%8A%E9%80%9A' },
+      ],
+      contents: [
+        { title: 'Jeuno NPCs', titleDate: '2008-08-25', searchTitle: 'vol.01 9784757744097' },
+        { title: 'Aht Urhgan NPCs', titleDate: '2008-11-25', searchTitle: 'vol.02 9784757745520' },
+        { title: 'Wings of the Goddess', titleDate: '2009-02-25', searchTitle: 'vol.03 9784757747227' },
+        { title: 'Small-Town NPCs', titleDate: '2009-05-25', searchTitle: 'vol.04 9784757749207' },
+        { title: 'Tarutaru and Elvaan NPCs', titleDate: '2009-08-25', searchTitle: 'vol.05 9784757750616' },
+        { title: 'Galka and Mithra NPCs', titleDate: '2009-11-25', searchTitle: 'vol.06 9784047261730' },
+        { title: 'Hume NPCs', titleDate: '2010-03-15', searchTitle: 'vol.07 9784047264496' },
+      ],
+      platforms: [
+        { key: 'book', name: 'Mook', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo' },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy XI Vana Digest', noResults: true },
       ],
     },
   },
@@ -907,6 +942,51 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       ],
       platforms: [
         { key: 'book', name: 'Manga', jpTag: true },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy XI Lightning Brigade 4-Koma Manga', noResults: true },
+      ],
+    },
+  },
+  {
+    mediaType: 'Book', chronoOrder: 5065, narrativeOrder: 636.5, narrativeSection: 'Main',
+    title: 'Final Fantasy XI ~Lightning Brigade Guides~', titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Guides', titleDate: { start: '2003-04-04', end: '2013-03-12' },
+    mediaDesc: [
+      [{ text: 'A long-running series of guides and companion books by the Lightning Brigade, the Dengeki PlayStation writers for ' }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: " who play as a group of characters you follow and come to know. Part strategy guide, part account of their adventures (\"we did this quest, here's what happened\"), and part four-panel manga, often humorous, that brings them to life, with dozens to hundreds of all-new strips per book." }],
+      [{ text: 'Also included elsewhere: ' }, { emLinkText: 'Dengeki 4-Koma International', emLinkUrl: '#entry-XI-final-fantasy-xi-dengeki-4-koma-international-2004' }, { text: ' (the English strips of Vol.1 and Vol.2). Released as 電撃の旅団編 ヴァナ・ディール公式ワールドガイド.' }],
+    ],
+    primary: {
+      tags: ['Tie-in', 'Manga'],
+      subtitle: 'Book',
+      length: '19 books',
+      contentsLabel: 'books',
+      searchTitle: 'Final Fantasy XI Lightning Brigade',
+      profileUrl: 'https://www.kadokawa.co.jp/product/search/?kw=%E9%9B%BB%E6%92%83%E3%81%AE%E6%97%85%E5%9B%A3',
+      languages: [
+        { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77422157' },
+      ],
+      contents: [
+        { title: 'Vol.1', titleDate: '2003-04-04', titleUrl: 'https://www.goodreads.com/book/show/77422157', searchTitle: '9784840223614' },
+        { title: 'Vol.2', titleDate: '2003-09-22', titleUrl: 'https://www.goodreads.com/book/show/120496856', searchTitle: '9784840225038' },
+        { title: 'Vol.2.6 (magazine supplement)', titleDate: '2004-10', searchTitle: "Vana'diel Latest World Guide Vol.2.6" },
+        { title: 'Vol.3: Communication Edition', titleDate: '2005-12-28', titleUrl: 'https://www.google.com/books/edition/_/9n3cMgAACAAJ?hl=en&kptab=getbook', searchTitle: '9784840232654' },
+        { title: 'Treasures of Aht Urhgan Edition', titleDate: '2006-06-30', titleUrl: 'https://www.goodreads.com/book/show/120464402', searchTitle: '9784840235631' },
+        { title: 'Vol.3: Adventure Edition', titleDate: '2006-10-27', titleUrl: 'https://www.goodreads.com/book/show/77232403', searchTitle: '9784840236515' },
+        { title: 'World Edition 2007', titleDate: '2007-07-27', titleUrl: 'https://www.goodreads.com/book/show/77308924', searchTitle: '9784840238175' },
+        { title: 'Chronicle 1', titleDate: '2008-03-28', titleUrl: 'https://www.goodreads.com/book/show/77748448', searchTitle: '9784840242080' },
+        { title: 'Video Strategy 1: Burning Circle Battlefields', titleDate: '2008-03-28', titleUrl: 'https://www.goodreads.com/book/show/61615718', searchTitle: '9784840242318' },
+        { title: 'Wings of the Goddess Edition', titleDate: '2008-05-30', titleUrl: 'https://www.goodreads.com/book/show/77765859', searchTitle: '9784048670333' },
+        { title: 'Chronicle 2', titleDate: '2008-09-26', titleUrl: 'https://www.goodreads.com/book/show/77438537', searchTitle: '9784048673051' },
+        { title: 'Video Strategy 2: Assault', titleDate: '2008-12-26', titleUrl: 'https://www.goodreads.com/book/show/77446925', searchTitle: '9784048675437' },
+        { title: 'Jobs 2009 Vol.1', titleDate: '2009-03-31', titleUrl: 'https://www.goodreads.com/book/show/77481952', searchTitle: '9784048678292' },
+        { title: 'Jobs 2009 Vol.2', titleDate: '2009-06-12', titleUrl: 'https://www.goodreads.com/book/show/77329859', searchTitle: '9784048678568' },
+        { title: '2010 Vol.1', titleDate: '2010-06-04', titleUrl: 'https://www.goodreads.com/book/show/78010531', searchTitle: '9784048686969' },
+        { title: '2010 Vol.2', titleDate: '2010-10-22', titleUrl: 'https://www.goodreads.com/book/show/85562187', searchTitle: '9784048701020' },
+        { title: '2011 Abyssea Edition', titleDate: '2011-11-11', titleUrl: 'https://www.goodreads.com/book/show/102368022', searchTitle: '9784048860420' },
+        { title: '2012 Vol.1', titleDate: '2012-03-31', titleUrl: 'https://www.goodreads.com/book/show/102368028', searchTitle: '9784048860437' },
+        { title: 'Decennial Encyclopedia', titleDate: '2013-03-12', titleUrl: 'https://www.goodreads.com/book/show/28453696', searchTitle: '9784048867573' },
+      ],
+      platforms: [
+        { key: 'book', name: 'Guides', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo' },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy XI Lightning Brigade Guides', noResults: true },
       ],
     },
   },
@@ -959,6 +1039,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       ],
       platforms: [
         { key: 'book', name: 'Manga', jpTag: true, opensContents: true },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy XI 4-Panel Anthology Comic', noResults: true },
       ],
     },
   },
@@ -979,26 +1060,27 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       ],
       platforms: [
         { key: 'book', name: 'Manga', jpTag: true, url: 'https://www.goodreads.com/search?q=%E7%8D%A3%E3%81%AE%E8%8A%B1%E9%81%93' },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: "Final Fantasy XI The Beast's Path", noResults: true },
       ],
     },
   },
   {
     mediaType: 'Comic', chronoOrder: 5050, narrativeOrder: 640, narrativeSection: 'Main',
-    title: 'Final Fantasy XI ~Aloha Iroha~', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Aloha_Iroha', titleDate: '2015-08-11',
+    title: 'Final Fantasy XI ~Aloha Iroha~', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Aloha_Iroha', titleDate: { start: '2015-08-11', end: '2015-12-25' },
+    by: 'Tomokichi',
     mediaDesc: [
-      "A series of four-panel manga based on Final Fantasy XI, following the story of Iroha, the main heroine of Rhapsodies of Vana'diel. Known in Japan as Iroha de Gozaru.",
+      [{ text: "A series of four-panel manga based on Final Fantasy XI, following the story of Iroha, the main heroine of Rhapsodies of Vana'diel. Also known as " }, { emText: 'Iroha de Gozaru' }, { text: '.' }],
     ],
     primary: {
-      tags: ['Tie-in', 'Manga'],
+      tags: ['Tie-in', 'Manga', 'Free'],
       subtitle: 'Comic',
-      helpWanted: true,
+      length: '20 issues',
       languages: [
-        { value: 'JA', native: true },
-        { value: 'EN' },
-        { value: '…?' },
+        { value: 'JA', native: true, url: 'https://www.playonline.com/ff11us/vanaproj/detail/manga.html?lng=ja&rgn=jp&manga=iroha_1' },
+        { value: 'EN', url: 'https://www.playonline.com/ff11us/vanaproj/detail/manga.html?lng=en&rgn=us&manga=iroha_1' },
       ],
       platforms: [
-        { key: 'book', name: 'Manga', url: 'https://breezewiki.com/finalfantasy/wiki/Aloha_Iroha#External_links' },
+        { key: 'globe', name: 'Webcomic', url: 'https://breezewiki.com/finalfantasy/wiki/Aloha_Iroha#External_links' },
         { key: 'fan-audiobook', name: 'Fan manga dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XI Aloha Iroha', searchSuffix: 'manga dub', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', noResults: true },
       ],
