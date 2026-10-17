@@ -175,7 +175,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
   },
   {
     mediaType: 'Comic', chronoOrder: -10, narrativeOrder: 602, narrativeSection: 'Main',
-    title: 'Final Fantasy XI ~The Out of Orders~', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_XI_~The_Out_of_Orders~', titleDate: '2004-12-17',
+    title: 'Final Fantasy XI ~The Out of Orders~', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_XI_~The_Out_of_Orders~', titleDate: '2004-12-03',
     by: [{ role: 'written', names: 'Kim Sung-Jae' }, { role: 'illustrated', names: 'Kim Byung-Jin' }],
     mediaDesc: [
       [{ text: 'An original story set during the Crystal War twenty years before the main story of ' }, { emLinkText: 'XI (2003)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: ', which later became the setting for the ' }, { emLinkText: 'Wings of the Goddess (2007)', emLinkUrl: '#entry-XI-final-fantasy-xi-wings-of-the-goddess-2007' }, { text: ' expansion. Some differences with characters from the game make it so it could be considered an alternate universe story. It was cancelled after three issues and left incomplete.' }],
@@ -184,6 +184,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       tags: ['Prequel', 'Alternate Universe', 'Manhwa', 'Incomplete'],
       subtitle: 'Comic',
       length: '3 issues',
+      profileUrl: 'https://web.archive.org/web/20130305015755/http://www.square-enix.co.jp/magazine/yg/backnumber/backnumber001.shtml',
       languages: [
         { value: 'JA', native: true },
       ],
@@ -717,10 +718,10 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
   },
   {
     mediaType: 'Comic', chronoOrder: 5150, narrativeOrder: 642, narrativeSection: 'Main',
-    title: 'Final Fantasy XI ~Love in the Sky 1·2·3!~', titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#Personal_Collection_-_Misc', titleDate: '2007-06',
+    title: 'Final Fantasy XI ~Love in the Sky 1·2·3!~', titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#Personal_Collection_-_Misc', titleDate: { start: '2005-08', end: '2010-04' },
     by: 'Fumio Minagawa',
     mediaDesc: [
-      [{ text: 'A short manga for ' }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: ', released as 恋の空蝉1・2・3! (Koi no Utsusemi) and collected in the art book ' }, { emText: 'Final Fantasy XI Minagawa Fumio Illustrations' }, { text: " (ファイナルファンタジーXI 皆川史生イラストレーションズ). Originally serialized in the Vana'diel Communications mook." }],
+      [{ text: 'A school-romance slapstick comedy manga for ' }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: ', released as 恋の空蝉1・2・3! (Koi no Utsusemi) and collected in the art book ' }, { emText: 'Final Fantasy XI Minagawa Fumio Illustrations' }, { text: " (ファイナルファンタジーXI 皆川史生イラストレーションズ). Originally published in " }, { emLinkText: "Vana'diel Communications (2005)", emLinkUrl: '#entry-XI-final-fantasy-xi-vanadiel-communications-2005' }, { text: ", and compiled in the appendix of 5th Anniversary Vana'diel Memoirs." }],
     ],
     primary: {
       tags: ['Tie-in', 'Manga'],
@@ -786,6 +787,74 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
       platforms: [
         { key: 'book', name: 'Manga', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo' },
         { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'Final Fantasy XI Anthology Comic', noResults: true },
+      ],
+    },
+  },
+  {
+    mediaType: 'Comic', chronoOrder: 5056, narrativeOrder: 636.6, narrativeSection: 'Main',
+    title: "Final Fantasy XI ~Vana'diel Petit~", titleUrl: "https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Manga#Vana'diel_Petit", titleDate: { start: '2005-10', end: '2006-06' },
+    mediaDesc: [
+      [{ text: 'Special editions of the Enterbrain anthology comic and novel series for ' }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: ', issued as supplements to Famitsu PlayStation2: short comics about the adventurers, two booklets of short novel stories, and features such as a Mithra NPC encyclopedia. Released as ヴァナ・ディール通信プチ (ヴァナ通ぷち).' }],
+    ],
+    primary: {
+      tags: ['Tie-in', 'Manga'],
+      subtitle: 'Comic',
+      length: '8 booklets',
+      contentsLabel: 'booklets',
+      searchTitle: 'ヴァナ・ディール通信プチ',
+      languages: [
+        { value: 'JA', native: true },
+      ],
+      contents: [
+        { title: 'Vana Petit: Anthology Comic Special', titleDate: '2005-10-28', searchTitle: 'ヴァナ通ぷち' },
+        { title: 'Vana Petit x2: Anthology Comic Special', titleDate: '2005-11', searchTitle: 'ヴァナ通ぷちx2' },
+        { title: 'Vana Petit x3: Novelization Special', titleDate: '2005-12', searchTitle: 'ヴァナ通ぷちx3' },
+        { title: 'Vana Petit x4: Novelization Special', titleDate: '2006-01', searchTitle: 'ヴァナ通ぷちx4' },
+        { title: 'Vana Petit x5: Anthology Comic Special', titleDate: '2006-02', searchTitle: 'ヴァナ通ぷちx5' },
+        { title: 'Vana Petit x6: Anthology Comic Special', titleDate: '2006-04', searchTitle: 'ヴァナ通ぷちx6' },
+        { title: 'Vana Petit x7: Anthology Comic Special', titleDate: '2006-05', searchTitle: 'ヴァナ通ぷちx7' },
+        { title: 'Vana Petit x8: Anthology Comic Special', titleDate: '2006-06', searchTitle: 'ヴァナ通ぷちx8' },
+      ],
+      platforms: [
+        { key: 'book', name: 'Booklets', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo' },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: "Final Fantasy XI Vana'diel Petit", noResults: true },
+      ],
+    },
+  },
+  {
+    mediaType: 'Comic', chronoOrder: 5056.5, narrativeOrder: 636.65, narrativeSection: 'Main',
+    title: "Final Fantasy XI ~Vana'diel Communications~", titleUrl: 'http://elemen.jp/ff11/contents/goods/guidebook_enterbrain.html', titleDate: { start: '2005-08', end: '2010-04' },
+    mediaDesc: [
+      [{ text: "Enterbrain's fan-book mooks for " }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: ", full of guides, interviews, gag corners and DVDs, with serial manga by community artists such as Minagawa, Haru and Ponkichi, including " }, { emLinkText: 'Love in the Sky 1·2·3!', emLinkUrl: '#entry-XI-final-fantasy-xi-love-in-the-sky-1-2-3-2005' }, { text: '. Only the issues that carry manga are listed. Released as ヴァナ・ディール通信 (ヴァナ通).' }],
+    ],
+    primary: {
+      tags: ['Tie-in', 'Manga'],
+      subtitle: 'Comic',
+      length: '13 issues',
+      contentsLabel: 'issues',
+      searchTitle: 'ヴァナ・ディール通信',
+      profileUrl: 'https://www.kadokawa.co.jp/product/search/?kw=%E3%83%B4%E3%82%A1%E3%83%8A%E3%83%BB%E3%83%87%E3%82%A3%E3%83%BC%E3%83%AB%E9%80%9A%E4%BF%A1',
+      languages: [
+        { value: 'JA', native: true },
+      ],
+      contents: [
+        { title: 'Bastok Edition', titleDate: '2005-08-05', titleUrl: 'https://www.google.com/books/edition/_/LQ7SMAAACAAJ?hl=en&kptab=getbook', searchTitle: '9784757723702' },
+        { title: 'Summer Carnival 2005 Edition', titleDate: '2005-11-11', titleUrl: 'https://www.goodreads.com/book/show/77686604', searchTitle: '9784757725324' },
+        { title: 'Windurst Edition', titleDate: '2006-02-24', titleUrl: 'https://www.google.com/books/edition/_/iug5MwAACAAJ?hl=en&kptab=getbook', searchTitle: '9784757727106' },
+        { title: 'Vol.1: Treasures of Aht Urhgan Edition', titleDate: '2006-04-20', titleUrl: 'https://www.google.com/books/edition/_/etCHZwEACAAJ?hl=en&kptab=getbook', searchTitle: '9784757728103' },
+        { title: 'Vol.2: Assault Edition', titleDate: '2006-07-20', titleUrl: 'https://www.google.com/books/edition/_/O3unZwEACAAJ?hl=en&kptab=getbook', searchTitle: '9784757728936' },
+        { title: 'Vol.3: My Chocobo Edition', titleDate: '2006-11-24', titleUrl: 'https://www.google.com/books/edition/_/ytarygAACAAJ?hl=en&kptab=getbook', searchTitle: '9784757731080' },
+        { title: 'Vol.4: Salvage Festival Edition', titleDate: '2007-03-16', titleUrl: 'https://www.google.com/books/edition/_/UL-eZwEACAAJ?hl=en&kptab=getbook', searchTitle: '9784757734753' },
+        { title: "5th Anniversary Vana'diel Memoirs (appendix)", titleDate: '2007-05-31', titleUrl: 'https://www.google.com/books/edition/_/5darygAACAAJ?hl=en&kptab=getbook', searchTitle: '9784757735705' },
+        { title: 'Vol.5: Wings of the Goddess Edition', titleDate: '2008-02-08', titleUrl: 'https://www.google.com/books/edition/_/ZkqHZwEACAAJ?hl=en&kptab=getbook', searchTitle: '9784757740624' },
+        { title: 'Vol.6: Autumn Version Update Edition', titleDate: '2008-11-21', titleUrl: 'https://www.google.com/books/edition/_/25CVPgAACAAJ?hl=en&kptab=getbook', searchTitle: '9784757746299' },
+        { title: 'Vol.7: Salvage Video Edition', titleDate: '2009-04-02', titleUrl: 'https://www.google.com/books/edition/_/g3XlXwAACAAJ?hl=en&kptab=getbook', searchTitle: '9784757748736' },
+        { title: 'Vol.8: Pandemonium Edition', titleDate: '2009-09-18', titleUrl: 'https://www.google.com/books/edition/_/pYWiQwAACAAJ?hl=en&kptab=getbook', searchTitle: '9784047260917' },
+        { title: "Vol.9: Under the Sky of Vana'diel", titleDate: '2010-04-02', titleUrl: 'https://www.google.com/books/edition/_/NEXrZwEACAAJ?hl=en&kptab=getbook', searchTitle: '9784047265097' },
+      ],
+      platforms: [
+        { key: 'book', name: 'Mook', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo' },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: "Final Fantasy XI Vana'diel Communications", noResults: true },
       ],
     },
   },
@@ -947,16 +1016,16 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
     },
   },
   {
-    mediaType: 'Book', chronoOrder: 5065, narrativeOrder: 636.5, narrativeSection: 'Main',
+    mediaType: 'Comic', chronoOrder: 5065, narrativeOrder: 636.5, narrativeSection: 'Main',
     title: 'Final Fantasy XI ~Lightning Brigade Guides~', titleUrl: 'https://www.bg-wiki.com/ffxi/Media,_Merchandise,_and_More/Publications/Guides', titleDate: { start: '2003-04-04', end: '2013-03-12' },
     mediaDesc: [
       [{ text: 'A long-running series of guides and companion books by the Lightning Brigade, the Dengeki PlayStation writers for ' }, { emLinkText: 'XI (2002)', emLinkUrl: '#entry-XI-final-fantasy-xi-online-2002' }, { text: " who play as a group of characters you follow and come to know. Part strategy guide, part account of their adventures (\"we did this quest, here's what happened\"), and part four-panel manga, often humorous, that brings them to life, with dozens to hundreds of all-new strips per book." }],
-      [{ text: 'Also included elsewhere: ' }, { emLinkText: 'Dengeki 4-Koma International', emLinkUrl: '#entry-XI-final-fantasy-xi-dengeki-4-koma-international-2004' }, { text: ' (the English strips of Vol.1 and Vol.2). Released as 電撃の旅団編 ヴァナ・ディール公式ワールドガイド.' }],
+      [{ text: 'Also included elsewhere: ' }, { emLinkText: 'Dengeki 4-Koma International', emLinkUrl: '#entry-XI-final-fantasy-xi-dengeki-4-koma-international-2004' }, { text: ' (the English strips of Vol.1 and Vol.2). Some books repeat content from other books in the series. Released as 電撃の旅団編 ヴァナ・ディール公式ワールドガイド.' }],
     ],
     primary: {
       tags: ['Tie-in', 'Manga'],
-      subtitle: 'Book',
-      length: '19 books',
+      subtitle: 'Comic',
+      length: '20 books',
       contentsLabel: 'books',
       searchTitle: 'Final Fantasy XI Lightning Brigade',
       profileUrl: 'https://www.kadokawa.co.jp/product/search/?kw=%E9%9B%BB%E6%92%83%E3%81%AE%E6%97%85%E5%9B%A3',
@@ -968,6 +1037,7 @@ window.__ffGroupReg['XI'] = { num: 'XI', chronoOrder: 1100, narrativeOrder: 1100
         { title: 'Vol.2', titleDate: '2003-09-22', titleUrl: 'https://www.goodreads.com/book/show/120496856', searchTitle: '9784840225038' },
         { title: 'Vol.2.6 (magazine supplement)', titleDate: '2004-10', searchTitle: "Vana'diel Latest World Guide Vol.2.6" },
         { title: 'Vol.3: Communication Edition', titleDate: '2005-12-28', titleUrl: 'https://www.google.com/books/edition/_/9n3cMgAACAAJ?hl=en&kptab=getbook', searchTitle: '9784840232654' },
+        { title: 'Dengeki Xbox 360 Special (magazine)', titleDate: '2006-03-24', searchTitle: 'Dengeki Xbox 360 Final Fantasy XI Lightning Brigade Special' },
         { title: 'Treasures of Aht Urhgan Edition', titleDate: '2006-06-30', titleUrl: 'https://www.goodreads.com/book/show/120464402', searchTitle: '9784840235631' },
         { title: 'Vol.3: Adventure Edition', titleDate: '2006-10-27', titleUrl: 'https://www.goodreads.com/book/show/77232403', searchTitle: '9784840236515' },
         { title: 'World Edition 2007', titleDate: '2007-07-27', titleUrl: 'https://www.goodreads.com/book/show/77308924', searchTitle: '9784840238175' },
