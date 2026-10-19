@@ -58,7 +58,7 @@ window.__ffGroupReg['BE'] = { num: 'BE', chronoOrder: 1550, narrativeOrder: 1550
         { value: 'ZH-CN' },
         { value: 'ZH-TW' },
       ],
-      profileUrl: 'https://www.square-enix-games.com/games/final-fantasy-brave-exvius',
+      profileUrl: 'https://web.archive.org/web/20241111211722/https://www.finalfantasyexvius.com/',
       platforms: [
         { key: 'android2', terminated: true, url: 'https://web.archive.org/web/20240909211105/https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.FFBEWW' },
         { key: 'apple', terminated: true, url: 'https://web.archive.org/web/20230928143311/https://apps.apple.com/app/final-fantasy-brave-exvius/id1078553808' },
@@ -148,13 +148,15 @@ window.__ffGroupReg['BE'] = { num: 'BE', chronoOrder: 1550, narrativeOrder: 1550
       languages: [
         { value: 'JA', native: true },
         { value: 'EN' },
+        { value: 'ZH-TW' },
         { value: '…?' },
       ],
       helpWanted: true,
       length: [{ value: '48½h', tip: 'Main Story' }],
       platforms: [
-        { key: 'android2', terminated: true },
-        { key: 'apple', terminated: true },
+        { key: 'android2', terminated: true, url: 'https://web.archive.org/web/20250107195003/https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.WOTVffbeww' },
+        { key: 'apple', terminated: true, url: 'https://web.archive.org/web/20241128152909/https://apps.apple.com/us/app/final-fantasy-be-wotv/id1484937345' },
+        { key: 'amazon', terminated: true, url: 'https://web.archive.org/web/20230404032551/https://www.amazon.com/gp/product/B0844M7STY' },
         { key: 'fan-movie', search: 'youtube', searchTitle: 'War of the Visions Final Fantasy Brave Exvius' },
         { key: 'fan-recap', search: 'youtube', searchTitle: 'War of the Visions Final Fantasy Brave Exvius' },
         { key: 'fan-playthrough', search: 'youtube', searchTitle: 'War of the Visions Final Fantasy Brave Exvius' },
