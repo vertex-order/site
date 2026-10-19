@@ -53,10 +53,8 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
         helpWanted: true,
         platforms: [
           { key: 'apple', url: 'https://apps.apple.com/us/app/adventures-of-mana/id1048629983' },
-          { key: 'apple', jpTag: true, url: 'https://apps.apple.com/jp/app/id1048629552' },
           { key: 'android2', url: 'https://play.google.com/store/apps/details?id=com.square_enix.adventures' },
           { key: 'amazon', url: 'https://www.amazon.com/dp/B01CZKNQQM' },
-          { key: 'amazon', jpTag: true, url: 'https://www.amazon.co.jp/dp/B01CZKNQQM' },
           { key: 'playstation-vita', paren: 'Digital', url: 'https://www.jp.square-enix.com/seiken/en/psvita/' },
         ],
         versionDesc: [
@@ -160,7 +158,7 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
       'A manga following Square Enix employee Shogo Sasaki, a lifelong Final Fantasy fan, who is killed in a truck accident along with his sister Yuko and reborn into a Final Fantasy-style world unbound to any particular installment. Ongoing.',
     ],
     primary: {
-      tags: ['Alternate Universe', 'Manga'],
+      tags: ['Manga'],
       subtitle: 'Comic',
       profileUrl: 'https://yenpress.com/series/final-fantasy-lost-stranger',
       languages: [
@@ -179,7 +177,10 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
       ],
       length: [{ value: '14+ volumes', tip: 'As of 2026-05-12' }],
       platforms: [
-        { key: 'book', name: 'Manga', url: 'https://www.goodreads.com/series/271153-final-fantasy-lost-stranger' },
+        { key: 'book', name: 'Manga', paren: 'Volumes', url: 'https://www.goodreads.com/series/271153-final-fantasy-lost-stranger' },
+        { key: 'book', name: 'Manga (Chapters, E-book)', url: 'https://yenpress.com/series/final-fantasy-lost-stranger-serial' },
+        { key: 'globe', name: 'Manga UP! Global', url: 'https://global.manga-up.com/manga/156' },
+        { key: 'globe', name: 'Crunchyroll (Manga)', terminated: true, url: 'https://web.archive.org/web/20231130084624/https://www.crunchyroll.com/comics/manga/final-fantasy-lost-stranger/volumes' },
         { key: 'fan-audiobook', name: 'Fan manga dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy Lost Stranger', searchSuffix: 'manga dub', noResults: true },
         {
           key: 'fan-recap',
@@ -446,6 +447,24 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
           paren: 'Switch compatibility; Digital',
           url: 'https://www.nintendo.com/store/products/collection-of-saga-final-fantasy-legend-switch/',
         },
+      ],
+    },
+  },
+  {
+    mediaType: 'Movie', chronoOrder: 1600, narrativeOrder: 450,
+    title: 'Final Fantasy XR: The Ride', titleUrl: 'https://otakumode.com/otapedia/games/final_fantasy/universal_studios_japan', titleDate: { start: '2018-01-19', end: '2018-06-24' },
+    mediaDesc: [
+      'A limited-time VR roller coaster ride at Universal Studios Japan in Osaka. Riders put on VR headsets to board an airship through Final Fantasy landscapes, passing Chocobos and Cactuars, and end up in a battle between Cloud and Sephiroth in Midgar.',
+    ],
+    primary: {
+      tags: ['VR', 'Theme park'],
+      subtitle: 'Ride',
+      terminated: true,
+      languages: [
+        { value: 'JA', native: true },
+      ],
+      platforms: [
+        { key: 'fan-movie', name: 'Clips & Promos', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XR The Ride', searchSuffix: 'movie' },
       ],
     },
   },
