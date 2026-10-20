@@ -21,7 +21,7 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
       length: [{ value: '10½h', tip: 'Main + Extra', join: ' / ' }, { value: '11½h', tip: 'Completionist' }],
       platforms: [
         { key: 'nintendo-game-boy', paren: 'Physical' },
-        { key: 'nintendo-switch', paren: 'Collection of Mana', url: 'https://www.nintendo.com/store/products/collection-of-mana-switch/' },
+        { key: 'nintendo-switch', paren: 'Digital', url: 'https://www.nintendo.com/store/products/collection-of-mana-switch/' },
         { key: 'fan-movie', paren: 'Youtube', search: 'youtube', noResults: true },
         { key: 'fan-recap', search: 'youtube' },
         { key: 'fan-playthrough', search: 'youtube' },
@@ -112,8 +112,8 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
       length: [{ value: '207h', tip: 'Main Story', join: ' / ' }, { value: '307h', tip: 'Main + Extra', join: ' / ' }, { value: '1666h', tip: 'Completionist' }],
       platforms: [
         { key: 'steam', terminated: true },
-        { key: 'apple', terminated: true },
-        { key: 'android2', terminated: true },
+        { key: 'apple', terminated: true, url: 'https://web.archive.org/web/20200612163359/https://apps.apple.com/us/app/mobius-final-fantasy/id1091974564' },
+        { key: 'android2', terminated: true, url: 'https://web.archive.org/web/20191021201143/https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.mobiusff_ne' },
         { key: 'fan-movie', search: 'youtube' },
         { key: 'fan-recap', search: 'youtube' },
         { key: 'fan-playthrough', search: 'youtube' },
@@ -237,11 +237,15 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
     primary: {
       tags: ['Voice-controlled RPG', 'Jobs', 'Single-player', 'Mobile'],
       terminated: true,
+      languages: [
+        { value: 'JA', native: true },
+        { value: 'EN' },
+      ],
       ratings: [
         { score: '46', url: 'https://www.metacritic.com/game/voice-fantasy/', key: 'metacritic' },
       ],
       platforms: [
-        { key: 'apple', jpTag: true, terminated: true },
+        { key: 'apple', terminated: true, url: 'https://web.archive.org/web/20160203051749/https://itunes.apple.com/us/app/voice-fantasy/id398443202?mt=8' },
         { key: 'fan-playthrough', search: 'youtube' },
       ],
     },
@@ -296,8 +300,8 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
       ],
       length: [{ value: '4h', tip: 'Main Story', join: ' / ' }, { value: '4½h', tip: 'Main + Extra', join: ' / ' }, { value: '4½h', tip: 'Completionist' }],
       platforms: [
-        { key: 'android2', terminated: true },
-        { key: 'apple', terminated: true },
+        { key: 'android2', terminated: true, url: 'https://web.archive.org/web/20221013014513/https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.ffatb' },
+        { key: 'apple', terminated: true, url: 'https://web.archive.org/web/20230722174326/https://apps.apple.com/us/app/final-fantasy-all-the-bravest/id581058256' },
         { key: 'fan-playthrough', search: 'youtube' },
       ],
     },
@@ -311,6 +315,7 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
     primary: {
       tags: ['Mashup', 'Dot logic puzzle', 'RPG', 'Single-player', 'Multiplayer', 'Co-op'],
       terminated: true,
+      profileUrl: 'https://web.archive.org/web/20170310061304/http://www.jp.square-enix.com/p_ff/',
       languages: [
         { value: 'JA', native: true },
       ],
@@ -319,8 +324,8 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
       ],
       length: [{ value: '20h', tip: 'Main Story', join: ' / ' }, { value: '34h', tip: 'Main + Extra', join: ' / ' }, { value: '47½h', tip: 'Completionist' }],
       platforms: [
-        { key: 'android2', jpTag: true, terminated: true },
-        { key: 'apple', jpTag: true, terminated: true },
+        { key: 'android2', jpTag: true, terminated: true, url: 'https://web.archive.org/web/20161011031113/https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.pictlogicaff' },
+        { key: 'apple', jpTag: true, terminated: true, url: 'https://web.archive.org/web/20160625171900/https://itunes.apple.com/jp/app/pictlogica-final-fantasy/id715441573' },
         { key: 'nintendo-3ds', jpTag: true, terminated: true, paren: 'Digital' },
         { key: 'fan-playthrough', search: 'youtube' },
       ],
@@ -336,12 +341,13 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
     primary: {
       tags: ['Mashup', 'Typing RPG', 'Mobile', 'Free-to-play', 'Multiplayer'],
       terminated: true,
+      profileUrl: 'https://web.archive.org/web/20150206053603/http://www.jp.square-enix.com/ff_www/',
       languages: [
         { value: 'JA', native: true },
       ],
       platforms: [
-        { key: 'apple', jpTag: true, terminated: true },
-        { key: 'android2', jpTag: true, terminated: true },
+        { key: 'apple', jpTag: true, terminated: true, url: 'https://web.archive.org/web/20150616025539/https://itunes.apple.com/jp/app/final-fantasy-world-wide-words/id900312607?mt=8' },
+        { key: 'android2', jpTag: true, terminated: true, url: 'https://web.archive.org/web/20151128160812/https://play.google.com/store/apps/details?id=com.square_enix.ffwww' },
         { key: 'fan-playthrough', search: 'youtube', searchTitle: 'Final Fantasy World Wide Words' },
       ],
     },
@@ -369,7 +375,7 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
       platforms: [
         { key: 'steam', terminated: true },
         { key: 'apple', terminated: true },
-        { key: 'android2', terminated: true },
+        { key: 'android2', terminated: true, url: 'https://web.archive.org/web/20161213092938/https://play.google.com/store/apps/details?id=com.square_enix.HEAVENSTRIKERIVALS_WW' },
         { key: 'fan-movie', search: 'youtube' },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', noResults: true },
         { key: 'fan-playthrough', search: 'youtube' },
@@ -378,7 +384,7 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
   },
   {
     mediaType: 'Game', chronoOrder: 250, narrativeOrder: 361,
-    title: 'Final Fantasy Portal App: Triple Triad', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Triple_Triad_(Portal_App)', titleDate: '2015-04-01',
+    title: 'Final Fantasy Portal App: Triple Triad', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Triple_Triad_(Portal_App)', titleDate: '2015-02-05',
     mediaDesc: [
       [{ text: 'An updated version of the recurring minigame Triple Triad first introduced in ' }, { emLinkText: 'VIII (1999)', emLinkUrl: '#entry-VIII-final-fantasy-viii-1999' }, { text: ', with rules from the ' }, { emText: 'XIV (2010)' }, { text: ' version, with cards from many Final Fantasy games. Its bare story loosely tied it to the ' }, { emText: 'Dissidia' }, { text: ' series (2008).' }],
       [{ text: 'Incorporates existing series and titles.' }],
@@ -396,7 +402,7 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
         { url: 'https://www.metacritic.com/game/final-fantasy-portal-app/', key: 'nyr' },
       ],
       platforms: [
-        { key: 'android2', terminated: true, url: 'https://play.google.com/store/apps/details?id=com.square_enix.ffportal_w.googleplay' },
+        { key: 'android2', terminated: true, url: 'https://web.archive.org/web/20240909220125/https://play.google.com/store/apps/details?id=com.square_enix.ffportal_w.googleplay' },
         { key: 'apple', terminated: true },
         { key: 'fan-playthrough', search: 'youtube', searchTitle: 'Final Fantasy Portal App Triple Triad' },
       ],
@@ -408,17 +414,17 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
     mediaDesc: [
       [{ text: 'Players deployed various characters and creatures from the Final Fantasy series in a board to compete with one another.' }],
       [{ text: 'Incorporates existing series and titles.' }],
+      'Also known as ファイナルファンタジー デジタルカードゲーム (Final Fantasy Dejitaru Kādo Gēmu).',
     ],
     primary: {
       tags: ['Mashup', 'Card game', 'Free-to-play', 'In-app purchases', 'Multiplayer'],
       terminated: true,
+      profileUrl: 'https://web.archive.org/web/20200702055727/https://www.jp.square-enix.com/ffdcg/',
       languages: [
         { value: 'JA', native: true },
       ],
       platforms: [
-        { key: 'globe', jpTag: true, terminated: true },
-        { key: 'android2', jpTag: true, terminated: true },
-        { key: 'apple', jpTag: true, terminated: true },
+        { key: 'globe', jpTag: true, terminated: true, url: 'https://web.archive.org/web/20200513022613/https://games.yahoo.co.jp/ffdcg' },
         { key: 'fan-playthrough', search: 'youtube' },
       ],
     },
@@ -441,6 +447,7 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
         { key: 'nintendo-game-boy', paren: 'Physical' },
         { key: 'steam', paren: 'PC; Handheld', url: 'https://store.steampowered.com/app/1642620/COLLECTION_of_SaGa_FINAL_FANTASY_LEGEND/' },
         { key: 'android2', url: 'https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.SagaCollection_Sww' },
+        { key: 'apple', url: 'https://apps.apple.com/app/collection-of-saga-ff-legend/id1565119677' },
         { key: 'nintendo-switch', paren: 'Digital', url: 'https://www.nintendo.com/store/products/collection-of-saga-final-fantasy-legend-switch/' },
         {
           key: 'nintendo-switch-2',

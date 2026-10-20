@@ -4,7 +4,7 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
 ], media: [
   {
     mediaType: 'TV', chronoOrder: -2000, narrativeOrder: 100,
-    title: 'Brotherhood: Final Fantasy XV', titleUrl: 'https://wikipedia.org/wiki/Brotherhood:_Final_Fantasy_XV', titleDate: '2016-03-30 10',
+    title: 'Brotherhood: Final Fantasy XV', titleUrl: 'https://wikipedia.org/wiki/Brotherhood:_Final_Fantasy_XV', titleDate: { start: '2016-03-30 10', end: '2016-09-17' },
     mediaDesc: [
       'Details the backstories of Noctis Lucis Caelum and his friends. Also included with some game releases in the XV series.',
     ],
@@ -12,6 +12,14 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
       tags: ['Essential', 'Prologue', 'Anime', 'Free'],
       subtitle: 'Anime',
       length: '5 episodes',
+      contentsLabel: 'episodes',
+      contents: [
+        { title: 'Before the Storm' },
+        { title: 'Dogged Runner' },
+        { title: 'Sword and Shield' },
+        { title: 'Bittersweet Memories' },
+        { title: 'The Warmth of Light' },
+      ],
       languages: [
         { value: 'JA', tip: 'Japanese — audio', native: true, voice: true },
         { value: 'FR', textOnly: true },
@@ -95,11 +103,16 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
         },
         {
           subtitle: 'Edit', subtitleDate: 2019,
+          profileUrl: 'https://web.archive.org/web/20210207121513/https://finalfantasyxv.square-enix-games.com/en/stadia',
+          languages: [
+            { value: 'EN' },
+            { value: '…?' },
+          ],
           platforms: [
-            { key: 'stadia', terminated: true, url: 'https://web.archive.org/web/20241024083316/https://finalfantasyxv.square-enix-games.com/en/stadia' },
+            { key: 'stadia', terminated: true, url: 'https://web.archive.org/web/20201112104757/https://store.google.com/product/stadia_games' },
           ],
           versionDesc: [
-            'A launch title on Stadia, with four exclusive challenge minigames: an off-road Regalia rally, Expert Duel boss fights, Endless Magitek Armor, and Magna Flight.',
+            'A launch title on Stadia, with an exclusive "Crazy Challenge" minigame pack (4): an off-road Regalia rally, Expert Duel boss fights, Endless Magitek Armor, and Magna Flight.',
           ],
         },
       ],
@@ -134,8 +147,8 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
         ],
         platforms: [
           { key: 'windows', url: 'https://apps.microsoft.com/detail/9mvr4t7znq1t' },
-          { key: 'android2' },
-          { key: 'apple' },
+          { key: 'android2', terminated: true, url: 'https://web.archive.org/web/20240821072717/https://play.google.com/store/apps/details?id=com.square_enix.android_google.ffxvpe' },
+          { key: 'apple', terminated: true, url: 'https://web.archive.org/web/20240828125756/https://apps.apple.com/us/app/finalfantasy-xv-pocket-edition/id1152350815' },
           { key: 'nintendo-switch', paren: 'Digital', url: 'https://www.nintendo.com/store/products/final-fantasy-xv-pocket-edition-hd-switch/' },
           {
             key: 'nintendo-switch-2',
@@ -249,6 +262,7 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
         { key: 'playstation5', paren: 'PS4 compat', url: 'https://store.playstation.com/product/UP0082-CUSA01633_00-FFXVSEASONPASS00' },
         { key: 'xbox-one', paren: 'Enhanced; Digital', url: 'https://www.xbox.com/games/store/final-fantasy-xv-season-pass/c2qfb9wzpz7p' },
         { key: 'xbox-xs', paren: 'Digital', url: 'https://www.xbox.com/games/store/final-fantasy-xv-season-pass/c2qfb9wzpz7p' },
+        { key: 'stadia', terminated: true, url: 'https://web.archive.org/web/20201112104757/https://store.google.com/product/stadia_games' },
         { key: 'fan-movie', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Gladiolus' },
         { key: 'fan-recap', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Gladiolus' },
         { key: 'fan-playthrough', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Gladiolus' },
@@ -277,6 +291,7 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
         { key: 'playstation5', paren: 'PS4 compat', url: 'https://store.playstation.com/product/UP0082-CUSA01633_00-FFXVSEASONPASS00' },
         { key: 'xbox-one', paren: 'Enhanced; Digital', url: 'https://www.xbox.com/games/store/final-fantasy-xv-season-pass/c2qfb9wzpz7p' },
         { key: 'xbox-xs', paren: 'Digital', url: 'https://www.xbox.com/games/store/final-fantasy-xv-season-pass/c2qfb9wzpz7p' },
+        { key: 'stadia', terminated: true, url: 'https://web.archive.org/web/20201112104757/https://store.google.com/product/stadia_games' },
         { key: 'fan-movie', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Prompto' },
         { key: 'fan-recap', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Prompto' },
         { key: 'fan-playthrough', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Prompto' },
@@ -304,6 +319,7 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
         { key: 'playstation5', paren: 'PS4 compat', url: 'https://store.playstation.com/product/UP0082-CUSA01633_00-FFXVSEASONPASS00' },
         { key: 'xbox-one', paren: 'Enhanced; Digital', url: 'https://www.xbox.com/games/store/final-fantasy-xv-season-pass/c2qfb9wzpz7p' },
         { key: 'xbox-xs', paren: 'Digital', url: 'https://www.xbox.com/games/store/final-fantasy-xv-season-pass/c2qfb9wzpz7p' },
+        { key: 'stadia', terminated: true, url: 'https://web.archive.org/web/20201112104757/https://store.google.com/product/stadia_games' },
         { key: 'fan-movie', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Ignis' },
         { key: 'fan-recap', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Ignis' },
         { key: 'fan-playthrough', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Ignis' },
@@ -347,6 +363,7 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
         { key: 'playstation-plus', url: 'https://store.playstation.com/product/UP0082-CUSA01633_00-FFXVROYALEDITION', paren: 'PS5; PS4' },
         { key: 'xbox-one', paren: 'Enhanced; Digital', url: 'https://www.xbox.com/games/store/final-fantasy-xv-season-pass/c2qfb9wzpz7p' },
         { key: 'xbox-xs', paren: 'Digital', url: 'https://www.xbox.com/games/store/final-fantasy-xv-season-pass/c2qfb9wzpz7p' },
+        { key: 'stadia', terminated: true, url: 'https://web.archive.org/web/20201112104757/https://store.google.com/product/stadia_games' },
         { key: 'fan-movie', search: 'youtube', searchTitle: 'Final Fantasy XV Comrades' },
         { key: 'fan-recap', name: 'Fan story recap (wiki)', url: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_XV:_Comrades#Story' },
         { key: 'fan-playthrough', search: 'youtube', searchTitle: 'Final Fantasy XV Comrades' },
@@ -402,6 +419,7 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
         { key: 'playstation5', paren: 'PS4 compat', url: 'https://store.playstation.com/product/UP0082-CUSA01633_00-ARDYN00000000001' },
         { key: 'xbox-one', paren: 'Digital', url: 'https://www.xbox.com/games/store/final-fantasy-xv-episode-ardyn/bpsh2wv558lc' },
         { key: 'xbox-xs', paren: 'Digital', url: 'https://www.xbox.com/games/store/final-fantasy-xv-episode-ardyn/bpsh2wv558lc' },
+        { key: 'stadia', terminated: true, url: 'https://web.archive.org/web/20201112104757/https://store.google.com/product/stadia_games' },
         { key: 'fan-movie', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Ardyn' },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Ardyn', noResults: true },
         { key: 'fan-playthrough', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Ardyn' },

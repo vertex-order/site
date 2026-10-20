@@ -62,10 +62,12 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, narrativeOrder: 200, 
           helpWanted: true,
           length: [{ value: '5h', tip: 'Soul of Rebirth Main Story', join: ' / ' }, { value: '6h', tip: 'Soul of Rebirth Main + Extra', join: ' / ' }, { value: '7½h', tip: 'Soul of Rebirth Completionist' }],
           platforms: [
-            { key: 'android2', terminated: true, paren: 'Digital' },
+            { key: 'android2', terminated: true, paren: 'Digital', url: 'https://web.archive.org/web/20201127015350/https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.finalfantasy2' },
+            { key: 'android2', suffix: 'portal', terminated: true, paren: 'Digital', url: 'https://web.archive.org/web/20231211133701/https://play.google.com/store/apps/details?id=com.square_enix.ffportal_w.googleplay' },
+            { key: 'apple', suffix: 'portal', terminated: true, paren: 'Digital' },
           ],
           versionDesc: [
-            [{ text: 'This mobile edit reworks the UI for touch controls, reduces music quality, and removes the Art Gallery and Item Collection. Includes the ' }, { emLinkText: 'Soul of Rebirth', emLinkUrl: 'https://breezewiki.com/finalfantasy/wiki/Soul_of_Rebirth' }, { text: ' bonus campaign.' }],
+            [{ text: 'This mobile edit reworks the UI for touch controls, reduces music quality, and removes the Art Gallery and Item Collection. Includes the ' }, { emLinkText: 'Soul of Rebirth', emLinkUrl: 'https://breezewiki.com/finalfantasy/wiki/Soul_of_Rebirth' }, { text: ' bonus campaign. Also playable inside the Final Fantasy Portal App.' }],
           ],
         },
         {
@@ -77,7 +79,7 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, narrativeOrder: 200, 
             { value: '…?' },
           ],
           platforms: [
-            { key: 'apple', terminated: true, paren: 'Digital' },
+            { key: 'apple', terminated: true, paren: 'Digital', url: 'https://web.archive.org/web/20210629040229/https://apps.apple.com/us/app/final-fantasy-ii/id354974729' },
             { key: 'playstation-portable', paren: 'Physical' },
           ],
           versionDesc: [
@@ -181,7 +183,7 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, narrativeOrder: 200, 
       length: '288p; A6',
       languages: [
         { value: 'JA', url: 'https://www.goodreads.com/book/show/77954969' },
-        { value: 'EN', tip: 'English (fan translation)' },
+        { value: 'EN', tip: 'English (partial fan translation)' },
       ],
       platforms: [
         { key: 'book', name: 'Light Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: "Final Fantasy II Muma no Meikyū Nightmare's Labyrinth", searchQualifier: 'light novel' },
@@ -191,6 +193,27 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, narrativeOrder: 200, 
         },
         { key: 'fan-recap', name: 'Fan story recap video of II (1988)', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy II' },
         { key: 'fan-audiobook', paren: 'Youtube', search: 'youtube', searchTitle: "Final Fantasy II Nightmare's Labyrinth" },
+      ],
+    },
+  },
+  {
+    mediaType: 'Book', chronoOrder: 505, narrativeOrder: 305,
+    title: 'Final Fantasy II: Prelude to a Nightmare', titleUrl: 'https://www.goodreads.com/book/show/45554076', titleDate: '1988-12-09',
+    by: 'Kenji Terada',
+    mediaDesc: [
+      [{ text: 'A booklet of original fiction set in ' }, { emLinkText: 'II (1988)', emLinkUrl: '#entry-II-final-fantasy-ii-1988' }, { text: ', given away with the magazine マル勝ファミコン. ' }, { emLinkText: "Nightmare's Labyrinth (1989)", emLinkUrl: '#entry-II-final-fantasy-ii-nightmares-labyrinth-1989' }, { text: ' has a part with the same title; whether the two share text is unconfirmed. Released as ' }, { emText: 'ファイナルファンタジーII 夢魔への前奏曲' }, { text: ' (Final Fantasy II Muma e no Zensōkyoku).' }],
+    ],
+    primary: {
+      tags: ['Light Novel'],
+      subtitle: 'Book',
+      languages: [
+        { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/45554076' },
+      ],
+      helpWanted: true,
+      platforms: [
+        { key: 'book', name: 'Light Novel', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'ファイナルファンタジーII 夢魔への前奏曲', searchQualifier: 'light novel' },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'ファイナルファンタジーII 夢魔への前奏曲', noResults: true },
+        { key: 'fan-recap', paren: 'Youtube', search: 'youtube', noResults: true },
       ],
     },
   },
@@ -218,10 +241,11 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, narrativeOrder: 200, 
   },
   {
     mediaType: 'Book', chronoOrder: 620, narrativeOrder: 410,
-    title: 'Final Fantasy II: Dragon Treasures', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_II_Hih%C5%8D_no_Dragon', titleDate: '1989-01',
+    title: 'Final Fantasy II: Dragon Treasures', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_II_Hih%C5%8D_no_Dragon', titleDate: '1988-12',
     by: 'Naomi Inoue',
     mediaDesc: [
-      'A gamebook set in the world of Final Fantasy II. Centers on Princess Marie of Fynn, an original character combining traits of Maria and Hilda, alongside Firion, Guy, and Minwu. Released as ファイナルファンタジーII 秘宝のドラゴン (Final Fantasy II Hihō no Dragon).',
+      'A gamebook set in the world of Final Fantasy II. Centers on Princess Marie of Fynn, an original character combining traits of Maria and Hilda, alongside Firion, Guy, and Minwu.',
+      'Released as ファイナルファンタジーII 秘宝のドラゴン (Final Fantasy II Hihō no Dragon), also known as Dragon of Hidden Treasure and The Hidden Dragon, and printed in the book as Treasure of Dragon.',
     ],
     primary: {
       tags: ['Gamebook'],
@@ -241,7 +265,6 @@ window.__ffGroupReg['II'] = { num: 'II', chronoOrder: 200, narrativeOrder: 200, 
   {
     mediaType: 'Book', chronoOrder: 630, narrativeOrder: 415,
     title: 'Final Fantasy II: Journey to Victory', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_II_Sh%C5%8Dri_e_no_Tabidachi', titleDate: '1988-12-31',
-    by: 'Naoko Uehara',
     mediaDesc: [
       [{ text: 'A gamebook telling a side story set just before the main events of ' }, { emLinkText: 'II (1988)', emLinkUrl: '#entry-II-final-fantasy-ii-1988' }, { text: ' and starring Mid, an original character who joins the rebel army. Released as ファイナルファンタジーII 勝利への旅立ち (Final Fantasy II Shōri e no Tabidachi).' }],
     ],

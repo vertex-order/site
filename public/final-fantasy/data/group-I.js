@@ -231,10 +231,12 @@ window.__ffGroupReg['I'] = { num: 'I', chronoOrder: 100, narrativeOrder: 100, ti
           ],
           helpWanted: true,
           platforms: [
-            { key: 'android2', terminated: true, paren: 'Digital' },
+            { key: 'android2', terminated: true, paren: 'Digital', url: 'https://web.archive.org/web/20210603211025/https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.finalfantasy' },
+            { key: 'android2', suffix: 'portal', terminated: true, paren: 'Digital', url: 'https://web.archive.org/web/20231211133701/https://play.google.com/store/apps/details?id=com.square_enix.ffportal_w.googleplay' },
+            { key: 'apple', suffix: 'portal', terminated: true, paren: 'Digital' },
           ],
           versionDesc: [
-            ['This remaster has higher resolution 2D graphics, ', { abbrTerm: 'FMV', abbrDef: 'Full Motion Video' }, ' sequences, remixed soundtrack from Remaster (2007). No bonus content.'],
+            ['This remaster has higher resolution 2D graphics, ', { abbrTerm: 'FMV', abbrDef: 'Full Motion Video' }, ' sequences, remixed soundtrack from Remaster (2007). No bonus content. Also playable inside the Final Fantasy Portal App.'],
           ],
         },
         {
@@ -246,7 +248,7 @@ window.__ffGroupReg['I'] = { num: 'I', chronoOrder: 100, narrativeOrder: 100, ti
           ],
           helpWanted: true,
           platforms: [
-            { key: 'apple', paren: 'Digital' },
+            { key: 'apple', terminated: true, paren: 'Digital', url: 'https://web.archive.org/web/20210123061113/https://apps.apple.com/us/app/final-fantasy/id354972939' },
             { key: 'playstation-portable', paren: 'Physical' },
             { key: 'windows-phone', paren: 'Digital' },
           ],
@@ -423,6 +425,50 @@ window.__ffGroupReg['I'] = { num: 'I', chronoOrder: 100, narrativeOrder: 100, ti
       platforms: [
         { key: 'globe', name: 'Webcomic', url: 'https://www.nuklearpower.com/2001/03/02/episode-001-were-going-where/' },
         { key: 'fan-audiobook', name: 'Fan comic dub, panels read aloud', paren: 'Youtube', search: 'youtube', searchTitle: '8-Bit Theater', searchSuffix: 'comic dub', noResults: true },
+      ],
+    },
+  },
+  {
+    mediaType: 'Book', chronoOrder: -3500, narrativeOrder: 540,
+    title: 'Final Fantasy: Crystal Inheritance Legend', titleUrl: 'https://www.thevideogamelibrary.org/book/final-fantasy-crystal-inheritance-legend', titleDate: '1988-01-10',
+    by: ['Osamu Mihara', 'Shoko Uehara'],
+    mediaDesc: [
+      [{ text: 'A gamebook with an original story set before ' }, { emLinkText: 'Final Fantasy (1987)', emLinkUrl: '#entry-I-final-fantasy-1987' }, { text: ', in which a boy and a girl search for the lost Water Crystal. Includes a short timeline of the world. Released as ファイナルファンタジー クリスタル継承伝説 (Fainaru Fantajī Kurisutaru Keishō Densetsu), printed "Cristal Saga".' }],
+    ],
+    primary: {
+      tags: ['Gamebook'],
+      subtitle: 'Book',
+      length: '235p; P',
+      profileUrl: 'https://ndlsearch.ndl.go.jp/books/R100000002-I000001965142',
+      languages: [
+        { value: 'JA', native: true },
+      ],
+      platforms: [
+        { key: 'book', name: 'Gamebook', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'ファイナルファンタジー クリスタル継承伝説', searchQualifier: 'gamebook' },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'ファイナルファンタジー クリスタル継承伝説', noResults: true },
+        { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'ファイナルファンタジー クリスタル継承伝説', noResults: true },
+      ],
+    },
+  },
+  {
+    mediaType: 'Book', chronoOrder: 510, narrativeOrder: 310,
+    title: 'Final Fantasy: May Light Be Upon the Heroes!', titleUrl: 'https://www.thevideogamelibrary.org/book/final-fantasy-let-the-brave-light', titleDate: '1988-04-25',
+    by: 'Naomi Inoue',
+    mediaDesc: [
+      [{ text: 'A gamebook adaptation of ' }, { emLinkText: 'Final Fantasy (1987)', emLinkUrl: '#entry-I-final-fantasy-1987' }, { text: ', set in a reimagined version of its world, in which four boys born under the moon of Ulm are guided by a crystal blessed by the Priestess of Light. Released as ファイナルファンタジー 勇者に光あれ！ (Fainaru Fantajī Yūsha ni Hikari Are!), printed inside as “Quest of the Sanctuary ‘Light’”.' }],
+    ],
+    primary: {
+      tags: ['Alternate Universe', 'Gamebook'],
+      subtitle: 'Book',
+      length: '265p; A6',
+      profileUrl: 'https://ndlsearch.ndl.go.jp/books/R100000002-I000001922850',
+      languages: [
+        { value: 'JA', native: true, url: 'https://www.goodreads.com/book/show/77930245' },
+      ],
+      platforms: [
+        { key: 'book', name: 'Gamebook', paren: 'DuckDuckGo', jpTag: true, search: 'duckduckgo', searchTitle: 'ファイナルファンタジー 勇者に光あれ', searchQualifier: 'gamebook' },
+        { key: 'fan-translation', search: 'duckduckgo', searchTitle: 'ファイナルファンタジー 勇者に光あれ', noResults: true },
+        { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'ファイナルファンタジー 勇者に光あれ', noResults: true },
       ],
     },
   },
