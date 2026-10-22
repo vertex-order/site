@@ -156,18 +156,19 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
       languages: [
         { value: 'JA', native: true },
         { value: 'EN', tip: 'English (content up to 2022-09)' },
-        { value: '…?' },
+        { value: 'ES', tip: 'Spanish (global version, removed in 2020)' },
+        { value: 'FR', tip: 'French (global version, removed in 2020)' },
       ],
-      helpWanted: true,
+      profileUrl: 'https://ffrk.jp/', profileHreflang: 'ja',
       ratings: [
         { score: '75', url: 'https://www.metacritic.com/game/final-fantasy-record-keeper/', key: 'metacritic' },
         { score: '7.0', url: 'https://www.metacritic.com/game/final-fantasy-record-keeper/', key: 'metacritic-user' },
       ],
       platforms: [
-        { key: 'android2', jpTag: true },
-        { key: 'android2', terminated: true, paren: 'Non-Japan' },
-        { key: 'apple', jpTag: true },
-        { key: 'apple', terminated: true, paren: 'Non-Japan' },
+        { key: 'android2', jpTag: true, url: 'https://play.google.com/store/apps/details?id=jp.mbga.a12019103.lite' },
+        { key: 'android2', terminated: true, paren: 'Non-Japan', url: 'https://web.archive.org/web/20220703095849/https://play.google.com/store/apps/details?id=com.dena.west.FFRK' },
+        { key: 'apple', jpTag: true, url: 'https://apps.apple.com/jp/app/final-fantasy-record-keeper/id866037912' },
+        { key: 'apple', terminated: true, paren: 'Non-Japan', url: 'https://web.archive.org/web/20220703201323/https://apps.apple.com/app/id964320334?mt=8' },
         { key: 'fan-movie', paren: 'Youtube', search: 'youtube', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', noResults: true },
         { key: 'fan-playthrough', search: 'youtube' },
@@ -279,23 +280,21 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
     title: 'Final Fantasy Airborne Brigade', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_Airborne_Brigade', titleDate: '2012-01-06',
     mediaDesc: [
       'Long ago, the country was protected by two crystals. However, one was broken and scattered throughout the world following a monster invasion. The other lost its glow. Only the ancient summon beasts can return the crystals to their original shine, and the player must travel the world by air ship and defeat the summon beasts.',
-      'Incorporates original elements with existing series and titles.',
+      ['Incorporates original elements with existing series and titles. Also known as ', { emText: 'Final Fantasy Brigade' }, ' (', { text: 'ファイナルファンタジー ブリゲイド', lang: 'ja' }, ', ', { emText: 'Fainaru Fantajī Burigeido', lang: 'ja-Latn' }, ') and later ', { emText: 'Final Fantasy Brigade Break the Seal' }, ' (', { text: 'ファイナルファンタジー ブリゲイド ブレイク ザ シール', lang: 'ja' }, ', ', { emText: 'Fainaru Fantajī Burigeido Bureiku za Shīru', lang: 'ja-Latn' }, ').'],
     ],
     primary: {
       tags: ['Mashup', 'Social RPG', 'Jobs', 'Multiplayer', 'Co-op', 'Mobile'],
       terminated: true,
+      profileUrl: 'https://web.archive.org/web/20131019150622/http://www.mobage.com/games/ff-airborne-brigade',
       languages: [
-        { value: 'JA', native: true },
-        { value: 'EN' },
-        { value: '…?' },
-      ],
-      helpWanted: true,
-      ratings: [
-        { url: 'https://www.metacritic.com/game/final-fantasy-airborne-brigade/', key: 'nyr' },
+        { value: 'JA', native: true, url: 'https://web.archive.org/web/20190915045811/http://mbga.jp/_ffjm_top', hreflang: 'ja' },
+        { value: 'EN', url: 'https://web.archive.org/web/20131019150622/http://www.mobage.com/games/ff-airborne-brigade' },
+        { value: 'KO', url: 'https://web.archive.org/web/20131008141040/https://play.google.com/store/apps/details?id=kr.daum_mobage.am_db.g13000067', hreflang: 'ko' },
       ],
       platforms: [
-        { key: 'apple', terminated: true },
-        { key: 'android2', terminated: true },
+        { key: 'apple', terminated: true, url: 'https://web.archive.org/web/20131104150941/https://itunes.apple.com/app/id576445141' },
+        { key: 'android2', terminated: true, url: 'https://web.archive.org/web/20131030143435/https://play.google.com/store/apps/details?id=com.mobage.ww.a1174.FINAL_FANTASY_AIRBORNE_BRIGADE_Android' },
+        { key: 'mobile-phone', jpTag: true, terminated: true, paren: 'Mobage', url: 'https://web.archive.org/web/20190915045811/http://mbga.jp/_ffjm_top', hreflang: 'ja' },
         { key: 'fan-movie', paren: 'Youtube', search: 'youtube', searchQualifier: 'movie', searchSuffix: '', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', noResults: true },
         { key: 'fan-playthrough', search: 'youtube' },
@@ -386,19 +385,18 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
     primary: {
       tags: ['Mashup', 'Social Tactical RPG'],
       terminated: true,
+      profileUrl: 'https://web.archive.org/web/20170505215245/http://www.heavenstrikerivals.com/',
       languages: [
-        { value: 'JA', native: true },
-        { value: 'EN' },
-        { value: '…?' },
+        { value: 'JA', native: true, url: 'https://web.archive.org/web/20161108003953/http://heavenstrikerivals.com/jp/', hreflang: 'ja' },
+        { value: 'EN', url: 'https://web.archive.org/web/20170505215245/http://www.heavenstrikerivals.com/' },
       ],
-      helpWanted: true,
       ratings: [
         { score: '78', url: 'https://www.metacritic.com/game/heavenstrike-rivals/', key: 'metacritic' },
         { score: '7.1', url: 'https://www.metacritic.com/game/heavenstrike-rivals/', key: 'metacritic-user' },
       ],
       platforms: [
-        { key: 'steam', terminated: true },
-        { key: 'apple', terminated: true },
+        { key: 'steam', terminated: true, url: 'https://steamcommunity.com/app/441020' },
+        { key: 'apple', terminated: true, url: 'https://web.archive.org/web/20161025035217/https://itunes.apple.com/us/app/heavenstrike-rivals-monster/id929464758?mt=8' },
         { key: 'android2', terminated: true, url: 'https://web.archive.org/web/20161213092938/https://play.google.com/store/apps/details?id=com.square_enix.HEAVENSTRIKERIVALS_WW' },
         { key: 'fan-movie', search: 'youtube' },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', noResults: true },
@@ -438,7 +436,7 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
     mediaDesc: [
       [{ text: 'Players deployed various characters and creatures from the Final Fantasy series in a board to compete with one another.' }],
       [{ text: 'Incorporates existing series and titles.' }],
-      ['Also known as ', { text: 'ファイナルファンタジー デジタルカードゲーム', lang: 'ja' }, ' (Final Fantasy Dejitaru Kādo Gēmu).'],
+      ['Also known as ', { emText: 'Final Fantasy Dejitaru Kādo Gēmu', lang: 'ja-Latn' }, ' (', { text: 'ファイナルファンタジー デジタルカードゲーム', lang: 'ja' }, ').'],
     ],
     primary: {
       tags: ['Mashup', 'Card game', 'Free-to-play', 'In-app purchases', 'Multiplayer'],

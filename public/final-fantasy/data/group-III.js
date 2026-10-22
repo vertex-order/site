@@ -115,7 +115,7 @@ window.__ffGroupReg['III'] = { num: 'III', chronoOrder: 300, narrativeOrder: 300
             helpWanted: true,
             platforms: [
               { key: 'apple', paren: 'Digital', url: 'https://apps.apple.com/app/final-fantasy-iii-3d-remake/id424591347' },
-              { key: 'apple', name: 'iPadOS', suffix: 'pad', paren: 'Digital', url: 'https://apps.apple.com/app/final-fantasy-iii-for-ipad-3d/id430823968' },
+              { key: 'apple-ipad', paren: 'Digital', url: 'https://apps.apple.com/app/final-fantasy-iii-for-ipad-3d/id430823968' },
               { key: 'android2', paren: 'Digital', url: 'https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.FFIII_GP' },
               { key: 'ouya', terminated: true, paren: 'Digital' },
               { key: 'windows-phone', paren: 'Digital' },
@@ -167,7 +167,7 @@ window.__ffGroupReg['III'] = { num: 'III', chronoOrder: 300, narrativeOrder: 300
     title: 'Legend of the Eternal Wind: from Final Fantasy III', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Y%C5%ABky%C5%AB_no_Kaze_Densetsu:_Final_Fantasy_III_Yori', titleDate: { start: '1990', end: '1992-09-04', approx: true },
     by: [{ role: 'adapted', names: 'Kenji Terada' }, { role: 'illustrated', names: 'Yuu Kinutani' }],
     mediaDesc: [
-      [{ text: 'Adaptation of ' }, { emLinkText: 'Final Fantasy III (1990)', emLinkUrl: '#entry-III-final-fantasy-iii-1990' }, { text: ' as a manga with many changes, which could be considered an alternate universe retelling. Released as ' }, { emText: 'Yūkyū no Kaze Densetsu: Final Fantasy III Yori' }, { text: '.' }],
+      [{ text: 'Adaptation of ' }, { emLinkText: 'Final Fantasy III (1990)', emLinkUrl: '#entry-III-final-fantasy-iii-1990' }, { text: ' as a manga with many changes, which could be considered an alternate universe retelling. Released as ' }, { emText: 'Yūkyū no Kaze Densetsu: Final Fantasy III Yori', lang: 'ja-Latn' }, { text: '.' }],
     ],
     primary: {
       tags: ['Alternate Universe', 'Manga'],
