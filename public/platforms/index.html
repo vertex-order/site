@@ -125,7 +125,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
       <div style="position: relative; display: flex; flex-wrap: wrap; align-content: flex-start; row-gap: 16px; column-gap: 16px;">
         <sc-for list="{{ platformIcons }}" as="pl" hint-placeholder-count="30">
           <span data-legend-item="{{ pl.name }}" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
-            <dc-import name="ZoomedPlatformIcon" item-name="{{ pl.name }}" prefix="{{ pl.prefix }}" icon-img="{{ pl.iconImg }}" icon="{{ pl.icon }}" icon-size="{{ pl.iconSize }}" suffix-font-size="{{ pl.suffixFontSize }}" suffix-small-caps="{{ pl.suffixSmallCaps }}" suffix-offset-y="{{ pl.suffixOffsetY }}" img-style="{{ pl.imgStyle }}" text="{{ pl.text }}" suffix="{{ pl.suffix }}" jp-tag="{{ pl.jpTag }}" non-jp-tag="{{ pl.nonJpTag }}" hint-size="auto,40px" style="display: flex;"></dc-import>
+            <dc-import name="ZoomedPlatformIcon" item-name="{{ pl.name }}" prefix="{{ pl.prefix }}" icon-img="{{ pl.iconImg }}" icon="{{ pl.icon }}" icon-size="{{ pl.iconSize }}" suffix-font-size="{{ pl.suffixFontSize }}" suffix-small-caps="{{ pl.suffixSmallCaps }}" suffix-gap="{{ pl.suffixGap }}" suffix-offset-y="{{ pl.suffixOffsetY }}" img-style="{{ pl.imgStyle }}" text="{{ pl.text }}" suffix="{{ pl.suffix }}" jp-tag="{{ pl.jpTag }}" non-jp-tag="{{ pl.nonJpTag }}" hint-size="auto,40px" style="display: flex;"></dc-import>
           </span>
         </sc-for>
       </div>
@@ -135,7 +135,7 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
     <div style="margin: 0 0 var(--space-8);">
       <span style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px;">
         <sc-for list="{{ platformIcons }}" as="pl" hint-placeholder-count="30">
-<dc-import name="PlatformIcon" item-name="{{ pl.name }}" prefix="{{ pl.prefix }}" icon-img="{{ pl.iconImg }}" icon="{{ pl.icon }}" icon-size="{{ pl.iconSize }}" suffix-font-size="{{ pl.suffixFontSize }}" suffix-small-caps="{{ pl.suffixSmallCaps }}" suffix-offset-y="{{ pl.suffixOffsetY }}" img-style="{{ pl.imgStyle }}" text="{{ pl.text }}" suffix="{{ pl.suffix }}" jp-tag="{{ pl.jpTag }}" non-jp-tag="{{ pl.nonJpTag }}" hint-size="auto,20px" style="display: flex;"></dc-import>
+<dc-import name="PlatformIcon" item-name="{{ pl.name }}" prefix="{{ pl.prefix }}" icon-img="{{ pl.iconImg }}" icon="{{ pl.icon }}" icon-size="{{ pl.iconSize }}" suffix-font-size="{{ pl.suffixFontSize }}" suffix-small-caps="{{ pl.suffixSmallCaps }}" suffix-gap="{{ pl.suffixGap }}" suffix-offset-y="{{ pl.suffixOffsetY }}" img-style="{{ pl.imgStyle }}" text="{{ pl.text }}" suffix="{{ pl.suffix }}" jp-tag="{{ pl.jpTag }}" non-jp-tag="{{ pl.nonJpTag }}" hint-size="auto,20px" style="display: flex;"></dc-import>
 </sc-for>
       </span>
     </div>
@@ -951,16 +951,50 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
   </span></div></span></div>
           </span>
         
-          <span data-dc-tpl="19" data-legend-item="iOS" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+          <span data-dc-tpl="19" data-legend-item="Android TV" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
             <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="20"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
   <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
-  <span data-dc-tpl="26" title="iOS" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+  <span data-dc-tpl="26" title="Android TV" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
     <span data-dc-tpl="27" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
       
-      <img data-dc-tpl="31" alt="iOS" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/apple.svg">
+      <img data-dc-tpl="31" alt="Android TV" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/android2.svg">
+      
+      
+      <span data-dc-tpl="37" style="font-size: 9px; margin-left: 1px; line-height: 1; display: flex; align-items: center; margin-top: 0px; font-variant: normal;"><span class="sc-interp">TV</span></span>
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="19" data-legend-item="iPhone / iPad (iOS)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="20"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="26" title="iPhone / iPad (iOS)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="27" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="31" alt="iPhone / iPad (iOS)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/apple.svg">
       
       
       
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="19" data-legend-item="Apple iPad" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="20"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="26" title="Apple iPad" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="27" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="31" alt="Apple iPad" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/apple.svg">
+      
+      
+      <span data-dc-tpl="37" style="font-size: 9px; margin-left: 1px; line-height: 1; display: flex; align-items: center; margin-top: 0px; font-variant: normal;"><span class="sc-interp">iPad</span></span>
       
       
     </span>
@@ -985,13 +1019,47 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
   </span></div></span></div>
           </span>
         
-          <span data-dc-tpl="19" data-legend-item="Amazon Appstore" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+          <span data-dc-tpl="19" data-legend-item="Apple TV" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
             <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="20"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
   <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
-  <span data-dc-tpl="26" title="Amazon Appstore" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+  <span data-dc-tpl="26" title="Apple TV" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
     <span data-dc-tpl="27" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
       
-      <img data-dc-tpl="31" alt="Amazon Appstore" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/amazon.svg">
+      <img data-dc-tpl="31" alt="Apple TV" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/apple.svg">
+      
+      
+      <span data-dc-tpl="37" style="font-size: 9px; margin-left: 1px; line-height: 1; display: flex; align-items: center; margin-top: 0px; font-variant: normal;"><span class="sc-interp">TV</span></span>
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="19" data-legend-item="Apple iPod" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="20"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="26" title="Apple iPod" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="27" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="31" alt="Apple iPod" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/apple.svg">
+      
+      
+      <span data-dc-tpl="37" style="font-size: 9px; margin-left: 1px; line-height: 1; display: flex; align-items: center; margin-top: 0px; font-variant: normal;"><span class="sc-interp">iPod</span></span>
+      
+      
+    </span>
+    
+  </span></div></span></div>
+          </span>
+        
+          <span data-dc-tpl="19" data-legend-item="Amazon Appstore (Fire OS + legacy Android)" style="display: flex; align-items: center; justify-content: center; height: 68px; flex: 0 0 auto;">
+            <div class="sc-host" data-sc-name="ZoomedPlatformIcon" data-dc-tpl="20"><span data-dc-tpl="5" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+  <div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="6">
+  <span data-dc-tpl="26" title="Amazon Appstore (Fire OS + legacy Android)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 2;">
+    <span data-dc-tpl="27" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="31" alt="Amazon Appstore (Fire OS + legacy Android)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/amazon.svg">
       
       
       
@@ -1850,13 +1918,37 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
     </span>
     
   </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="25">
-  <span data-dc-tpl="26" title="iOS" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+  <span data-dc-tpl="26" title="Android TV" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
     <span data-dc-tpl="27" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
       
-      <img data-dc-tpl="31" alt="iOS" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/apple.svg">
+      <img data-dc-tpl="31" alt="Android TV" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/android2.svg">
+      
+      
+      <span data-dc-tpl="37" style="font-size: 9px; margin-left: 1px; line-height: 1; display: flex; align-items: center; margin-top: 0px; font-variant: normal;"><span class="sc-interp">TV</span></span>
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="25">
+  <span data-dc-tpl="26" title="iPhone / iPad (iOS)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="27" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="31" alt="iPhone / iPad (iOS)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/apple.svg">
       
       
       
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="25">
+  <span data-dc-tpl="26" title="Apple iPad" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="27" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="31" alt="Apple iPad" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/apple.svg">
+      
+      
+      <span data-dc-tpl="37" style="font-size: 9px; margin-left: 1px; line-height: 1; display: flex; align-items: center; margin-top: 0px; font-variant: normal;"><span class="sc-interp">iPad</span></span>
       
       
     </span>
@@ -1874,10 +1966,34 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
     </span>
     
   </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="25">
-  <span data-dc-tpl="26" title="Amazon Appstore" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+  <span data-dc-tpl="26" title="Apple TV" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
     <span data-dc-tpl="27" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
       
-      <img data-dc-tpl="31" alt="Amazon Appstore" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/amazon.svg">
+      <img data-dc-tpl="31" alt="Apple TV" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/apple.svg">
+      
+      
+      <span data-dc-tpl="37" style="font-size: 9px; margin-left: 1px; line-height: 1; display: flex; align-items: center; margin-top: 0px; font-variant: normal;"><span class="sc-interp">TV</span></span>
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="25">
+  <span data-dc-tpl="26" title="Apple iPod" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="27" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="31" alt="Apple iPod" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/apple.svg">
+      
+      
+      <span data-dc-tpl="37" style="font-size: 9px; margin-left: 1px; line-height: 1; display: flex; align-items: center; margin-top: 0px; font-variant: normal;"><span class="sc-interp">iPod</span></span>
+      
+      
+    </span>
+    
+  </span></div><div class="sc-host" data-sc-name="PlatformIcon" data-dc-tpl="25">
+  <span data-dc-tpl="26" title="Amazon Appstore (Fire OS + legacy Android)" style="display: flex; align-items: center; flex-shrink: 0; color: var(--color-neutral-300); opacity: 0.85; position: relative; zoom: 1;">
+    <span data-dc-tpl="27" style="display: flex; align-items: center; flex-shrink: 0; opacity: 1;">
+      
+      <img data-dc-tpl="31" alt="Amazon Appstore (Fire OS + legacy Android)" class="dc-plat-img" width="16" height="16" style="flex-shrink: 0; max-width: none; width: auto; height: 16px;" src="images/platforms/amazon.svg">
       
       
       
@@ -2121,7 +2237,7 @@ class Component extends DCLogic {
     const platformIcons = (typeof window !== 'undefined' && window.PLATFORM_ICONS) || [];
     const SITE = (typeof window !== 'undefined' && window.SITE_CONFIG) || {};
     return {
-      platformIcons,
+      platformIcons: platformIcons.map(p => ({ ...p, name: p.name + (p.exampleParen ? ' (' + p.exampleParen + ')' : '') })),
       metaTitle: SITE.title || 'Platforms legend — Vertex Order',
       metaDescription: SITE.description || '',
       helpWantedItems: (typeof window !== 'undefined' && window.HELP_WANTED_ITEMS) || [],
