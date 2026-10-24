@@ -29,11 +29,12 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
       versions: [
         {
           subtitle: 'Remake', subtitleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_Adventure#Versions_and_merchandise', subtitleDate: 2006,
+          terminated: true,
           languages: [
             { value: 'JA', native: true },
           ],
           platforms: [
-            { key: 'mobile-phone', jpTag: true },
+            { key: 'mobile-phone', jpTag: true, terminated: true, paren: 'NTT DoCoMo i-mode; au EZweb; SoftBank', url: 'https://web.archive.org/web/20110122011850/http://web.square-enix.co.jp/mobile/seiken/sdff/', hreflang: 'ja' },
           ],
           versionDesc: [
             [{ text: 'Closer to the original design, with updated graphics and sound, an improved world map and a new sickle.' }],
@@ -234,7 +235,7 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
         { title: 'Chocobo Racing', titleDate: '1999-03-18', titleUrl: 'https://wikipedia.org/wiki/Chocobo_Racing', platforms: [{ key: 'playstation1' }, { key: 'playstation2', paren: 'PSone compatibility', more: true }, { key: 'playstation3', paren: 'Digital; PSone compatibility', more: true }, { key: 'playstation-portable', paren: 'Digital', more: true }, { key: 'playstation-vita', paren: 'PSP compatibility', more: true }] },
         { title: 'Chocobo GP', titleDate: '2022-03-10', titleUrl: 'https://wikipedia.org/wiki/Chocobo_GP', platforms: [{ key: 'nintendo-switch', url: 'https://www.square-enix-games.com/games/chocobo-gp' }, { key: 'nintendo-switch-2', paren: 'Switch compatibility', url: 'https://www.square-enix-games.com/games/chocobo-gp', more: true }] },
         { title: "Chocobo GP'", titleDate: '2022-01-13', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Chocobo_GP%27', platforms: [{ key: 'android2', terminated: true, url: 'https://web.archive.org/web/20221229104027/https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.chocodash' }, { key: 'apple', terminated: true, url: 'https://web.archive.org/web/20220824052651/https://apps.apple.com/us/app/chocobogp/id1567147111?mt=8' }] },
-        { title: 'Dice de Chocobo', titleDate: '1999-12-22 20', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Dice_de_Chocobo', platforms: [{ key: 'playstation1', jpTag: true }, { key: 'playstation2', jpTag: true, paren: 'PSone compatibility', more: true }, { key: 'nintendo-game-boy-advance', jpTag: true, more: true }, { key: 'playstation3', jpTag: true, paren: 'Digital; PSone compatibility', more: true }, { key: 'playstation-portable', jpTag: true, paren: 'Digital', more: true }, { key: 'playstation-vita', jpTag: true, paren: 'PSP compatibility', more: true }, { key: 'nintendo-wii-u', paren: 'Virtual Console', more: true }] },
+        { title: 'Dice de Chocobo', titleDate: '1999-12-22 20', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Dice_de_Chocobo', platforms: [{ key: 'playstation1', jpTag: true }, { key: 'playstation2', jpTag: true, paren: 'PSone compatibility', more: true }, { key: 'nintendo-game-boy-advance', jpTag: true, more: true }, { key: 'playstation3', jpTag: true, paren: 'Digital; PSone compatibility', more: true }, { key: 'playstation-portable', jpTag: true, paren: 'Digital', more: true }, { key: 'playstation-vita', jpTag: true, paren: 'PSP compatibility', more: true }, { key: 'nintendo-wii-u', terminated: true, paren: 'Virtual Console', more: true }] },
         { title: 'Hataraku Chocobo', titleDate: '2000-09-21', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Hataraku_Chocobo', platforms: [{ key: 'wonderswan', jpTag: true, paren: 'B&W; Color' }] },
         { title: 'Chocobo Anywhere', titleDate: '2002-05-24', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Doko_de_mo_Chocobo', platforms: [{ key: 'mobile-phone', jpTag: true, paren: 'NTT DoCoMo i-appli; Mitsubishi D504i' }] },
         { title: 'Chocobo Anywhere 2: Escape! Ghost Ship', titleDate: '2003-05-23 20', titleUrl: 'https://ja.wikipedia.org/wiki/%E3%81%A9%E3%81%93%E3%81%A7%E3%82%82%E3%83%81%E3%83%A7%E3%82%B3%E3%83%9C', titleHreflang: 'ja', platforms: [{ key: 'mobile-phone', jpTag: true, paren: 'NTT DoCoMo i-appli; Mitsubishi D505i and D505iS' }] },
@@ -244,7 +245,13 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
         { title: 'Final Fantasy Fables: Chocobo Tales', titleDate: '2006-12-14 10', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_Fables:_Chocobo_Tales', platforms: [{ key: 'nintendo-ds' }, { key: 'nintendo-3ds', paren: 'DS compatibility', more: true }] },
         { title: 'Chocobo Tales: The Witch, the Girl, and the Five Heroes', titleDate: '2008-12-11', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Chocobo_to_Mahou_no_Ehon:_Majo_to_Shoujo_to_Go-nin_no_Yuusha', platforms: [{ key: 'nintendo-ds', jpTag: true }, { key: 'nintendo-3ds', jpTag: true, paren: 'DS compatibility', more: true }] },
         { title: 'Chocobo de Mobile', titleDate: '2006-12-14 20', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Chocobo_de_Mobile', platforms: [{ key: 'mobile-phone', jpTag: true, terminated: true, paren: 'au EZweb; NTT DoCoMo FOMA series', url: 'https://web.archive.org/web/20071015040815/http://www.square-enix.co.jp/mobile/game/chocomoba/main.html', hreflang: 'ja' }] },
-        { title: 'Chocobo Panic', titleDate: '2010-05-28', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Chocobo_Panic', platforms: [{ key: 'apple-ipad', terminated: true, url: 'https://web.archive.org/web/20160208062817/https://itunes.apple.com/gb/app/chocobo-panic/id373052434?mt=8' }] },
+        { title: 'Patapata Chocobo', titleDate: '2007', titleUrl: 'https://web.archive.org/web/20080706054924/http://www.square-enix.co.jp/mobile/sem/flash/index.html#chocobo', titleHreflang: 'ja', platforms: [{ key: 'mobile-phone', jpTag: true, terminated: true }] },
+        { title: "Chocobo's Giri-Giri Stop Premium", titleDate: '2008', titleUrl: 'https://web.archive.org/web/20090830052615/http://www.square-enix.co.jp/mobile/sem/flash_ranking/index.html#chocogiri', titleHreflang: 'ja', platforms: [{ key: 'mobile-phone', jpTag: true, terminated: true }] },
+        { title: 'Chocolympic Jump', titleDate: '2008', titleUrl: 'https://web.archive.org/web/20090830052615/http://www.square-enix.co.jp/mobile/sem/flash_ranking/index.html#chocorin', titleHreflang: 'ja', platforms: [{ key: 'mobile-phone', jpTag: true, terminated: true }] },
+        { title: "Chocobo's Arithmetic Marathon", titleDate: '2008', titleUrl: 'https://web.archive.org/web/20090830052615/http://www.square-enix.co.jp/mobile/sem/flash_ranking/index.html#marathon', titleHreflang: 'ja', platforms: [{ key: 'mobile-phone', jpTag: true, terminated: true }] },
+        { title: 'Chocobo and the Labyrinth of Memory', titleDate: '2008', titleUrl: 'https://web.archive.org/web/20090830052615/http://www.square-enix.co.jp/mobile/sem/flash_ranking/index.html#chocobo_kioku', titleHreflang: 'ja', platforms: [{ key: 'mobile-phone', jpTag: true, terminated: true }] },
+        { title: "Chocobo's Crystal Hunter", titleDate: '2008', titleUrl: 'https://web.archive.org/web/20090830052615/http://www.square-enix.co.jp/mobile/sem/flash_ranking/index.html#chocobo_crystal', titleHreflang: 'ja', platforms: [{ key: 'mobile-phone', jpTag: true, terminated: true }] },
+        { title: 'Chocobo Panic', titleDate: '2010-05-28', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Chocobo_Panic', platforms: [{ key: 'apple-ipad', terminated: true, url: 'https://web.archive.org/web/20160924114712/https://itunes.apple.com/us/app/chocobo-panic/id373052434?mt=8' }] },
         { title: "Chocobo's Crystal Tower", titleDate: '2010-06-29', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Chocobo%27s_Crystal_Tower', platforms: [{ key: 'mobile-phone', jpTag: true, terminated: true }, { key: 'facebook', terminated: true, more: true, url: 'https://apps.facebook.com/chocobos/' }] },
         { title: "Chocobo's Chocotto Farm", titleDate: '2012-12-19', titleUrl: 'https://wikipedia.org/wiki/Chocobo%E2%80%99s_Chocotto_Farm', platforms: [{ key: 'mobile-phone', jpTag: true, paren: 'GREE' }, { key: 'android2', jpTag: true, terminated: true, paren: 'd game store', url: 'https://web.archive.org/web/20160805125814/https://play.google.com/store/apps/details?id=com.smilelab.chocoboFarm', more: true }, { key: 'apple', jpTag: true, terminated: true, paren: 'd game store', url: 'https://web.archive.org/web/20171017202521/https://www.dmkt-sp.jp/?url=http%3A%2F%2Fportal.dmkt-sp.jp%2Fsp%2Fgame-store%2Ftop', more: true }] },
       ],
@@ -387,7 +394,7 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
     mediaType: 'Game', chronoOrder: 700, narrativeOrder: 358,
     title: 'Pictlogica Final Fantasy', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Pictlogica_Final_Fantasy', titleDate: '2013-10-28',
     mediaDesc: [
-      [{ text: 'Mixes RPG elements with dot logic puzzles. The player controls a party of four, plus one optional friend, as they battle their way through waves of enemies while solving puzzles. The 3DS version had a few extra features.' }],
+      [{ text: 'Mixes RPG elements with dot logic puzzles. The player controls a party of four, plus one optional friend, as they battle their way through waves of enemies while solving puzzles. The 3DS version has different puzzles and an easier difficulty.' }],
     ],
     primary: {
       tags: ['Mashup', 'Dot logic puzzle', 'RPG', 'Single-player', 'Multiplayer', 'Co-op'],
@@ -403,7 +410,8 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
       platforms: [
         { key: 'android2', jpTag: true, terminated: true, url: 'https://web.archive.org/web/20161011031113/https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.pictlogicaff' },
         { key: 'apple', jpTag: true, terminated: true, url: 'https://web.archive.org/web/20160625171900/https://itunes.apple.com/jp/app/pictlogica-final-fantasy/id715441573', hreflang: 'ja' },
-        { key: 'nintendo-3ds', jpTag: true, terminated: true, paren: 'Digital' },
+        { key: 'nintendo-3ds', jpTag: true, terminated: true, paren: 'Digital', url: 'https://www.jp.square-enix.com/game/detail/p_ffne/', hreflang: 'ja' },
+        { key: 'nintendo-wii-u', jpTag: true, terminated: true, paren: 'Digital', url: 'https://www.jp.square-enix.com/game/detail/p_ffne/', hreflang: 'ja' },
         { key: 'fan-playthrough', search: 'youtube' },
       ],
     },
@@ -530,6 +538,7 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
           paren: 'Digital; Switch compatibility',
           url: 'https://www.nintendo.com/store/products/collection-of-saga-final-fantasy-legend-switch/',
         },
+        { key: 'mobile-phone', jpTag: true, terminated: true, paren: 'Part I; NTT DoCoMo i-mode; au EZweb; SoftBank', url: 'https://web.archive.org/web/20080704111206/http://www.square-enix.co.jp/mobile/sem/saga/', hreflang: 'ja' },
       ],
     },
   },
@@ -580,6 +589,45 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
         { title: 'Final Fantasy XIV Agents of Enquiry: A Realm Reborn', titleDate: { start: '2027-03', approx: true }, titleUrl: 'https://na.store.square-enix-games.com/final-fantasy-xiv-agents-of-enquiry---a-realm-reborn' },
       ],
       profileUrl: 'https://na.store.square-enix-games.com/merchandise/table-top/board-games?_bc_fsnf=1',
+    },
+  },
+  {
+    mediaType: 'Game', chronoOrder: 350, narrativeOrder: 330,
+    title: 'Dragon Quest & Final Fantasy in Itadaki Street Mobile', titleDate: '2010-07-01',
+    mediaDesc: [
+      [{ text: 'A mobile board game in the ' }, { emText: 'Itadaki Street' }, { text: ' style, where rivals race to become the richest, with characters from both series, among them Cloud, Tifa, Aerith, Yuffie, Squall, Rinoa and a Moogle, and maps such as Alexandria, Tycoon Castle and the Crystal Tower. Launched as ' }, { emText: 'Final Fantasy in Itadaki Street Mobile' }, { text: ' (' }, { text: 'ファイナルファンタジー in いただきストリートMOBILE', lang: 'ja' }, { text: ') and renamed on 2011-02-03.' }],
+    ],
+    primary: {
+      tags: ['Mashup', 'Board game', 'Mobile'],
+      terminated: true,
+      languages: [
+        { value: 'JA', native: true },
+      ],
+      profileUrl: 'https://web.archive.org/web/20110511091729/http://www.square-enix.co.jp/mobile/sem/itast-sp/', profileHreflang: 'ja',
+      platforms: [
+        { key: 'mobile-phone', jpTag: true, terminated: true, paren: 'NTT DoCoMo i-mode; au EZweb' },
+      ],
+    },
+  },
+  {
+    mediaType: 'Game', chronoOrder: 1750, narrativeOrder: 320,
+    title: 'Final Fantasy Minigames', titleDate: { start: '2005-03-29', end: '2016-08-30' },
+    mediaDesc: [
+      [{ text: 'Small standalone games from across the franchise, mostly for phones, including the ones also listed under ' }, { emLinkText: 'VII (2005)', emLinkUrl: '#entry-VII-final-fantasy-vii-snowboarding-2005' }, { text: ', ' }, { emLinkText: 'VII (2014)', emLinkUrl: '#entry-VII-final-fantasy-vii-g-bike-2014' }, { text: ' and ' }, { emLinkText: 'XV (2016)', emLinkUrl: '#entry-XV-justice-monsters-five-2016' }, { text: '. Minigames themed on Chocobo, including ' }, { emLinkText: 'Chocobo World (1999)', emLinkUrl: '#entry-VIII-chocobo-world-1999' }, { text: ', are in ' }, { emLinkText: 'Chocobo (game series)', emLinkUrl: '#entry-Other-chocobo-game-series-1997' }, { text: '.' }],
+    ],
+    primary: {
+      contentsLabel: 'games',
+      length: '7 games',
+      terminated: true,
+      contents: [
+        { title: "Bombs' Great Counterattack", titleDate: '2008', titleUrl: 'https://web.archive.org/web/20090830052615/http://www.square-enix.co.jp/mobile/sem/flash_ranking/index.html#bom', titleHreflang: 'ja', platforms: [{ key: 'mobile-phone', jpTag: true, terminated: true }] },
+        { title: "Free-Diving Moogle's Undersea Expedition", titleDate: '2008', titleUrl: 'https://web.archive.org/web/20090830052615/http://www.square-enix.co.jp/mobile/sem/flash_ranking/index.html#sumoguri', titleHreflang: 'ja', platforms: [{ key: 'mobile-phone', jpTag: true, terminated: true }] },
+        { title: 'Cactuar Panic', titleDate: '2008', titleUrl: 'https://web.archive.org/web/20090830052615/http://www.square-enix.co.jp/mobile/sem/flash_ranking/index.html#sabo_panic', titleHreflang: 'ja', platforms: [{ key: 'mobile-phone', jpTag: true, terminated: true }] },
+        { title: "Moogle's Shop Manager for a Day", titleDate: '2008', titleUrl: 'https://web.archive.org/web/20090830052615/http://www.square-enix.co.jp/mobile/sem/flash_ranking/index.html#mogu_tencho', titleHreflang: 'ja', platforms: [{ key: 'mobile-phone', jpTag: true, terminated: true }] },
+        { title: 'Final Fantasy VII: Snowboarding', titleDate: '2005-03-29', titleUrl: '#entry-VII-final-fantasy-vii-snowboarding-2005', platforms: [{ key: 'mobile-phone', terminated: true }] },
+        { title: 'Final Fantasy VII G-Bike', titleDate: '2014-10-30', titleUrl: '#entry-VII-final-fantasy-vii-g-bike-2014', platforms: [{ key: 'android2', jpTag: true, terminated: true }, { key: 'apple', jpTag: true, terminated: true }] },
+        { title: 'Justice Monsters Five', titleDate: '2016-08-30', titleUrl: '#entry-XV-justice-monsters-five-2016', platforms: [{ key: 'android2', terminated: true }, { key: 'apple', terminated: true }] },
+      ],
     },
   },
 ]};
