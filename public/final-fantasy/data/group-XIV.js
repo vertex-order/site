@@ -69,7 +69,7 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, narrativeOrder: 15
           url: 'https://store.playstation.com/product/UP0082-PPSA02954_00-FFXIVCOMPLETE05S',
           paren: 'Pro Enhanced; Physical; Digital; Terminated 2027',
         },
-        { key: 'playstation5', paren: 'PS4 compat; Digital', url: 'https://www.finalfantasyxiv.com' },
+        { key: 'playstation5', paren: 'Digital; PS4 compat', url: 'https://www.finalfantasyxiv.com' },
         { key: 'playstation-plus', url: 'https://store.playstation.com/product/UP0082-PPSA02954_00-FFXIVCOMPLETE05S', paren: 'PS5; PS4; PSPortal' },
         { key: 'xbox-xs', paren: 'Optimized; Digital', url: 'https://www.xbox.com/games/store/final-fantasy-xiv-online-complete-edition/9p3lzjnnmpzs' },
         { key: 'xbox-cloud', url: 'https://www.xbox.com/games/store/final-fantasy-xiv-online-complete-edition/9p3lzjnnmpzs' },
@@ -563,6 +563,27 @@ window.__ffGroupReg['XIV'] = { num: 'XIV', chronoOrder: 1500, narrativeOrder: 15
         { key: 'cast', paren: 'Crunchyroll', url: 'https://www.imdb.com/title/tt10551160/' },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Brave Father Online Final Fantasy XIV' },
       ],
+    },
+  },
+  {
+    mediaType: 'Tabletop', chronoOrder: 1200, narrativeOrder: 1000,
+    title: 'Final Fantasy XIV Tabletop Games', titleUrl: 'https://na.store.square-enix-games.com/merchandise/table-top/board-games?_bc_fsnf=1&brand=238', titleDate: { start: '2019', end: '2027-03', approx: true },
+    mediaDesc: [
+      'Tabletop games set in Eorzea: a Gold Saucer party board game, a tabletop role-playing game sold as a starter set and further rulebooks, and a party card game.',
+    ],
+    primary: {
+      contentsLabel: 'games',
+      length: '3 games',
+      helpWanted: true,
+      contents: [
+        { title: 'Final Fantasy XIV: Gold Saucer Cactpot Party', titleDate: '2019', titleUrl: 'https://boardgamegeek.com/boardgame/283713/final-fantasy-xiv-gold-saucer-cactpot-party' },
+        { title: 'Final Fantasy XIV Agents of Enquiry: A Realm Reborn', titleDate: { start: '2027-03', approx: true }, titleUrl: 'https://na.store.square-enix-games.com/final-fantasy-xiv-agents-of-enquiry---a-realm-reborn' },
+        { title: 'Final Fantasy XIV TTRPG Starter Set', titleDate: '2024-06-29', titleUrl: 'https://na.store.square-enix-games.com/final-fantasy-xiv-ttrpg-starter-set' },
+        { title: 'Final Fantasy XIV TTRPG Standard Rulebook', num: false, titleDate: '2024-11-23', titleUrl: 'https://na.store.square-enix-games.com/final-fantasy-xiv-ttrpg-standard-rulebook-deluxe-edition' },
+        { title: 'Final Fantasy XIV TTRPG Scenario & Gamemaster Guide', num: false, titleDate: '2025-07-26', titleUrl: 'https://na.store.square-enix-games.com/final-fantasy-xiv-ttrpg-scenario-_-gamemaster-guide' },
+        { title: 'Final Fantasy XIV TTRPG Advanced Rulebook: Stormblood', num: false, titleDate: '2026-03-21', titleUrl: 'https://na.store.square-enix-games.com/final-fantasy-xiv-ttrpg-advanced-rulebook_-stormblood' },
+      ],
+      profileUrl: 'https://na.store.square-enix-games.com/merchandise/table-top/board-games?_bc_fsnf=1',
     },
   },
 ]};

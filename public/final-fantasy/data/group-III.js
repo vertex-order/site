@@ -37,7 +37,7 @@ window.__ffGroupReg['III'] = { num: 'III', chronoOrder: 300, narrativeOrder: 300
         { key: 'android2', url: 'https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.FFPR3&' },
         { key: 'apple', url: 'https://apps.apple.com/app/final-fantasy-iii/id1492041436?' },
         { key: 'nintendo-switch', paren: 'Physical; Digital', url: 'https://www.nintendo.com/store/products/final-fantasy-iii-switch/' },
-        { key: 'nintendo-switch-2', paren: 'Switch 1 compatibility; Digital', url: 'https://www.nintendo.com/store/products/final-fantasy-iii-switch/' },
+        { key: 'nintendo-switch-2', paren: 'Digital; Switch 1 compatibility', url: 'https://www.nintendo.com/store/products/final-fantasy-iii-switch/' },
         { key: 'playstation4', paren: 'Physical; Digital', url: 'https://store.playstation.com/product/UP0082-CUSA33825_00-FF3PS4APPNA00001' },
         { key: 'playstation5', paren: 'PS4 compat', url: 'https://store.playstation.com/product/UP0082-CUSA33825_00-FF3PS4APPNA00001' },
         { key: 'xbox-xs', paren: 'Optimized; Digital', url: 'https://www.xbox.com/games/store/final-fantasy-iii/9nwdpfppk30v?' },
@@ -60,7 +60,7 @@ window.__ffGroupReg['III'] = { num: 'III', chronoOrder: 300, narrativeOrder: 300
             { value: 'KO', tip: 'Korean (Fan Translation) (2003)' },
           ],
           platforms: [
-            { key: 'nintendo-wii-u', terminated: true, jpTag: true, paren: 'Virtual Console' },
+            { key: 'nintendo-wii-u', terminated: true, jpTag: true, paren: 'Virtual Console; Wii compatibility' },
             { key: 'nintendo-wii', terminated: true, jpTag: true, paren: 'Virtual Console' },
             { key: 'nintendo-nes-classic-edition', jpTag: true },
             { key: 'nintendo-fc', paren: 'Physical; Japan Only' },
@@ -149,6 +149,7 @@ window.__ffGroupReg['III'] = { num: 'III', chronoOrder: 300, narrativeOrder: 300
             helpWanted: true,
             platforms: [
               { key: 'nintendo-ds', paren: 'Physical' },
+              { key: 'nintendo-3ds', paren: 'Physical; DS compatibility' },
             ],
             versionDesc: [
               'The original release of the 3D remake, introducing 3D graphics in a cutesy character style, a reworked job system, and a new cast of playable characters, as well as Mognet, a mail-based sidequest chain that is no longer functional in this version now that Nintendo Wi-Fi Connection has been discontinued.',

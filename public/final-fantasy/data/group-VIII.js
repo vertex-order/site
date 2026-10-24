@@ -2,7 +2,7 @@
 window.__ffGroupReg['VIII'] = { num: 'VIII', chronoOrder: 800, narrativeOrder: 800, title: 'Final Fantasy VIII', note: 'A more grounded, character-driven entry, centered on a love story and experimental mechanics.', media: [
   {
     mediaType: 'Game', chronoOrder: 0, narrativeOrder: 100,
-    title: 'Final Fantasy VIII', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_VIII', titleDate: '1999-02-11',
+    title: 'Final Fantasy VIII', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy_VIII', titleDate: '1999-02-11 10',
     mediaDesc: [
       'Squall leads a group of mercenaries as they are drawn into a conflict with Edea who seized control of a powerful military state.',
     ],
@@ -35,7 +35,7 @@ window.__ffGroupReg['VIII'] = { num: 'VIII', chronoOrder: 800, narrativeOrder: 8
         { key: 'nintendo-switch', paren: 'Physical; Digital', url: 'https://www.nintendo.com/store/products/final-fantasy-viii-remastered-switch/' },
         {
           key: 'nintendo-switch-2',
-          paren: 'Switch 1 compatibility; Digital',
+          paren: 'Digital; Switch 1 compatibility',
           url: 'https://www.nintendo.com/store/products/final-fantasy-viii-remastered-switch/',
         },
         { key: 'playstation4', paren: 'Physical; Digital', url: 'https://store.playstation.com/product/UP0082-CUSA08749_00-FINALFANTASY80NA' },
@@ -48,7 +48,7 @@ window.__ffGroupReg['VIII'] = { num: 'VIII', chronoOrder: 800, narrativeOrder: 8
         { key: 'fan-playthrough', search: 'youtube' },
       ],
       versionDesc: [
-        [{ text: 'This remaster has remodeled character and Guardian Force models, restored missing visual effects, multiple optional cheats, and a no-encounters mode. A companion mini-game is removed, though its rewards are still obtainable. Released as ' }, { emText: 'Final Fantasy VIII Remastered' }, { text: '.' }],
+        [{ text: 'This remaster has remodeled character and Guardian Force models, restored missing visual effects, multiple optional cheats, and a no-encounters mode. The companion mini-game ' }, { emLinkText: 'Chocobo World (1999)', emLinkUrl: '#entry-VIII-chocobo-world-1999' }, { text: ' is removed, though its rewards are still obtainable. Released as ' }, { emText: 'Final Fantasy VIII Remastered' }, { text: '.' }],
       ],
       versions: [
         {
@@ -72,7 +72,7 @@ window.__ffGroupReg['VIII'] = { num: 'VIII', chronoOrder: 800, narrativeOrder: 8
             { key: 'apple', jpTag: true, terminated: true, paren: 'Dive In cloud', url: 'https://web.archive.org/web/20150317010201/http://divein.jp.square-enix.com/', hreflang: 'ja' },
           ],
           versionDesc: [
-            [{ text: 'This remaster has upscaled graphics, High Speed Mode, companion mini-game ' }, { emLinkText: 'Chocobo World', emLinkUrl: 'https://wikipedia.org/wiki/Final_Fantasy_VIII#Other_media' }, { text: ', many accesibility and cheat booster commands; including Battle Assistance, Magic Booster, Max Damage, AP Max, Gil Max.' }],
+            [{ text: 'This remaster has upscaled graphics, High Speed Mode, companion mini-game ' }, { emLinkText: 'Chocobo World (1999)', emLinkUrl: '#entry-VIII-chocobo-world-1999' }, { text: ', many accesibility and cheat booster commands; including Battle Assistance, Magic Booster, Max Damage, AP Max, Gil Max.' }],
           ],
         },
         {
@@ -89,7 +89,7 @@ window.__ffGroupReg['VIII'] = { num: 'VIII', chronoOrder: 800, narrativeOrder: 8
             { key: 'windows' },
           ],
           versionDesc: [
-            'This port has MIDI audio instead of the original soundtrack and a slower battle interface that makes Limit Break inputs less precise. A companion mini-game no longer requires extra hardware to play.',
+            [{ text: 'This port has MIDI audio instead of the original soundtrack and a slower battle interface that makes Limit Break inputs less precise. The companion mini-game ' }, { emLinkText: 'Chocobo World (1999)', emLinkUrl: '#entry-VIII-chocobo-world-1999' }, { text: ' is built in and no longer requires PocketStation to play.' }],
           ],
         },
         {
@@ -104,14 +104,56 @@ window.__ffGroupReg['VIII'] = { num: 'VIII', chronoOrder: 800, narrativeOrder: 8
           platforms: [
             { key: 'playstation1', paren: 'Physical' },
             { key: 'playstation2', paren: 'PSone compatibility' },
-            { key: 'playstation3', paren: 'PSone compatibility; Digital' },
+            { key: 'playstation3', paren: 'Digital; PSone compatibility' },
             { key: 'playstation-vita', paren: 'Digital' },
             { key: 'playstation-portable', paren: 'Digital' },
           ],
           versionDesc: [
-            'The original release. Non-Japan releases add automatic tutorials and give two Guardian Forces their elemental/status junction abilities by default.',
+            [{ text: 'The original release. Non-Japan releases add automatic tutorials and give two Guardian Forces their elemental/status junction abilities by default. The companion game ' }, { emLinkText: 'Chocobo World (1999)', emLinkUrl: '#entry-VIII-chocobo-world-1999' }, { text: ' requires a PocketStation.' }],
           ],
         },
+      ],
+    },
+  },
+  {
+    mediaType: 'Game', chronoOrder: 10, narrativeOrder: 200,
+    title: 'Chocobo World', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Chocobo_World', titleDate: '1999-02-11 20',
+    mediaDesc: [
+      [{ text: 'Boko the Chocobo sets out to find his friend MiniMog, assisted by Moomba and Cactuar. Companion game for the PocketStation that shipped with ' }, { emLinkText: 'VIII (1999)', emLinkUrl: '#entry-VIII-final-fantasy-viii-1999' }, { text: '. Built into the game as a minigame as of the ' }, { emLinkText: 'Edit (2000)', emLinkUrl: '#entry-VIII-final-fantasy-viii-1999-x-edit-2000' }, { text: ' and still there in the ' }, { emLinkText: 'Remaster (2013)', emLinkUrl: '#entry-VIII-final-fantasy-viii-1999-x-remaster-2013' }, { text: '; removed from ' }, { emLinkText: 'Remastered (2019)', emLinkUrl: '#entry-VIII-final-fantasy-viii-1999' }, { text: ', where its rewards stay obtainable.' }],
+    ],
+    primary: {
+      tags: ['Minigame', 'Single-player'],
+      languages: [
+        { value: 'JA', native: true },
+        { value: 'EN' },
+        { value: 'FR' },
+        { value: 'IT' },
+        { value: 'DE' },
+        { value: 'ES-ES' },
+      ],
+      platforms: [
+        { key: 'pocketstation' },
+        { key: 'windows' },
+        { key: 'steam', url: 'https://store.steampowered.com/app/39150/FINAL_FANTASY_VIII/' },
+        { key: 'fan-playthrough', search: 'youtube' },
+      ],
+    },
+  },
+  {
+    mediaType: 'Tabletop', chronoOrder: 1000, narrativeOrder: 400,
+    title: 'Final Fantasy VIII Tabletop Games', titleUrl: 'https://boardgamegeek.com/boardgame/15957/final-fantasy-viii-triple-triad', titleDate: 1999,
+    mediaDesc: [
+      [{ text: 'A physical collectible card game version of the Triple Triad card minigame inside ' }, { emLinkText: 'VIII (1999)', emLinkUrl: '#entry-VIII-final-fantasy-viii-1999' }, { text: ', for two players on a 3x3 grid, sold in booster packs with art by Tetsuya Nomura.' }],
+    ],
+    primary: {
+      contentsLabel: 'games',
+      length: '1 game',
+      helpWanted: true,
+      languages: [
+        { value: 'JA', native: true },
+      ],
+      contents: [
+        { title: 'Final Fantasy VIII: Triple Triad', titleDate: 1999, titleUrl: 'https://boardgamegeek.com/boardgame/15957/final-fantasy-viii-triple-triad' },
       ],
     },
   },

@@ -154,7 +154,7 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
           { key: 'nintendo-switch', paren: 'Digital', url: 'https://www.nintendo.com/store/products/final-fantasy-xv-pocket-edition-hd-switch/' },
           {
             key: 'nintendo-switch-2',
-            paren: 'Switch compatibility; Digital',
+            paren: 'Digital; Switch compatibility',
             url: 'https://www.nintendo.com/store/products/final-fantasy-xv-pocket-edition-hd-switch/',
           },
           { key: 'playstation4', paren: 'Digital', url: 'https://store.playstation.com/product/UP0082-CUSA12651_00-0000000000000001' },
@@ -599,7 +599,7 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
       platforms: [
         { key: 'nintendo-nes-fc', paren: 'Physical' },
         { key: 'nintendo-wii', terminated: true, paren: 'Virtual Console' },
-        { key: 'nintendo-wii-u', terminated: true, jpTag: true, paren: 'Virtual Console' },
+        { key: 'nintendo-wii-u', terminated: true, jpTag: true, paren: 'Virtual Console; Wii compatibility' },
         { key: 'nintendo-3ds', terminated: true, jpTag: true, paren: 'Virtual Console' },
         { key: 'fan-movie', paren: 'Youtube', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', noResults: true },
