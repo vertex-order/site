@@ -22,6 +22,7 @@ window.__ffGroupReg['DFF'] = { num: 'DFF', chronoOrder: 1390, narrativeOrder: 13
       length: [{ value: '40min', tip: 'Main Story', join: ' / ' }, { value: '2h', tip: 'Main + Extra', join: ' / ' }, { value: '14½h', tip: 'Completionist' }],
       platforms: [
         { key: 'playstation-portable', paren: 'Digital' },
+        { key: 'playstation-vita', paren: 'Digital; PSP compatibility' },
         { key: 'fan-movie', search: 'youtube' },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', noResults: true },
         { key: 'fan-playthrough', search: 'youtube' },
@@ -48,8 +49,11 @@ window.__ffGroupReg['DFF'] = { num: 'DFF', chronoOrder: 1390, narrativeOrder: 13
         { score: '7.3', url: 'https://www.metacritic.com/game/dissidia-012-duodecim-final-fantasy/', key: 'metacritic-user' },
       ],
       length: [{ value: '29h', tip: 'Main Story', join: ' / ' }, { value: '65½h', tip: 'Main + Extra', join: ' / ' }, { value: '150h', tip: 'Completionist' }],
+      profileUrl: 'https://web.archive.org/web/20110430093425/http://web.square-enix.co.jp/dissidia_012/', profileHreflang: 'ja',
       platforms: [
-        { key: 'playstation-portable' },
+        { key: 'playstation-portable', paren: 'Physical' },
+        { key: 'playstation-portable', jpTag: true, paren: 'Digital' },
+        { key: 'playstation-vita', jpTag: true, paren: 'Digital; PSP compatibility' },
         { key: 'fan-movie', search: 'youtube', searchTitle: 'Dissidia 012 Final Fantasy' },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Dissidia 012 Final Fantasy', noResults: true },
         { key: 'fan-playthrough', search: 'youtube', searchTitle: 'Dissidia 012 Final Fantasy' },
@@ -71,7 +75,9 @@ window.__ffGroupReg['DFF'] = { num: 'DFF', chronoOrder: 1390, narrativeOrder: 13
             { score: '7.1', url: 'https://www.metacritic.com/game/dissidia-final-fantasy/', key: 'metacritic-user' },
           ],
           platforms: [
+            { key: 'playstation-portable', paren: 'Physical' },
             { key: 'playstation-portable', paren: 'Digital' },
+            { key: 'playstation-vita', paren: 'Digital; PSP compatibility' },
           ],
           versionDesc: [
             [{ text: 'The original release. The Western versions add new cutscenes, an Arcade Mode, and ease unlocking Shade Impulse and grinding for player icons. Also released as ' }, { emText: 'Dissidia Final Fantasy: Universal Tuning' }, { text: ' in Japan, which offers a choice of English or Japanese voice audio in battles (cutscenes are English only).' }],
@@ -108,7 +114,7 @@ window.__ffGroupReg['DFF'] = { num: 'DFF', chronoOrder: 1390, narrativeOrder: 13
       length: [{ value: '33½h', tip: 'Solo', join: ' / ' }, { value: '110h', tip: 'Vs.' }],
       platforms: [
         { key: 'arcade' },
-        { key: 'steam', paren: 'PC', url: 'https://store.steampowered.com/sub/346805/' },
+        { key: 'steam', paren: 'PC; Digital', url: 'https://store.steampowered.com/sub/346805/' },
         { key: 'playstation4', paren: 'Physical; Digital', url: 'https://store.playstation.com/product/UP0082-CUSA09512_00-DISSIDIAFFDELUXE' },
         { key: 'playstation5', paren: 'PS4 compat', url: 'https://store.playstation.com/product/UP0082-CUSA09512_00-DISSIDIAFFDELUXE' },
         { key: 'playstation-plus', url: 'https://store.playstation.com/product/UP0082-CUSA09512_00-DISSIDIAFFDELUXE', paren: 'PS5; PS4' },

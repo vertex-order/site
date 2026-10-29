@@ -72,8 +72,8 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
       ],
       length: [{ value: '27½h', tip: 'Main Story' }, { value: '56½h', tip: 'Main + Extra' }, { value: '116h', tip: 'Completionist' }],
       platforms: [
-        { key: 'windows', paren: 'PC; Handheld; Digital', url: 'https://www.xbox.com/games/store/final-fantasy-xv-windows-edition/9nr0n2lz6tc5' },
-        { key: 'steam', paren: 'PC; Handheld', url: 'https://store.steampowered.com/app/637650/FINAL_FANTASY_XV_WINDOWS_EDITION/' },
+        { key: 'windows', paren: 'PC; Handheld; Physical; Digital', url: 'https://www.xbox.com/games/store/final-fantasy-xv-windows-edition/9nr0n2lz6tc5' },
+        { key: 'steam', paren: 'PC; Handheld; Digital', url: 'https://store.steampowered.com/app/637650/FINAL_FANTASY_XV_WINDOWS_EDITION/' },
         { key: 'playstation4', paren: 'Physical; Digital', url: 'https://store.playstation.com/product/UP0082-CUSA01633_00-FFXVROYALEDITION' },
         { key: 'playstation5', paren: 'PS4 compat', url: 'https://store.playstation.com/product/UP0082-CUSA01633_00-FFXVROYALEDITION' },
         { key: 'playstation-plus', url: 'https://store.playstation.com/product/UP0082-CUSA01633_00-FFXVROYALEDITION', paren: 'Comrades only; PS5; PS4' },
@@ -94,7 +94,7 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
           ],
           helpWanted: true,
           platforms: [
-            { key: 'playstation4' },
+            { key: 'playstation4', paren: 'Physical; Digital' },
             { key: 'playstation5', paren: 'PS4 compat' },
             { key: 'xbox-one', paren: 'Physical' },
             { key: 'xbox-xs', paren: 'Xbox One compatibility' },
@@ -148,7 +148,8 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
           { score: '6.1', url: 'https://www.metacritic.com/game/final-fantasy-xv-pocket-edition/', key: 'metacritic-user' },
         ],
         platforms: [
-          { key: 'windows', url: 'https://apps.microsoft.com/detail/9mvr4t7znq1t' },
+          { key: 'windows', paren: 'Digital', url: 'https://apps.microsoft.com/detail/9mvr4t7znq1t' },
+          { key: 'windows-phone', terminated: true },
           { key: 'android', terminated: true, url: 'https://web.archive.org/web/20240821072717/https://play.google.com/store/apps/details?id=com.square_enix.android_google.ffxvpe' },
           { key: 'apple', terminated: true, url: 'https://web.archive.org/web/20240828125756/https://apps.apple.com/us/app/finalfantasy-xv-pocket-edition/id1152350815' },
           { key: 'nintendo-switch', paren: 'Digital', url: 'https://www.nintendo.com/store/products/final-fantasy-xv-pocket-edition-hd-switch/' },
@@ -429,6 +430,32 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
     },
   },
   {
+    mediaType: 'Game', chronoOrder: 100, narrativeOrder: 510,
+    title: 'Final Fantasy XV: Episode Duscae', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Final_Fantasy_XV_Episode_Duscae', titleDate: '2015-03-19',
+    mediaDesc: [
+      [{ text: 'Playable demo of ' }, { emLinkText: 'XV (2016)', emLinkUrl: '#entry-XV-final-fantasy-xv-2016' }, { text: ', given away with ' }, { emLinkText: 'Type-0 HD (2015)', emLinkUrl: '#entry-XIII-final-fantasy-type-0-2011' }, { text: '. Stranded in the region of Duscae without their car, Noctis and his party must earn the gil to repair it by hunting down a bounty. The plot is original to the demo.' }],
+    ],
+    primary: {
+      tags: ['Demo'],
+      subtitle: 'Demo',
+      terminated: true,
+      languages: [
+        { value: 'JA', native: true, voice: true },
+        { value: 'EN', voice: true },
+        { value: '…?' },
+      ],
+      platforms: [
+        { key: 'playstation4', terminated: true },
+        { key: 'playstation5', terminated: true, paren: 'PS4 compat' },
+        { key: 'xbox-one', terminated: true },
+        { key: 'xbox-xs', terminated: true, paren: 'Xbox One compatibility' },
+        { key: 'fan-movie', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Duscae' },
+        { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Duscae' },
+        { key: 'fan-playthrough', search: 'youtube', searchTitle: 'Final Fantasy XV Episode Duscae' },
+      ],
+    },
+  },
+  {
     mediaType: 'Game', chronoOrder: -3000, narrativeOrder: 500,
     title: 'Platinum Demo – Final Fantasy XV Prologue', titleUrl: 'https://wikipedia.org/wiki/Development_of_Final_Fantasy_XV#Demos', titleDate: '2016-03-30 20',
     mediaDesc: [
@@ -506,7 +533,8 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
       ],
       length: [{ value: '3½h', tip: 'Main Story', join: ' / ' }, { value: '5½h', tip: 'Main + Extra', join: ' / ' }, { value: '11½h', tip: 'Completionist' }],
       platforms: [
-        { key: 'playstation4', url: 'https://www.playstation.com/games/monster-of-the-deep-final-fantasy-xv/' },
+        { key: 'playstation4', paren: 'Digital; VR only', url: 'https://www.playstation.com/games/monster-of-the-deep-final-fantasy-xv/' },
+        { key: 'playstation5', paren: 'PS4 compatibility' },
         { key: 'fan-movie', search: 'youtube', searchTitle: 'Monster of the Deep Final Fantasy XV' },
         { key: 'fan-recap', search: 'youtube', searchTitle: 'Monster of the Deep Final Fantasy XV' },
         { key: 'fan-playthrough', search: 'youtube', searchTitle: 'Monster of the Deep Final Fantasy XV' },
@@ -600,7 +628,7 @@ window.__ffGroupReg['XV'] = { num: 'XV', chronoOrder: 1600, narrativeOrder: 1600
         { key: 'nintendo-nes-fc', paren: 'Physical' },
         { key: 'nintendo-wii', terminated: true, paren: 'Virtual Console' },
         { key: 'nintendo-wii-u', terminated: true, jpTag: true, paren: 'Virtual Console; Wii compatibility' },
-        { key: 'nintendo-3ds', terminated: true, jpTag: true, paren: 'Virtual Console' },
+        { key: 'nintendo-3ds', terminated: true, jpTag: true, paren: 'Virtual Console; Digital', url: 'https://www.jp.square-enix.com/game/detail/kingsknight/', hreflang: 'ja' },
         { key: 'fan-movie', paren: 'Youtube', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', noResults: true },
         { key: 'fan-playthrough', paren: 'Youtube' },

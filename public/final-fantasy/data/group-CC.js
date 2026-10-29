@@ -28,7 +28,7 @@ window.__ffGroupReg['CC'] = { num: 'CC', chronoOrder: 1200, narrativeOrder: 1200
         { key: 'apple', terminated: true, url: 'https://web.archive.org/web/20241222152916/https://apps.apple.com/us/app/finalfantasy-crystalchronicles/id1478870957' },
         {
           key: 'nintendo-switch',
-          paren: 'Digital',
+          paren: 'Physical; Digital',
           url: 'https://www.nintendo.com/store/products/final-fantasy-crystal-chronicles-remastered-edition-switch/',
         },
         {
@@ -36,7 +36,7 @@ window.__ffGroupReg['CC'] = { num: 'CC', chronoOrder: 1200, narrativeOrder: 1200
           paren: 'Digital; Switch compatibility',
           url: 'https://www.nintendo.com/store/products/final-fantasy-crystal-chronicles-remastered-edition-switch/',
         },
-        { key: 'playstation4', paren: 'Digital', url: 'https://store.playstation.com/product/UP0082-CUSA16885_00-FFCCRE2003TO2020' },
+        { key: 'playstation4', paren: 'Physical; Digital', url: 'https://store.playstation.com/product/UP0082-CUSA16885_00-FFCCRE2003TO2020' },
         { key: 'playstation5', paren: 'PS4 compat', url: 'https://store.playstation.com/product/UP0082-CUSA16885_00-FFCCRE2003TO2020' },
         { key: 'fan-movie', search: 'youtube' },
         { key: 'fan-recap', search: 'youtube' },
@@ -209,13 +209,14 @@ window.__ffGroupReg['CC'] = { num: 'CC', chronoOrder: 1200, narrativeOrder: 1200
         { value: '…?' },
       ],
       helpWanted: true,
+      profileUrl: 'https://www.jp.square-enix.com/game/detail/ffcc_tcb/',
       ratings: [
         { score: '66', url: 'https://www.metacritic.com/game/final-fantasy-crystal-chronicles-the-crystal-bear/', key: 'metacritic' },
         { score: '6.0', url: 'https://www.metacritic.com/game/final-fantasy-crystal-chronicles-the-crystal-bear/', key: 'metacritic-user' },
       ],
       length: [{ value: '10½h', tip: 'Main Story', join: ' / ' }, { value: '16½h', tip: 'Main + Extra', join: ' / ' }, { value: '32h', tip: 'Completionist' }],
       platforms: [
-        { key: 'nintendo-wii' },
+        { key: 'nintendo-wii', paren: 'Physical' },
         { key: 'nintendo-wii-u', paren: 'Wii compatibility' },
         { key: 'fan-movie', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy Crystal Chronicles The Crystal Bearers', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy Crystal Chronicles The Crystal Bearers', noResults: true },
@@ -243,7 +244,7 @@ window.__ffGroupReg['CC'] = { num: 'CC', chronoOrder: 1200, narrativeOrder: 1200
       ],
       length: [{ value: '12½h', tip: 'Main Story', join: ' / ' }, { value: '17½h', tip: 'Main + Extra', join: ' / ' }, { value: '23½h', tip: 'Completionist' }],
       platforms: [
-        { key: 'nintendo-ds' },
+        { key: 'nintendo-ds', paren: 'Physical' },
         { key: 'nintendo-3ds', paren: 'DS compatibility' },
         { key: 'fan-movie', search: 'youtube', searchTitle: 'Final Fantasy Crystal Chronicles Ring of Fates' },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy Crystal Chronicles Ring of Fates', noResults: true },
@@ -316,15 +317,16 @@ window.__ffGroupReg['CC'] = { num: 'CC', chronoOrder: 1200, narrativeOrder: 1200
         { value: '…?' },
       ],
       helpWanted: true,
+      profileUrl: 'https://www.jp.square-enix.com/game/detail/ffcc_eot/',
       ratings: [
         { score: '75', url: 'https://www.metacritic.com/game/final-fantasy-crystal-chronicles-echoes-of-time/', key: 'metacritic' },
         { score: '7.2', url: 'https://www.metacritic.com/game/final-fantasy-crystal-chronicles-echoes-of-time/', key: 'metacritic-user' },
       ],
       length: [{ value: '14h', tip: 'Main Story', join: ' / ' }, { value: '19h', tip: 'Main + Extra', join: ' / ' }, { value: '31½h', tip: 'Completionist' }],
       platforms: [
-        { key: 'nintendo-ds' },
+        { key: 'nintendo-ds', paren: 'Physical', url: 'https://web.archive.org/web/20190918234144/http://store.jp.square-enix.com/item/NTR_P_CFIJ.html', hreflang: 'ja' },
         { key: 'nintendo-3ds', paren: 'DS compatibility' },
-        { key: 'nintendo-wii' },
+        { key: 'nintendo-wii', paren: 'Physical' },
         { key: 'nintendo-wii-u', paren: 'Wii compatibility' },
         { key: 'fan-movie', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy Crystal Chronicles Echoes of Time', noResults: true },
         { key: 'fan-recap', paren: 'Youtube', search: 'youtube', searchTitle: 'Final Fantasy Crystal Chronicles Echoes of Time', noResults: true },
