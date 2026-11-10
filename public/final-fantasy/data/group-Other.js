@@ -93,7 +93,7 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
     mediaType: 'Game', chronoOrder: 300, narrativeOrder: 200,
     title: 'Final Fantasy: The 4 Heroes of Light', titleUrl: 'https://wikipedia.org/wiki/Final_Fantasy:_The_4_Heroes_of_Light', titleDate: '2009-10-29',
     mediaDesc: [
-      [{ text: 'Four youths journey around their world to free their home from a terrible curse. A sequel morphed into the unrelated ' }, { emText: 'Bravely Default (2012)' }, { text: ' game and franchise.' }],
+      [{ text: 'Four youths journey around their world to free their home from a terrible curse. Its successor, ' }, { emText: 'Bravely Default (2012)' }, { text: ', started a franchise of its own that is not on this list.' }],
     ],
     primary: {
       tags: ['Essential', 'Turn-based RPG', 'Jobs', 'Single-player', 'Multiplayer', 'Co-op'],
@@ -127,8 +127,8 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
       tags: ['Essential', 'Turn-based RPG', 'Jobs', 'Single-player', 'Mobile', 'Free-to-play'],
       terminated: true,
       languages: [
-        { value: 'JA', native: true },
-        { value: 'EN' },
+        { value: 'JA', native: true, voice: true },
+        { value: 'EN', voice: true },
         { value: 'FR', textOnly: true },
         { value: 'DE', textOnly: true },
         { value: 'ZH-TW', textOnly: true },
@@ -158,7 +158,7 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
     primary: {
       tags: ['Mashup', '2D', 'Sprites', 'RPG', 'Active Time Battle', 'Single-player', 'Multiplayer', 'Mobile', 'Free-to-play', 'Gacha'],
       languages: [
-        { value: 'JA', native: true },
+        { value: 'JA', native: true, voice: true },
         { value: 'EN', tip: 'English (content up to 2022-09)' },
         { value: 'ES', tip: 'Spanish (global version, removed in 2020)' },
         { value: 'FR', tip: 'French (global version, removed in 2020)' },
@@ -227,12 +227,12 @@ window.__ffGroupReg['Other'] = { num: 'Other', chronoOrder: 1800, narrativeOrder
       [{ text: "Over 21 titles in this series provide casual fun centered around a recurring cast of characters and all relating to Final Fantasy's Chocobo mounts. The games span different genres, and some entries are a bit too simplistic to deserve their own entries, as a whole the series may be worth checking out." }],
     ],
     primary: {
-      tags: ['Casual'],
+      tags: ['Casual', 'Co-op'],
       contentsLabel: 'games',
       contents: [
         { title: "Chocobo's Mysterious Dungeon", titleDate: '1997-12-23', titleUrl: "https://wikipedia.org/wiki/Chocobo's_Mysterious_Dungeon", platforms: [{ key: 'playstation1', jpTag: true, paren: 'Physical' }, { key: 'playstation2', jpTag: true, paren: 'PSone compatibility', more: true }, { key: 'playstation3', jpTag: true, paren: 'Digital; PSone compatibility', url: 'https://web.archive.org/web/20140104213637/http://dlgames.square-enix.com/jp/psga/2010/chocobodungeon1/', hreflang: 'ja', more: true }, { key: 'playstation-portable', jpTag: true, paren: 'Digital', url: 'https://web.archive.org/web/20140104213637/http://dlgames.square-enix.com/jp/psga/2010/chocobodungeon1/', hreflang: 'ja', more: true }, { key: 'playstation-vita', jpTag: true, paren: 'Digital; PSP compatibility', url: 'https://web.archive.org/web/20140104213637/http://dlgames.square-enix.com/jp/psga/2010/chocobodungeon1/', hreflang: 'ja', more: true }, { key: 'wonderswan', jpTag: true, paren: 'Physical; B&W', more: true }] },
         { title: "Chocobo's Dungeon 2", titleDate: '1998-12-23', titleUrl: "https://wikipedia.org/wiki/Chocobo's_Dungeon_2", platforms: [{ key: 'playstation1', paren: 'Physical' }, { key: 'playstation2', paren: 'PSone compatibility', more: true }, { key: 'playstation3', jpTag: true, paren: 'Digital; PSone compatibility', url: 'https://web.archive.org/web/20140104214851/http://dlgames.square-enix.com/jp/psga/2010/chocobodungeon2/', hreflang: 'ja', more: true }, { key: 'playstation-portable', jpTag: true, paren: 'Digital', url: 'https://web.archive.org/web/20140104214851/http://dlgames.square-enix.com/jp/psga/2010/chocobodungeon2/', hreflang: 'ja', more: true }, { key: 'playstation-vita', jpTag: true, paren: 'Digital; PSP compatibility', url: 'https://web.archive.org/web/20140104214851/http://dlgames.square-enix.com/jp/psga/2010/chocobodungeon2/', hreflang: 'ja', more: true }] },
-        { title: "Final Fantasy Fables: Chocobo's Dungeon", titleDate: '2007-12-13', titleUrl: "https://wikipedia.org/wiki/Final_Fantasy_Fables:_Chocobo's_Dungeon", platforms: [{ key: 'nintendo-wii', paren: 'Physical' }, { key: 'nintendo-wii-u', paren: 'Wii compatibility', more: true }, { key: 'nintendo-ds', jpTag: true, paren: 'Physical', more: true }, { key: 'nintendo-3ds', jpTag: true, paren: 'DS compatibility', more: true }, { key: 'nintendo-switch', paren: 'Physical; Digital', more: true }, { key: 'nintendo-switch-2', paren: 'Switch compatibility', more: true }, { key: 'playstation4', more: true }, { key: 'playstation5', paren: 'PS4 compatibility', more: true }] },
+        { title: "Final Fantasy Fables: Chocobo's Dungeon", titleDate: '2007-12-13', titleUrl: "https://wikipedia.org/wiki/Final_Fantasy_Fables:_Chocobo's_Dungeon", platforms: [{ key: 'nintendo-wii', paren: 'Physical' }, { key: 'nintendo-wii-u', paren: 'Wii compatibility', more: true }, { key: 'nintendo-ds', jpTag: true, paren: 'Physical', more: true }, { key: 'nintendo-3ds', jpTag: true, paren: 'DS compatibility', more: true }, { key: 'nintendo-switch', paren: 'Physical; Digital', more: true }, { key: 'nintendo-switch-2', paren: 'Switch compatibility', more: true }, { key: 'playstation4', paren: 'Physical; Digital', more: true }, { key: 'playstation5', paren: 'PS4 compatibility', more: true }] },
         { title: 'Chocobo World', titleDate: '1999-02-11', titleUrl: '#entry-VIII-chocobo-world-1999', platforms: [{ key: 'pocketstation' }, { key: 'windows', more: true }, { key: 'steam', more: true, url: 'https://store.steampowered.com/app/39150/FINAL_FANTASY_VIII/' }] },
         { title: 'Chocobo Stallion', titleDate: '1999-12-22 10', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/Chocobo_Stallion', platforms: [{ key: 'playstation1', jpTag: true, paren: 'Physical' }, { key: 'pocketstation' }, { key: 'playstation2', jpTag: true, paren: 'PSone compatibility', more: true }, { key: 'playstation3', jpTag: true, paren: 'Digital; PSone compatibility', url: 'https://web.archive.org/web/20140101192656/http://dlgames.square-enix.com/jp/psga/2008/chocobostallion/', hreflang: 'ja', more: true }, { key: 'playstation-portable', jpTag: true, paren: 'Digital', url: 'https://web.archive.org/web/20140101192656/http://dlgames.square-enix.com/jp/psga/2008/chocobostallion/', hreflang: 'ja', more: true }, { key: 'playstation-vita', jpTag: true, paren: 'Digital; PSP compatibility', url: 'https://web.archive.org/web/20140101192656/http://dlgames.square-enix.com/jp/psga/2008/chocobostallion/', hreflang: 'ja', more: true }] },
         { title: 'Chocobo Racing', titleDate: '1999-03-18', titleUrl: 'https://wikipedia.org/wiki/Chocobo_Racing', platforms: [{ key: 'playstation1', paren: 'Physical' }, { key: 'playstation2', paren: 'PSone compatibility', more: true }, { key: 'playstation3', jpTag: true, paren: 'Digital; PSone compatibility', url: 'https://web.archive.org/web/20140718200141/http://dlgames.square-enix.com/jp/psga/2009/chocoboracing/', hreflang: 'ja', more: true }, { key: 'playstation-portable', jpTag: true, paren: 'Digital', url: 'https://web.archive.org/web/20140718200141/http://dlgames.square-enix.com/jp/psga/2009/chocoboracing/', hreflang: 'ja', more: true }, { key: 'playstation-vita', jpTag: true, paren: 'Digital; PSP compatibility', url: 'https://web.archive.org/web/20140718200141/http://dlgames.square-enix.com/jp/psga/2009/chocoboracing/', hreflang: 'ja', more: true }] },

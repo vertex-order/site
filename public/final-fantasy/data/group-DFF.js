@@ -39,8 +39,8 @@ window.__ffGroupReg['DFF'] = { num: 'DFF', chronoOrder: 1390, narrativeOrder: 13
       tags: ['Essential', '3D', 'Fighting game', 'Action RPG', 'Single-player', 'Multiplayer'],
       subtitle: 'Remake', subtitleUrl: 'https://wikipedia.org/wiki/Dissidia_012_Final_Fantasy', subtitleDate: '2011-03-03',
       languages: [
-        { value: 'JA', native: true },
-        { value: 'EN' },
+        { value: 'JA', native: true, voice: true },
+        { value: 'EN', voice: true },
         { value: '…?' },
       ],
       helpWanted: true,
@@ -65,8 +65,8 @@ window.__ffGroupReg['DFF'] = { num: 'DFF', chronoOrder: 1390, narrativeOrder: 13
       versions: [
         {
           languages: [
-            { value: 'JA', native: true },
-            { value: 'EN' },
+            { value: 'JA', native: true, voice: true },
+            { value: 'EN', voice: true },
             { value: '…?' },
           ],
           helpWanted: true,
@@ -94,7 +94,7 @@ window.__ffGroupReg['DFF'] = { num: 'DFF', chronoOrder: 1390, narrativeOrder: 13
       [{ text: 'Confusingly released to arcades in Japan as ' }, { emText: 'Dissidia Final Fantasy' }, { text: ' (which already existed on the PSP as a different game) before being rebranded ' }, { emText: 'Dissidia Final Fantasy NT' }, { text: '.' }],
     ],
     primary: {
-      tags: ['Essential', '3D', 'Fighting game', 'Action RPG', 'Single-player', 'Multiplayer'],
+      tags: ['Essential', '3D', 'Fighting game', 'Action RPG', 'Single-player', 'Multiplayer', 'Co-op'],
       languages: [
         { value: 'JA', native: true, voice: true },
         { value: 'EN', voice: true },
@@ -134,7 +134,7 @@ window.__ffGroupReg['DFF'] = { num: 'DFF', chronoOrder: 1390, narrativeOrder: 13
       tags: ['Mobile', 'Free-to-play', 'Turn-based RPG', 'Single-player'],
       terminated: true,
       languages: [
-        { value: 'JA', native: true },
+        { value: 'JA', native: true, voice: true },
         { value: 'EN' },
         { value: '…?' },
       ],
@@ -162,7 +162,7 @@ window.__ffGroupReg['DFF'] = { num: 'DFF', chronoOrder: 1390, narrativeOrder: 13
     primary: {
       tags: ['Essential', 'Mobile', 'Fighting game', 'Action RPG', 'Gacha', 'Multiplayer', 'Free-to-play', 'In-app purchases'],
       languages: [
-        { value: 'JA', native: true },
+        { value: 'JA', native: true, voice: true },
         { value: 'EN' },
         { value: 'KO' },
         { value: 'ZH-TW' },
