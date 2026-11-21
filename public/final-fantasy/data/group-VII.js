@@ -272,7 +272,7 @@ window.__ffGroupReg['VII'] = { num: 'VII', chronoOrder: 700, narrativeOrder: 700
       profileUrl: 'https://www.square-enix.com/ffvii/en-us/games/remake-intergrade/',
       ratings: [
         { score: '89', url: 'https://www.metacritic.com/game/final-fantasy-vii-remake-intergrade/', key: 'metacritic' },
-        { score: '8.7', url: 'https://www.metacritic.com/game/final-fantasy-vii-remake-intergrade/', key: 'metacritic-user' },
+        { score: '8.3', url: 'https://www.metacritic.com/game/final-fantasy-vii-remake-intergrade/', key: 'metacritic-user' },
         { score: 'VP', url: 'https://store.steampowered.com/app/1462040/FINAL_FANTASY_VII_REMAKE_INTERGRADE/', key: 'steam' },
       ],
       length: [{ value: '32h', tip: 'Main Story', join: ' / ' }, { value: '41h', tip: 'Main + Extra', join: ' / ' }, { value: '85½h', tip: 'Completionist', join: ', ' }, { value: 'INTERmission 4½h', tip: 'INTERmission Main Story', join: ' / ' }, { value: '7h', tip: 'INTERmission Main + Extra', join: ' / ' }, { value: '16h', tip: 'INTERmission Completionist' }],
@@ -685,6 +685,7 @@ window.__ffGroupReg['VII'] = { num: 'VII', chronoOrder: 700, narrativeOrder: 700
     },
     alts: [
       {
+        id: 'on-the-way-to-a-smile-episode-denzel-2009',
         title: 'On the Way to a Smile - Episode: Denzel', titleUrl: 'https://breezewiki.com/finalfantasy/wiki/On_the_Way_to_a_Smile_-Episode:_Denzel-_Final_Fantasy_VII', titleDate: '2009-04-16',
         subtitle: 'Video',
         languages: [
