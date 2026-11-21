@@ -32,7 +32,7 @@ window.__khGroupReg['DDD'] = { num: 'DDD', chronoOrder: 270, narrativeOrder: 150
         { key: 'nintendo-switch-2', paren: 'Physical; Digital; Switch Compatibility', url: 'https://www.nintendo.com/store/products/kingdom-hearts-collection-i-iii-switch-2/' },
         { key: 'playstation4', paren: 'Physical; Digital', url: 'https://store.playstation.com/product/UP0082-CUSA05795_00-KINGDOMHEARTSX28' },
         { key: 'playstation5', paren: 'Digital', url: 'https://store.playstation.com/product/UP0082-PPSA35909_00-KHHD28RMX0000000' },
-        { key: 'xbox-one', paren: 'Digital', url: 'https://www.xbox.com/games/store/kingdom-hearts-hd-28-final-chapter-prologue/9nb80t1xc43b' },
+        { key: 'xbox-one', paren: 'Enhanced; Digital', url: 'https://www.xbox.com/games/store/kingdom-hearts-hd-28-final-chapter-prologue/9nb80t1xc43b' },
         { key: 'xbox-xs', paren: 'Digital; Optimized; One Compatibility', url: 'https://www.xbox.com/games/store/kingdom-hearts-hd-28-final-chapter-prologue/9p9669spd8sf' },
         { key: 'xbox-cloud', url: 'https://www.xbox.com/games/store/kingdom-hearts-hd-28-final-chapter-prologue/9nb80t1xc43b' },
         { key: 'fan-movie', search: 'youtube', searchTitle: 'Kingdom Hearts Dream Drop Distance HD' },
@@ -67,7 +67,7 @@ window.__khGroupReg['DDD'] = { num: 'DDD', chronoOrder: 270, narrativeOrder: 150
           ],
           helpWanted: true,
           profileUrl: 'https://www.nintendo.com/en-gb/Games/Nintendo-3DS-games/KINGDOM-HEARTS-3D-Dream-Drop-Distance--274292.html',
-          languages: [{ value: 'JA', native: true }, { value: 'EN' }, { value: '…?' }],
+          languages: [{ value: 'JA', native: true, voice: true }, { value: 'EN' }, { value: '…?' }],
           platforms: [
             { key: 'nintendo-3ds', paren: 'Physical', url: 'https://www.jp.square-enix.com/game/detail/kh3d/', hreflang: 'ja' },
             { key: 'fan-playthrough', search: 'youtube', searchQualifier: '3ds' },
